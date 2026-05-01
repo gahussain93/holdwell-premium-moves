@@ -31,7 +31,8 @@ export function Footer() {
           </p>
           <div className="mt-5 space-y-2 text-sm">
             <a href="tel:07737731115" className="flex items-center gap-2 text-foreground hover:text-primary">
-              <Phone className="h-4 w-4" /> 07737 731115
+              <Phone className="h-4 w-4" />
+              <span>07737 731115</span>
             </a>
             <a
               href="https://wa.me/447737731115"
@@ -39,10 +40,12 @@ export function Footer() {
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-foreground hover:text-primary"
             >
-              <MessageCircle className="h-4 w-4" /> WhatsApp
+              <MessageCircle className="h-4 w-4" />
+              <span>WhatsApp</span>
             </a>
             <a href="mailto:hello@holdwellremovals.co.uk" className="flex items-center gap-2 text-foreground hover:text-primary">
-              <Mail className="h-4 w-4" /> hello@holdwellremovals.co.uk
+              <Mail className="h-4 w-4" />
+              <span>hello@holdwellremovals.co.uk</span>
             </a>
           </div>
         </div>
