@@ -1,23 +1,18 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, MessageCircle, Mail } from "lucide-react";
 import { Logo } from "./Logo";
+import { AREAS_LOCAL, AREA_SLUGS } from "@/lib/areas-data";
 
 const services = [
-  "House Moves",
-  "Office Moves",
-  "Business Relocations",
-  "Single Item Transport",
-  "Small Moves",
-  "Packing",
-];
-
-const areas = [
-  "Central London",
-  "North London",
-  "South London",
-  "East London",
-  "West London",
-  "Greater London",
+  { label: "House Removals", href: "/house-removals-london" },
+  { label: "Office Removals", href: "/office-removals-london" },
+  { label: "Business Relocations", href: "/business-relocations-london" },
+  { label: "Single Item Transport", href: "/single-item-transport-london" },
+  { label: "Small Moves", href: "/small-moves-london" },
+  { label: "Man and Van", href: "/man-and-van-london" },
+  { label: "Packing & Assembly", href: "/packing-assembly-dismantling-london" },
+  { label: "Storage Runs", href: "/storage-runs-london" },
+  { label: "Waste Clearance", href: "/waste-clearance-london" },
 ];
 
 export function Footer() {
