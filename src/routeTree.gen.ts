@@ -10,6 +10,16 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as RemovalsWembleyRouteImport } from './routes/removals-wembley'
+import { Route as RemovalsUxbridgeRouteImport } from './routes/removals-uxbridge'
+import { Route as RemovalsShepherdsBushRouteImport } from './routes/removals-shepherds-bush'
+import { Route as RemovalsRichmondRouteImport } from './routes/removals-richmond'
+import { Route as RemovalsHounslowRouteImport } from './routes/removals-hounslow'
+import { Route as RemovalsHarrowRouteImport } from './routes/removals-harrow'
+import { Route as RemovalsFulhamRouteImport } from './routes/removals-fulham'
+import { Route as RemovalsEalingRouteImport } from './routes/removals-ealing'
+import { Route as RemovalsChiswickRouteImport } from './routes/removals-chiswick'
+import { Route as RemovalsBrentfordRouteImport } from './routes/removals-brentford'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AreasRouteImport } from './routes/areas'
@@ -19,6 +29,56 @@ import { Route as IndexRouteImport } from './routes/index'
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RemovalsWembleyRoute = RemovalsWembleyRouteImport.update({
+  id: '/removals-wembley',
+  path: '/removals-wembley',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RemovalsUxbridgeRoute = RemovalsUxbridgeRouteImport.update({
+  id: '/removals-uxbridge',
+  path: '/removals-uxbridge',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RemovalsShepherdsBushRoute = RemovalsShepherdsBushRouteImport.update({
+  id: '/removals-shepherds-bush',
+  path: '/removals-shepherds-bush',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RemovalsRichmondRoute = RemovalsRichmondRouteImport.update({
+  id: '/removals-richmond',
+  path: '/removals-richmond',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RemovalsHounslowRoute = RemovalsHounslowRouteImport.update({
+  id: '/removals-hounslow',
+  path: '/removals-hounslow',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RemovalsHarrowRoute = RemovalsHarrowRouteImport.update({
+  id: '/removals-harrow',
+  path: '/removals-harrow',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RemovalsFulhamRoute = RemovalsFulhamRouteImport.update({
+  id: '/removals-fulham',
+  path: '/removals-fulham',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RemovalsEalingRoute = RemovalsEalingRouteImport.update({
+  id: '/removals-ealing',
+  path: '/removals-ealing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RemovalsChiswickRoute = RemovalsChiswickRouteImport.update({
+  id: '/removals-chiswick',
+  path: '/removals-chiswick',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RemovalsBrentfordRoute = RemovalsBrentfordRouteImport.update({
+  id: '/removals-brentford',
+  path: '/removals-brentford',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PricingRoute = PricingRouteImport.update({
@@ -53,6 +113,16 @@ export interface FileRoutesByFullPath {
   '/areas': typeof AreasRoute
   '/contact': typeof ContactRoute
   '/pricing': typeof PricingRoute
+  '/removals-brentford': typeof RemovalsBrentfordRoute
+  '/removals-chiswick': typeof RemovalsChiswickRoute
+  '/removals-ealing': typeof RemovalsEalingRoute
+  '/removals-fulham': typeof RemovalsFulhamRoute
+  '/removals-harrow': typeof RemovalsHarrowRoute
+  '/removals-hounslow': typeof RemovalsHounslowRoute
+  '/removals-richmond': typeof RemovalsRichmondRoute
+  '/removals-shepherds-bush': typeof RemovalsShepherdsBushRoute
+  '/removals-uxbridge': typeof RemovalsUxbridgeRoute
+  '/removals-wembley': typeof RemovalsWembleyRoute
   '/services': typeof ServicesRoute
 }
 export interface FileRoutesByTo {
@@ -61,6 +131,16 @@ export interface FileRoutesByTo {
   '/areas': typeof AreasRoute
   '/contact': typeof ContactRoute
   '/pricing': typeof PricingRoute
+  '/removals-brentford': typeof RemovalsBrentfordRoute
+  '/removals-chiswick': typeof RemovalsChiswickRoute
+  '/removals-ealing': typeof RemovalsEalingRoute
+  '/removals-fulham': typeof RemovalsFulhamRoute
+  '/removals-harrow': typeof RemovalsHarrowRoute
+  '/removals-hounslow': typeof RemovalsHounslowRoute
+  '/removals-richmond': typeof RemovalsRichmondRoute
+  '/removals-shepherds-bush': typeof RemovalsShepherdsBushRoute
+  '/removals-uxbridge': typeof RemovalsUxbridgeRoute
+  '/removals-wembley': typeof RemovalsWembleyRoute
   '/services': typeof ServicesRoute
 }
 export interface FileRoutesById {
@@ -70,13 +150,55 @@ export interface FileRoutesById {
   '/areas': typeof AreasRoute
   '/contact': typeof ContactRoute
   '/pricing': typeof PricingRoute
+  '/removals-brentford': typeof RemovalsBrentfordRoute
+  '/removals-chiswick': typeof RemovalsChiswickRoute
+  '/removals-ealing': typeof RemovalsEalingRoute
+  '/removals-fulham': typeof RemovalsFulhamRoute
+  '/removals-harrow': typeof RemovalsHarrowRoute
+  '/removals-hounslow': typeof RemovalsHounslowRoute
+  '/removals-richmond': typeof RemovalsRichmondRoute
+  '/removals-shepherds-bush': typeof RemovalsShepherdsBushRoute
+  '/removals-uxbridge': typeof RemovalsUxbridgeRoute
+  '/removals-wembley': typeof RemovalsWembleyRoute
   '/services': typeof ServicesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/areas' | '/contact' | '/pricing' | '/services'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/areas'
+    | '/contact'
+    | '/pricing'
+    | '/removals-brentford'
+    | '/removals-chiswick'
+    | '/removals-ealing'
+    | '/removals-fulham'
+    | '/removals-harrow'
+    | '/removals-hounslow'
+    | '/removals-richmond'
+    | '/removals-shepherds-bush'
+    | '/removals-uxbridge'
+    | '/removals-wembley'
+    | '/services'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/areas' | '/contact' | '/pricing' | '/services'
+  to:
+    | '/'
+    | '/about'
+    | '/areas'
+    | '/contact'
+    | '/pricing'
+    | '/removals-brentford'
+    | '/removals-chiswick'
+    | '/removals-ealing'
+    | '/removals-fulham'
+    | '/removals-harrow'
+    | '/removals-hounslow'
+    | '/removals-richmond'
+    | '/removals-shepherds-bush'
+    | '/removals-uxbridge'
+    | '/removals-wembley'
+    | '/services'
   id:
     | '__root__'
     | '/'
@@ -84,6 +206,16 @@ export interface FileRouteTypes {
     | '/areas'
     | '/contact'
     | '/pricing'
+    | '/removals-brentford'
+    | '/removals-chiswick'
+    | '/removals-ealing'
+    | '/removals-fulham'
+    | '/removals-harrow'
+    | '/removals-hounslow'
+    | '/removals-richmond'
+    | '/removals-shepherds-bush'
+    | '/removals-uxbridge'
+    | '/removals-wembley'
     | '/services'
   fileRoutesById: FileRoutesById
 }
@@ -93,6 +225,16 @@ export interface RootRouteChildren {
   AreasRoute: typeof AreasRoute
   ContactRoute: typeof ContactRoute
   PricingRoute: typeof PricingRoute
+  RemovalsBrentfordRoute: typeof RemovalsBrentfordRoute
+  RemovalsChiswickRoute: typeof RemovalsChiswickRoute
+  RemovalsEalingRoute: typeof RemovalsEalingRoute
+  RemovalsFulhamRoute: typeof RemovalsFulhamRoute
+  RemovalsHarrowRoute: typeof RemovalsHarrowRoute
+  RemovalsHounslowRoute: typeof RemovalsHounslowRoute
+  RemovalsRichmondRoute: typeof RemovalsRichmondRoute
+  RemovalsShepherdsBushRoute: typeof RemovalsShepherdsBushRoute
+  RemovalsUxbridgeRoute: typeof RemovalsUxbridgeRoute
+  RemovalsWembleyRoute: typeof RemovalsWembleyRoute
   ServicesRoute: typeof ServicesRoute
 }
 
@@ -103,6 +245,76 @@ declare module '@tanstack/react-router' {
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/removals-wembley': {
+      id: '/removals-wembley'
+      path: '/removals-wembley'
+      fullPath: '/removals-wembley'
+      preLoaderRoute: typeof RemovalsWembleyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/removals-uxbridge': {
+      id: '/removals-uxbridge'
+      path: '/removals-uxbridge'
+      fullPath: '/removals-uxbridge'
+      preLoaderRoute: typeof RemovalsUxbridgeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/removals-shepherds-bush': {
+      id: '/removals-shepherds-bush'
+      path: '/removals-shepherds-bush'
+      fullPath: '/removals-shepherds-bush'
+      preLoaderRoute: typeof RemovalsShepherdsBushRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/removals-richmond': {
+      id: '/removals-richmond'
+      path: '/removals-richmond'
+      fullPath: '/removals-richmond'
+      preLoaderRoute: typeof RemovalsRichmondRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/removals-hounslow': {
+      id: '/removals-hounslow'
+      path: '/removals-hounslow'
+      fullPath: '/removals-hounslow'
+      preLoaderRoute: typeof RemovalsHounslowRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/removals-harrow': {
+      id: '/removals-harrow'
+      path: '/removals-harrow'
+      fullPath: '/removals-harrow'
+      preLoaderRoute: typeof RemovalsHarrowRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/removals-fulham': {
+      id: '/removals-fulham'
+      path: '/removals-fulham'
+      fullPath: '/removals-fulham'
+      preLoaderRoute: typeof RemovalsFulhamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/removals-ealing': {
+      id: '/removals-ealing'
+      path: '/removals-ealing'
+      fullPath: '/removals-ealing'
+      preLoaderRoute: typeof RemovalsEalingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/removals-chiswick': {
+      id: '/removals-chiswick'
+      path: '/removals-chiswick'
+      fullPath: '/removals-chiswick'
+      preLoaderRoute: typeof RemovalsChiswickRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/removals-brentford': {
+      id: '/removals-brentford'
+      path: '/removals-brentford'
+      fullPath: '/removals-brentford'
+      preLoaderRoute: typeof RemovalsBrentfordRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pricing': {
@@ -149,6 +361,16 @@ const rootRouteChildren: RootRouteChildren = {
   AreasRoute: AreasRoute,
   ContactRoute: ContactRoute,
   PricingRoute: PricingRoute,
+  RemovalsBrentfordRoute: RemovalsBrentfordRoute,
+  RemovalsChiswickRoute: RemovalsChiswickRoute,
+  RemovalsEalingRoute: RemovalsEalingRoute,
+  RemovalsFulhamRoute: RemovalsFulhamRoute,
+  RemovalsHarrowRoute: RemovalsHarrowRoute,
+  RemovalsHounslowRoute: RemovalsHounslowRoute,
+  RemovalsRichmondRoute: RemovalsRichmondRoute,
+  RemovalsShepherdsBushRoute: RemovalsShepherdsBushRoute,
+  RemovalsUxbridgeRoute: RemovalsUxbridgeRoute,
+  RemovalsWembleyRoute: RemovalsWembleyRoute,
   ServicesRoute: ServicesRoute,
 }
 export const routeTree = rootRouteImport

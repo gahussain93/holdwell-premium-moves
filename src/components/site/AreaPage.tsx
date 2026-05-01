@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Phone, MapPin, Home as HomeIcon, Briefcase, Truck, Package, ShieldCheck, Sparkles } from "lucide-react";
+import { Phone, MapPin, Home as HomeIcon, Briefcase, Truck, Package, Sparkles } from "lucide-react";
 import { SiteLayout } from "./SiteLayout";
 import { CtaBand } from "./CtaBand";
 import { WhatsAppButton } from "./WhatsAppButton";
@@ -113,16 +113,16 @@ export function AreaPage({ area }: { area: AreaInfo }) {
             {area.nearby.map((slug) => {
               const n = AREAS_LOCAL[slug];
               return (
-                <Link
+                <a
                   key={slug}
-                  to={`/removals-${slug}` as "/removals-ealing"}
+                  href={`/removals-${slug}`}
                   className="flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-3 shadow-[var(--shadow-card)] transition-colors hover:border-primary/30"
                 >
                   <MapPin className="h-4 w-4 text-accent-foreground" />
                   <span className="text-sm font-medium text-foreground">
                     Removals in {n.name}
                   </span>
-                </Link>
+                </a>
               );
             })}
           </div>
