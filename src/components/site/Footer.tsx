@@ -1,23 +1,18 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, MessageCircle, Mail } from "lucide-react";
 import { Logo } from "./Logo";
+import { AREAS_LOCAL, AREA_SLUGS } from "@/lib/areas-data";
 
 const services = [
-  "House Moves",
-  "Office Moves",
-  "Business Relocations",
-  "Single Item Transport",
-  "Small Moves",
-  "Packing",
-];
-
-const areas = [
-  "Central London",
-  "North London",
-  "South London",
-  "East London",
-  "West London",
-  "Greater London",
+  { label: "House Removals", href: "/house-removals-london" },
+  { label: "Office Removals", href: "/office-removals-london" },
+  { label: "Business Relocations", href: "/business-relocations-london" },
+  { label: "Single Item Transport", href: "/single-item-transport-london" },
+  { label: "Small Moves", href: "/small-moves-london" },
+  { label: "Man and Van", href: "/man-and-van-london" },
+  { label: "Packing & Assembly", href: "/packing-assembly-dismantling-london" },
+  { label: "Storage Runs", href: "/storage-runs-london" },
+  { label: "Waste Clearance", href: "/waste-clearance-london" },
 ];
 
 export function Footer() {
@@ -73,10 +68,10 @@ export function Footer() {
           <h3 className="text-sm font-semibold text-primary">Services</h3>
           <ul className="mt-4 space-y-2 text-sm">
             {services.map((s) => (
-              <li key={s}>
-                <Link to="/services" className="text-muted-foreground hover:text-primary">
-                  {s}
-                </Link>
+              <li key={s.href}>
+                <a href={s.href} className="text-muted-foreground hover:text-primary">
+                  {s.label}
+                </a>
               </li>
             ))}
           </ul>
@@ -85,11 +80,14 @@ export function Footer() {
         <div>
           <h3 className="text-sm font-semibold text-primary">Service Areas</h3>
           <ul className="mt-4 space-y-2 text-sm">
-            {areas.map((a) => (
-              <li key={a}>
-                <Link to="/areas" className="text-muted-foreground hover:text-primary">
-                  {a}
-                </Link>
+            {AREA_SLUGS.map((slug) => (
+              <li key={slug}>
+                <a
+                  href={`/removals-${slug}`}
+                  className="text-muted-foreground hover:text-primary"
+                >
+                  Removals in {AREAS_LOCAL[slug].name}
+                </a>
               </li>
             ))}
           </ul>

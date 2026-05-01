@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.holdwellremovals.co.uk/sitemap.xml

@@ -40,8 +40,9 @@ function ServicesPage() {
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((s) => (
-            <div
+            <a
               key={s.title}
+              href={s.href}
               className="group rounded-2xl border border-border bg-card p-7 shadow-[var(--shadow-card)] transition-colors hover:border-primary/30"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-primary">
@@ -49,13 +50,10 @@ function ServicesPage() {
               </div>
               <h2 className="mt-5 text-xl font-semibold text-primary">{s.title}</h2>
               <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
-              <Link
-                to="/contact"
-                className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary opacity-80 transition-opacity hover:opacity-100"
-              >
-                Get a quote <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
+              <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary opacity-80 transition-opacity group-hover:opacity-100">
+                Learn more <ArrowRight className="h-4 w-4" />
+              </span>
+            </a>
           ))}
         </div>
 

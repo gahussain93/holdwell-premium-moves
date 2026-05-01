@@ -9,6 +9,10 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WasteClearanceLondonRouteImport } from './routes/waste-clearance-london'
+import { Route as StorageRunsLondonRouteImport } from './routes/storage-runs-london'
+import { Route as SmallMovesLondonRouteImport } from './routes/small-moves-london'
+import { Route as SingleItemTransportLondonRouteImport } from './routes/single-item-transport-london'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as RemovalsWembleyRouteImport } from './routes/removals-wembley'
 import { Route as RemovalsUxbridgeRouteImport } from './routes/removals-uxbridge'
@@ -21,11 +25,37 @@ import { Route as RemovalsEalingRouteImport } from './routes/removals-ealing'
 import { Route as RemovalsChiswickRouteImport } from './routes/removals-chiswick'
 import { Route as RemovalsBrentfordRouteImport } from './routes/removals-brentford'
 import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as PackingAssemblyDismantlingLondonRouteImport } from './routes/packing-assembly-dismantling-london'
+import { Route as OfficeRemovalsLondonRouteImport } from './routes/office-removals-london'
+import { Route as ManAndVanLondonRouteImport } from './routes/man-and-van-london'
+import { Route as HouseRemovalsLondonRouteImport } from './routes/house-removals-london'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BusinessRelocationsLondonRouteImport } from './routes/business-relocations-london'
 import { Route as AreasRouteImport } from './routes/areas'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const WasteClearanceLondonRoute = WasteClearanceLondonRouteImport.update({
+  id: '/waste-clearance-london',
+  path: '/waste-clearance-london',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StorageRunsLondonRoute = StorageRunsLondonRouteImport.update({
+  id: '/storage-runs-london',
+  path: '/storage-runs-london',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SmallMovesLondonRoute = SmallMovesLondonRouteImport.update({
+  id: '/small-moves-london',
+  path: '/small-moves-london',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SingleItemTransportLondonRoute =
+  SingleItemTransportLondonRouteImport.update({
+    id: '/single-item-transport-london',
+    path: '/single-item-transport-london',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
@@ -86,11 +116,38 @@ const PricingRoute = PricingRouteImport.update({
   path: '/pricing',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PackingAssemblyDismantlingLondonRoute =
+  PackingAssemblyDismantlingLondonRouteImport.update({
+    id: '/packing-assembly-dismantling-london',
+    path: '/packing-assembly-dismantling-london',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const OfficeRemovalsLondonRoute = OfficeRemovalsLondonRouteImport.update({
+  id: '/office-removals-london',
+  path: '/office-removals-london',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ManAndVanLondonRoute = ManAndVanLondonRouteImport.update({
+  id: '/man-and-van-london',
+  path: '/man-and-van-london',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HouseRemovalsLondonRoute = HouseRemovalsLondonRouteImport.update({
+  id: '/house-removals-london',
+  path: '/house-removals-london',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BusinessRelocationsLondonRoute =
+  BusinessRelocationsLondonRouteImport.update({
+    id: '/business-relocations-london',
+    path: '/business-relocations-london',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AreasRoute = AreasRouteImport.update({
   id: '/areas',
   path: '/areas',
@@ -111,7 +168,12 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/areas': typeof AreasRoute
+  '/business-relocations-london': typeof BusinessRelocationsLondonRoute
   '/contact': typeof ContactRoute
+  '/house-removals-london': typeof HouseRemovalsLondonRoute
+  '/man-and-van-london': typeof ManAndVanLondonRoute
+  '/office-removals-london': typeof OfficeRemovalsLondonRoute
+  '/packing-assembly-dismantling-london': typeof PackingAssemblyDismantlingLondonRoute
   '/pricing': typeof PricingRoute
   '/removals-brentford': typeof RemovalsBrentfordRoute
   '/removals-chiswick': typeof RemovalsChiswickRoute
@@ -124,12 +186,21 @@ export interface FileRoutesByFullPath {
   '/removals-uxbridge': typeof RemovalsUxbridgeRoute
   '/removals-wembley': typeof RemovalsWembleyRoute
   '/services': typeof ServicesRoute
+  '/single-item-transport-london': typeof SingleItemTransportLondonRoute
+  '/small-moves-london': typeof SmallMovesLondonRoute
+  '/storage-runs-london': typeof StorageRunsLondonRoute
+  '/waste-clearance-london': typeof WasteClearanceLondonRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/areas': typeof AreasRoute
+  '/business-relocations-london': typeof BusinessRelocationsLondonRoute
   '/contact': typeof ContactRoute
+  '/house-removals-london': typeof HouseRemovalsLondonRoute
+  '/man-and-van-london': typeof ManAndVanLondonRoute
+  '/office-removals-london': typeof OfficeRemovalsLondonRoute
+  '/packing-assembly-dismantling-london': typeof PackingAssemblyDismantlingLondonRoute
   '/pricing': typeof PricingRoute
   '/removals-brentford': typeof RemovalsBrentfordRoute
   '/removals-chiswick': typeof RemovalsChiswickRoute
@@ -142,13 +213,22 @@ export interface FileRoutesByTo {
   '/removals-uxbridge': typeof RemovalsUxbridgeRoute
   '/removals-wembley': typeof RemovalsWembleyRoute
   '/services': typeof ServicesRoute
+  '/single-item-transport-london': typeof SingleItemTransportLondonRoute
+  '/small-moves-london': typeof SmallMovesLondonRoute
+  '/storage-runs-london': typeof StorageRunsLondonRoute
+  '/waste-clearance-london': typeof WasteClearanceLondonRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/areas': typeof AreasRoute
+  '/business-relocations-london': typeof BusinessRelocationsLondonRoute
   '/contact': typeof ContactRoute
+  '/house-removals-london': typeof HouseRemovalsLondonRoute
+  '/man-and-van-london': typeof ManAndVanLondonRoute
+  '/office-removals-london': typeof OfficeRemovalsLondonRoute
+  '/packing-assembly-dismantling-london': typeof PackingAssemblyDismantlingLondonRoute
   '/pricing': typeof PricingRoute
   '/removals-brentford': typeof RemovalsBrentfordRoute
   '/removals-chiswick': typeof RemovalsChiswickRoute
@@ -161,6 +241,10 @@ export interface FileRoutesById {
   '/removals-uxbridge': typeof RemovalsUxbridgeRoute
   '/removals-wembley': typeof RemovalsWembleyRoute
   '/services': typeof ServicesRoute
+  '/single-item-transport-london': typeof SingleItemTransportLondonRoute
+  '/small-moves-london': typeof SmallMovesLondonRoute
+  '/storage-runs-london': typeof StorageRunsLondonRoute
+  '/waste-clearance-london': typeof WasteClearanceLondonRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -168,7 +252,12 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/areas'
+    | '/business-relocations-london'
     | '/contact'
+    | '/house-removals-london'
+    | '/man-and-van-london'
+    | '/office-removals-london'
+    | '/packing-assembly-dismantling-london'
     | '/pricing'
     | '/removals-brentford'
     | '/removals-chiswick'
@@ -181,12 +270,21 @@ export interface FileRouteTypes {
     | '/removals-uxbridge'
     | '/removals-wembley'
     | '/services'
+    | '/single-item-transport-london'
+    | '/small-moves-london'
+    | '/storage-runs-london'
+    | '/waste-clearance-london'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/areas'
+    | '/business-relocations-london'
     | '/contact'
+    | '/house-removals-london'
+    | '/man-and-van-london'
+    | '/office-removals-london'
+    | '/packing-assembly-dismantling-london'
     | '/pricing'
     | '/removals-brentford'
     | '/removals-chiswick'
@@ -199,12 +297,21 @@ export interface FileRouteTypes {
     | '/removals-uxbridge'
     | '/removals-wembley'
     | '/services'
+    | '/single-item-transport-london'
+    | '/small-moves-london'
+    | '/storage-runs-london'
+    | '/waste-clearance-london'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/areas'
+    | '/business-relocations-london'
     | '/contact'
+    | '/house-removals-london'
+    | '/man-and-van-london'
+    | '/office-removals-london'
+    | '/packing-assembly-dismantling-london'
     | '/pricing'
     | '/removals-brentford'
     | '/removals-chiswick'
@@ -217,13 +324,22 @@ export interface FileRouteTypes {
     | '/removals-uxbridge'
     | '/removals-wembley'
     | '/services'
+    | '/single-item-transport-london'
+    | '/small-moves-london'
+    | '/storage-runs-london'
+    | '/waste-clearance-london'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AreasRoute: typeof AreasRoute
+  BusinessRelocationsLondonRoute: typeof BusinessRelocationsLondonRoute
   ContactRoute: typeof ContactRoute
+  HouseRemovalsLondonRoute: typeof HouseRemovalsLondonRoute
+  ManAndVanLondonRoute: typeof ManAndVanLondonRoute
+  OfficeRemovalsLondonRoute: typeof OfficeRemovalsLondonRoute
+  PackingAssemblyDismantlingLondonRoute: typeof PackingAssemblyDismantlingLondonRoute
   PricingRoute: typeof PricingRoute
   RemovalsBrentfordRoute: typeof RemovalsBrentfordRoute
   RemovalsChiswickRoute: typeof RemovalsChiswickRoute
@@ -236,10 +352,42 @@ export interface RootRouteChildren {
   RemovalsUxbridgeRoute: typeof RemovalsUxbridgeRoute
   RemovalsWembleyRoute: typeof RemovalsWembleyRoute
   ServicesRoute: typeof ServicesRoute
+  SingleItemTransportLondonRoute: typeof SingleItemTransportLondonRoute
+  SmallMovesLondonRoute: typeof SmallMovesLondonRoute
+  StorageRunsLondonRoute: typeof StorageRunsLondonRoute
+  WasteClearanceLondonRoute: typeof WasteClearanceLondonRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/waste-clearance-london': {
+      id: '/waste-clearance-london'
+      path: '/waste-clearance-london'
+      fullPath: '/waste-clearance-london'
+      preLoaderRoute: typeof WasteClearanceLondonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/storage-runs-london': {
+      id: '/storage-runs-london'
+      path: '/storage-runs-london'
+      fullPath: '/storage-runs-london'
+      preLoaderRoute: typeof StorageRunsLondonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/small-moves-london': {
+      id: '/small-moves-london'
+      path: '/small-moves-london'
+      fullPath: '/small-moves-london'
+      preLoaderRoute: typeof SmallMovesLondonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/single-item-transport-london': {
+      id: '/single-item-transport-london'
+      path: '/single-item-transport-london'
+      fullPath: '/single-item-transport-london'
+      preLoaderRoute: typeof SingleItemTransportLondonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
@@ -324,11 +472,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PricingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/packing-assembly-dismantling-london': {
+      id: '/packing-assembly-dismantling-london'
+      path: '/packing-assembly-dismantling-london'
+      fullPath: '/packing-assembly-dismantling-london'
+      preLoaderRoute: typeof PackingAssemblyDismantlingLondonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/office-removals-london': {
+      id: '/office-removals-london'
+      path: '/office-removals-london'
+      fullPath: '/office-removals-london'
+      preLoaderRoute: typeof OfficeRemovalsLondonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/man-and-van-london': {
+      id: '/man-and-van-london'
+      path: '/man-and-van-london'
+      fullPath: '/man-and-van-london'
+      preLoaderRoute: typeof ManAndVanLondonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/house-removals-london': {
+      id: '/house-removals-london'
+      path: '/house-removals-london'
+      fullPath: '/house-removals-london'
+      preLoaderRoute: typeof HouseRemovalsLondonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/business-relocations-london': {
+      id: '/business-relocations-london'
+      path: '/business-relocations-london'
+      fullPath: '/business-relocations-london'
+      preLoaderRoute: typeof BusinessRelocationsLondonRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/areas': {
@@ -359,7 +542,12 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AreasRoute: AreasRoute,
+  BusinessRelocationsLondonRoute: BusinessRelocationsLondonRoute,
   ContactRoute: ContactRoute,
+  HouseRemovalsLondonRoute: HouseRemovalsLondonRoute,
+  ManAndVanLondonRoute: ManAndVanLondonRoute,
+  OfficeRemovalsLondonRoute: OfficeRemovalsLondonRoute,
+  PackingAssemblyDismantlingLondonRoute: PackingAssemblyDismantlingLondonRoute,
   PricingRoute: PricingRoute,
   RemovalsBrentfordRoute: RemovalsBrentfordRoute,
   RemovalsChiswickRoute: RemovalsChiswickRoute,
@@ -372,6 +560,10 @@ const rootRouteChildren: RootRouteChildren = {
   RemovalsUxbridgeRoute: RemovalsUxbridgeRoute,
   RemovalsWembleyRoute: RemovalsWembleyRoute,
   ServicesRoute: ServicesRoute,
+  SingleItemTransportLondonRoute: SingleItemTransportLondonRoute,
+  SmallMovesLondonRoute: SmallMovesLondonRoute,
+  StorageRunsLondonRoute: StorageRunsLondonRoute,
+  WasteClearanceLondonRoute: WasteClearanceLondonRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

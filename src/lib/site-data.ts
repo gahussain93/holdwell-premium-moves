@@ -7,15 +7,15 @@ export const PRICING = [
 ] as const;
 
 export const SERVICES = [
-  { title: "House Moves", desc: "Smooth, careful home relocations across London." },
-  { title: "Office Moves", desc: "Minimise downtime with planned office relocations." },
-  { title: "Business Relocations", desc: "Full-service moves for shops, studios and clinics." },
-  { title: "Single Item Transport", desc: "From sofas to fridges — anywhere in London." },
-  { title: "Small Moves", desc: "Studios, single rooms and small flats handled with care." },
-  { title: "Packing", desc: "Professional packing using quality materials." },
-  { title: "Assembly & Dismantling", desc: "Beds, wardrobes, desks — taken apart and rebuilt." },
-  { title: "Storage Runs", desc: "Drop-offs and pick-ups from any storage facility." },
-  { title: "Waste Clearance", desc: "Tidy up after your move with a clearance run." },
+  { title: "House Moves", desc: "Smooth, careful home relocations across London.", href: "/house-removals-london" },
+  { title: "Office Moves", desc: "Minimise downtime with planned office relocations.", href: "/office-removals-london" },
+  { title: "Business Relocations", desc: "Full-service moves for shops, studios and clinics.", href: "/business-relocations-london" },
+  { title: "Single Item Transport", desc: "From sofas to fridges — anywhere in London.", href: "/single-item-transport-london" },
+  { title: "Small Moves", desc: "Studios, single rooms and small flats handled with care.", href: "/small-moves-london" },
+  { title: "Man and Van", desc: "Reliable man-and-van service for local jobs.", href: "/man-and-van-london" },
+  { title: "Packing, Assembly & Dismantling", desc: "Professional packing plus beds, wardrobes and desks.", href: "/packing-assembly-dismantling-london" },
+  { title: "Storage Runs", desc: "Drop-offs and pick-ups from any storage facility.", href: "/storage-runs-london" },
+  { title: "Waste Clearance", desc: "Tidy up after your move with a clearance run.", href: "/waste-clearance-london" },
 ] as const;
 
 export const AREAS = [
