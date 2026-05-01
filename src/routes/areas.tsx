@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { CtaBand } from "@/components/site/CtaBand";
-import { AREAS } from "@/lib/site-data";
 import { AREAS_LOCAL, AREA_SLUGS } from "@/lib/areas-data";
 import { MapPin, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -9,14 +8,14 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/areas")({
   head: () => ({
     meta: [
-      { title: "Removal Service Areas — London | HoldWell Removal Co." },
+      { title: "Removals Across West London & Nearby Areas | HoldWell" },
       {
         name: "description",
         content:
           "Local removal pages across West London — Ealing, Hounslow, Harrow, Wembley, Chiswick, Fulham, Shepherd's Bush, Brentford, Richmond and Uxbridge.",
       },
-      { property: "og:title", content: "Service Areas — HoldWell Removal Co." },
-      { property: "og:description", content: "London-wide removals & transport." },
+      { property: "og:title", content: "Removals Across West London & Nearby Areas" },
+      { property: "og:description", content: "Dedicated local pages for removals across West London." },
     ],
   }),
   component: AreasPage,
@@ -31,17 +30,16 @@ function AreasPage() {
             Service Areas
           </span>
           <h1 className="mt-4 text-4xl font-bold tracking-tight text-primary md:text-5xl">
-            Local removals across London
+            Removals Across West London &amp; Nearby Areas
           </h1>
           <p className="mt-4 text-muted-foreground">
-            Dedicated local pages for the areas we cover most — plus all London boroughs and
-            long-distance moves across the UK.
+            Dedicated local removal pages for the West London areas we cover most. Click your area
+            for local pricing, access notes and nearby coverage.
           </p>
         </div>
 
         {/* Local SEO landing pages */}
-        <h2 className="mt-16 text-2xl font-bold text-primary">Local removal pages</h2>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {AREA_SLUGS.map((slug) => {
             const a = AREAS_LOCAL[slug];
             return (
@@ -65,25 +63,11 @@ function AreasPage() {
           })}
         </div>
 
-        {/* Wider London coverage */}
-        <h2 className="mt-16 text-2xl font-bold text-primary">Other areas we cover</h2>
-        <div className="mt-6 grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {AREAS.map((a) => (
-            <div
-              key={a}
-              className="flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-3 shadow-[var(--shadow-card)]"
-            >
-              <MapPin className="h-4 w-4 text-accent-foreground" />
-              <span className="text-sm font-medium text-foreground">{a}</span>
-            </div>
-          ))}
-        </div>
-
         <div className="mx-auto mt-14 max-w-3xl rounded-2xl bg-surface-soft p-8 text-center">
           <h2 className="text-xl font-bold text-primary">Don't see your area?</h2>
           <p className="mt-2 text-muted-foreground">
-            We cover Greater London and offer long-distance moves across the UK. Get in touch and
-            we'll confirm.
+            We also cover wider Greater London and offer long-distance moves across the UK. Get in
+            touch and we'll confirm.
           </p>
           <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
             <Button asChild size="lg" className="rounded-full">
