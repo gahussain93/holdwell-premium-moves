@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Phone, MapPin, Home as HomeIcon, Briefcase, Truck, Package, Sparkles } from "lucide-react";
+import { Phone, MapPin, Home as HomeIcon, Briefcase, Truck, Package, ShieldCheck, Sparkles } from "lucide-react";
 import { SiteLayout } from "./SiteLayout";
 import { CtaBand } from "./CtaBand";
 import { WhatsAppButton } from "./WhatsAppButton";
