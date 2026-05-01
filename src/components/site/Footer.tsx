@@ -68,10 +68,10 @@ export function Footer() {
           <h3 className="text-sm font-semibold text-primary">Services</h3>
           <ul className="mt-4 space-y-2 text-sm">
             {services.map((s) => (
-              <li key={s}>
-                <Link to="/services" className="text-muted-foreground hover:text-primary">
-                  {s}
-                </Link>
+              <li key={s.href}>
+                <a href={s.href} className="text-muted-foreground hover:text-primary">
+                  {s.label}
+                </a>
               </li>
             ))}
           </ul>
@@ -80,11 +80,14 @@ export function Footer() {
         <div>
           <h3 className="text-sm font-semibold text-primary">Service Areas</h3>
           <ul className="mt-4 space-y-2 text-sm">
-            {areas.map((a) => (
-              <li key={a}>
-                <Link to="/areas" className="text-muted-foreground hover:text-primary">
-                  {a}
-                </Link>
+            {AREA_SLUGS.map((slug) => (
+              <li key={slug}>
+                <a
+                  href={`/removals-${slug}`}
+                  className="text-muted-foreground hover:text-primary"
+                >
+                  Removals in {AREAS_LOCAL[slug].name}
+                </a>
               </li>
             ))}
           </ul>
