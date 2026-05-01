@@ -95,7 +95,7 @@
   --surface-soft: oklch(0.975 0.005 250);
   --whatsapp: oklch(0.68 0.17 150);
   --whatsapp-foreground: oklch(1 0 0);
-  --shadow-card: 0 1px 2px oklch(0.18 0.04 260 / 0.04), 0 8px 24px oklch(0.18 0.04 260 / 0.06);
+  --shadow-card: 0 1px 2px oklch(0.18 0.04 260 / 0.05), 0 10px 30px oklch(0.18 0.04 260 / 0.07);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -154,5 +154,33 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+  }
+}
+
+@layer utilities {
+  /* Subtle premium polish — lightweight CSS-only transitions */
+  a, button {
+    transition:
+      background-color 200ms ease,
+      color 200ms ease,
+      border-color 200ms ease,
+      box-shadow 200ms ease,
+      transform 200ms ease;
+  }
+
+  button:hover:not(:disabled),
+  a[role="button"]:hover {
+    transform: translateY(-1px);
+  }
+
+  /* Card hover elevation — applies to elements using the design-system shadow token */
+  .shadow-\[var\(--shadow-card\)\] {
+    transition: box-shadow 200ms ease, transform 200ms ease, border-color 200ms ease;
+  }
+  .shadow-\[var\(--shadow-card\)\]:hover {
+    box-shadow:
+      0 2px 4px oklch(0.18 0.04 260 / 0.06),
+      0 16px 40px oklch(0.18 0.04 260 / 0.10);
+    transform: translateY(-2px);
   }
 }

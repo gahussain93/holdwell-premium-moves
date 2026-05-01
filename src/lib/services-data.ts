@@ -8,7 +8,6 @@ export type ServiceSlug =
   | "single-item-transport-london"
   | "man-and-van-london"
   | "packing-assembly-dismantling-london"
-  | "waste-clearance-london"
   | "storage-runs-london";
 
 export interface ServiceInfo {
@@ -164,26 +163,6 @@ export const SERVICES_SEO: Record<ServiceSlug, ServiceInfo> = {
       "Tell us which rooms or items you'd like packed, and which furniture needs dismantling. We arrive with materials and tools, work room-by-room, and label everything clearly.",
     pricingLabels: ["1-Bed Move", "2-Bed Move", "3-Bed+ Move"],
     relatedAreas: ["richmond", "fulham", "chiswick", "ealing"],
-  },
-  "waste-clearance-london": {
-    slug: "waste-clearance-london",
-    name: "Waste Clearance",
-    h1: "Post-Move Waste Clearance in London",
-    title: "Waste Clearance London — Post-Move Tidy Up | HoldWell",
-    description:
-      "Tidy up after your move with a London waste clearance run — old furniture, packaging and unwanted items removed responsibly.",
-    intro:
-      "Once you've moved, there's often packaging, an old sofa or a broken wardrobe left behind. We can clear it on the same day or come back for a separate run.",
-    bullets: [
-      "Old furniture and white goods",
-      "Cardboard, packaging and bubble wrap",
-      "Garage and shed clear-outs",
-      "Responsible disposal at licensed sites",
-    ],
-    details:
-      "Send photos of what's going and we'll quote a clearance price. We sort items where possible so usable goods are donated and only true waste is taken to a licensed transfer station.",
-    pricingLabels: ["Single Item / 1–2 Items", "Small Move"],
-    relatedAreas: ["hounslow", "brentford", "wembley", "uxbridge"],
   },
   "storage-runs-london": {
     slug: "storage-runs-london",

@@ -12,7 +12,6 @@ const services = [
   { label: "Man and Van", href: "/man-and-van-london" },
   { label: "Packing & Assembly", href: "/packing-assembly-dismantling-london" },
   { label: "Storage Runs", href: "/storage-runs-london" },
-  { label: "Waste Clearance", href: "/waste-clearance-london" },
 ];
 
 export function Footer() {

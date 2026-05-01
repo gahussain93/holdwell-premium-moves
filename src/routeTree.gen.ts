@@ -9,7 +9,6 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as WasteClearanceLondonRouteImport } from './routes/waste-clearance-london'
 import { Route as StorageRunsLondonRouteImport } from './routes/storage-runs-london'
 import { Route as SmallMovesLondonRouteImport } from './routes/small-moves-london'
 import { Route as SingleItemTransportLondonRouteImport } from './routes/single-item-transport-london'
@@ -35,11 +34,6 @@ import { Route as AreasRouteImport } from './routes/areas'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
-const WasteClearanceLondonRoute = WasteClearanceLondonRouteImport.update({
-  id: '/waste-clearance-london',
-  path: '/waste-clearance-london',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const StorageRunsLondonRoute = StorageRunsLondonRouteImport.update({
   id: '/storage-runs-london',
   path: '/storage-runs-london',
@@ -189,7 +183,6 @@ export interface FileRoutesByFullPath {
   '/single-item-transport-london': typeof SingleItemTransportLondonRoute
   '/small-moves-london': typeof SmallMovesLondonRoute
   '/storage-runs-london': typeof StorageRunsLondonRoute
-  '/waste-clearance-london': typeof WasteClearanceLondonRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -216,7 +209,6 @@ export interface FileRoutesByTo {
   '/single-item-transport-london': typeof SingleItemTransportLondonRoute
   '/small-moves-london': typeof SmallMovesLondonRoute
   '/storage-runs-london': typeof StorageRunsLondonRoute
-  '/waste-clearance-london': typeof WasteClearanceLondonRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -244,7 +236,6 @@ export interface FileRoutesById {
   '/single-item-transport-london': typeof SingleItemTransportLondonRoute
   '/small-moves-london': typeof SmallMovesLondonRoute
   '/storage-runs-london': typeof StorageRunsLondonRoute
-  '/waste-clearance-london': typeof WasteClearanceLondonRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -273,7 +264,6 @@ export interface FileRouteTypes {
     | '/single-item-transport-london'
     | '/small-moves-london'
     | '/storage-runs-london'
-    | '/waste-clearance-london'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -300,7 +290,6 @@ export interface FileRouteTypes {
     | '/single-item-transport-london'
     | '/small-moves-london'
     | '/storage-runs-london'
-    | '/waste-clearance-london'
   id:
     | '__root__'
     | '/'
@@ -327,7 +316,6 @@ export interface FileRouteTypes {
     | '/single-item-transport-london'
     | '/small-moves-london'
     | '/storage-runs-london'
-    | '/waste-clearance-london'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -355,18 +343,10 @@ export interface RootRouteChildren {
   SingleItemTransportLondonRoute: typeof SingleItemTransportLondonRoute
   SmallMovesLondonRoute: typeof SmallMovesLondonRoute
   StorageRunsLondonRoute: typeof StorageRunsLondonRoute
-  WasteClearanceLondonRoute: typeof WasteClearanceLondonRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/waste-clearance-london': {
-      id: '/waste-clearance-london'
-      path: '/waste-clearance-london'
-      fullPath: '/waste-clearance-london'
-      preLoaderRoute: typeof WasteClearanceLondonRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/storage-runs-london': {
       id: '/storage-runs-london'
       path: '/storage-runs-london'
@@ -563,7 +543,6 @@ const rootRouteChildren: RootRouteChildren = {
   SingleItemTransportLondonRoute: SingleItemTransportLondonRoute,
   SmallMovesLondonRoute: SmallMovesLondonRoute,
   StorageRunsLondonRoute: StorageRunsLondonRoute,
-  WasteClearanceLondonRoute: WasteClearanceLondonRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

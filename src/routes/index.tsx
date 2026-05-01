@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   Phone, ShieldCheck, BadgePoundSterling, MapPin, Clock, Sparkles, PackageCheck,
-  Package, Home as HomeIcon, Building2, Briefcase, Truck, Boxes, Wrench, Warehouse, Trash2,
+  Package, Home as HomeIcon, Building2, Briefcase, Truck, Boxes, Wrench, Warehouse,
 } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
@@ -43,7 +43,6 @@ const SERVICES = [
   { title: "Packing", desc: "Secure packing services to protect your items.", icon: Boxes },
   { title: "Assembly & Dismantling", desc: "Furniture assembly and dismantling service.", icon: Wrench },
   { title: "Storage Runs", desc: "Storage pick-ups and drop-offs.", icon: Warehouse },
-  { title: "Waste Clearance", desc: "Rubbish removal and waste clearance.", icon: Trash2 },
 ];
 
 const trustItems = [
