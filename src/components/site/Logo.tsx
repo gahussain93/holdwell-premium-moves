@@ -9,6 +9,8 @@ export function Logo({ className = "" }: { className?: string }) {
         alt="HoldWell Removals — We Move, You Settle"
         width={1536}
         height={1024}
+        loading="eager"
+        decoding="async"
         className="h-14 w-auto md:h-16"
       />
     </Link>
