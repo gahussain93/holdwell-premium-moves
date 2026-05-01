@@ -26,7 +26,7 @@ const includes = [
   "Modern, clean removals van",
   "Careful loading and unloading",
   "Blankets and straps to protect items",
-  "Fully insured service",
+  "Careful handling of your belongings and equipment",
   "Confirmation before any extra work",
 ];
 
@@ -42,7 +42,7 @@ function PricingPage() {
             Clear, upfront pricing
           </h1>
           <p className="mt-4 text-muted-foreground">
-            Honest starting prices so you know what to expect — no surprises, no hidden fees.
+            Honest starting prices so you know what to expect. Clear, upfront pricing — no surprises.
           </p>
         </div>
 
