@@ -1,4 +1,4 @@
-import logo from "@/assets/holdwell-logo.jpeg";
+import logo from "@/assets/holdwell-logo.webp";
 import { Link } from "@tanstack/react-router";
 
 export function Logo({ className = "" }: { className?: string }) {
