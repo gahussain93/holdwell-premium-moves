@@ -15,7 +15,6 @@ export const SERVICES = [
   { title: "Man and Van", desc: "Reliable man-and-van service for local jobs.", href: "/man-and-van-london" },
   { title: "Packing, Assembly & Dismantling", desc: "Professional packing plus beds, wardrobes and desks.", href: "/packing-assembly-dismantling-london" },
   { title: "Storage Runs", desc: "Drop-offs and pick-ups from any storage facility.", href: "/storage-runs-london" },
-  { title: "Waste Clearance", desc: "Tidy up after your move with a clearance run.", href: "/waste-clearance-london" },
 ] as const;
 
 export const AREAS = [

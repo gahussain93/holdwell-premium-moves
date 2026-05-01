@@ -65,8 +65,7 @@ function AreasPage() {
         <div className="mx-auto mt-14 max-w-3xl rounded-2xl bg-surface-soft p-8 text-center">
           <h2 className="text-xl font-bold text-primary">Don't see your area?</h2>
           <p className="mt-2 text-muted-foreground">
-            We also cover wider Greater London and offer long-distance moves across the UK. Get in
-            touch and we'll confirm.
+            We focus on West London and nearby areas, with longer-distance moves available on request.
           </p>
           <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
             <Button asChild size="lg" className="rounded-full">
