@@ -2,7 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { CtaBand } from "@/components/site/CtaBand";
 import { AREAS } from "@/lib/site-data";
-import { MapPin } from "lucide-react";
+import { AREAS_LOCAL, AREA_SLUGS } from "@/lib/areas-data";
+import { MapPin, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/areas")({
@@ -12,7 +13,7 @@ export const Route = createFileRoute("/areas")({
       {
         name: "description",
         content:
-          "HoldWell Removal Co. covers all London boroughs and surrounding areas. Local and long-distance moves available 7 days a week.",
+          "Local removal pages across West London — Ealing, Hounslow, Harrow, Wembley, Chiswick, Fulham, Shepherd's Bush, Brentford, Richmond and Uxbridge.",
       },
       { property: "og:title", content: "Service Areas — HoldWell Removal Co." },
       { property: "og:description", content: "London-wide removals & transport." },
@@ -30,14 +31,43 @@ function AreasPage() {
             Service Areas
           </span>
           <h1 className="mt-4 text-4xl font-bold tracking-tight text-primary md:text-5xl">
-            Covering all of London
+            Local removals across London
           </h1>
           <p className="mt-4 text-muted-foreground">
-            From central postcodes to the outer boroughs — and long-distance moves across the UK.
+            Dedicated local pages for the areas we cover most — plus all London boroughs and
+            long-distance moves across the UK.
           </p>
         </div>
 
-        <div className="mt-14 grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {/* Local SEO landing pages */}
+        <h2 className="mt-16 text-2xl font-bold text-primary">Local removal pages</h2>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {AREA_SLUGS.map((slug) => {
+            const a = AREAS_LOCAL[slug];
+            return (
+              <a
+                key={slug}
+                href={`/removals-${slug}`}
+                className="group flex items-center justify-between gap-3 rounded-2xl border border-border bg-card p-5 shadow-[var(--shadow-card)] transition-colors hover:border-primary/30"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-secondary text-primary">
+                    <MapPin className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-primary">Removals in {a.name}</p>
+                    <p className="text-xs text-muted-foreground">House &amp; office moves</p>
+                  </div>
+                </div>
+                <ArrowRight className="h-4 w-4 text-primary opacity-60 transition-opacity group-hover:opacity-100" />
+              </a>
+            );
+          })}
+        </div>
+
+        {/* Wider London coverage */}
+        <h2 className="mt-16 text-2xl font-bold text-primary">Other areas we cover</h2>
+        <div className="mt-6 grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {AREAS.map((a) => (
             <div
               key={a}

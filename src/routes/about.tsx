@@ -17,9 +17,9 @@ export const Route = createFileRoute("/about")({
 });
 
 const values = [
-  { icon: BadgePoundSterling, title: "Honest pricing", desc: "Clear, upfront prices — never any hidden fees." },
-  { icon: ShieldCheck, title: "Fully insured", desc: "Your belongings are protected at every step." },
-  { icon: Sparkles, title: "Careful handling", desc: "We treat your items with the respect they deserve." },
+  { icon: BadgePoundSterling, title: "Honest pricing", desc: "Clear, upfront pricing — no surprises." },
+  { icon: ShieldCheck, title: "Careful handling", desc: "Careful handling of your belongings and equipment." },
+  { icon: Sparkles, title: "Treated with respect", desc: "We treat your items with the respect they deserve." },
   { icon: Clock, title: "Reliable & on time", desc: "We arrive when we say we will, every time." },
 ];
 
@@ -35,8 +35,8 @@ function AboutPage() {
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
           HoldWell Removals is a friendly, professional removal & transport company based in London.
-          From a single item to a full office relocation, we handle every move with care, honesty,
-          and clear, upfront pricing.
+          From a single item to a full office relocation, we handle every move with care and clear,
+          upfront pricing — no surprises.
         </p>
       </section>
 

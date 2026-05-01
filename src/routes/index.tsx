@@ -47,11 +47,11 @@ const SERVICES = [
 ];
 
 const trustItems = [
-  { icon: BadgePoundSterling, title: "Clear, upfront pricing", desc: "No hidden fees, no surprises." },
+  { icon: BadgePoundSterling, title: "Clear, upfront pricing", desc: "No surprises — what we quote is what you pay for the agreed work." },
   { icon: PackageCheck, title: "House & office specialists", desc: "Experienced with every move type." },
   { icon: MapPin, title: "Local & long-distance", desc: "Across London and beyond." },
-  { icon: ShieldCheck, title: "Fully insured", desc: "Your belongings are protected." },
-  { icon: Sparkles, title: "Careful handling", desc: "We treat your items like our own." },
+  { icon: ShieldCheck, title: "Careful handling", desc: "Careful handling of your belongings and equipment." },
+  { icon: Sparkles, title: "Treated like our own", desc: "We treat every item with respect." },
   { icon: Clock, title: "Fast quotes", desc: "Reply within minutes by call or WhatsApp." },
 ];
 
