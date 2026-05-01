@@ -29,14 +29,13 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "HoldWell Removal Co. — Removal & Transport Specialists" },
+      { name: "description", content: "House & office removals in London. Clear, upfront pricing. Call or WhatsApp 07737 731115." },
+      { name: "author", content: "HoldWell Removal Co." },
+      { property: "og:title", content: "HoldWell Removal Co." },
+      { property: "og:description", content: "Removal & Transport Specialists across London." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
