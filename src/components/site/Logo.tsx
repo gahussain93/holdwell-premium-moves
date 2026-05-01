@@ -1,15 +1,15 @@
-import logo from "@/assets/holdwell-logo.png";
+import logo from "@/assets/holdwell-logo.jpeg";
 import { Link } from "@tanstack/react-router";
 
 export function Logo({ className = "" }: { className?: string }) {
   return (
-    <Link to="/" className={`inline-flex items-center ${className}`} aria-label="HoldWell Removal Co. — Home">
+    <Link to="/" className={`inline-flex items-center ${className}`} aria-label="HoldWell Removals — Home">
       <img
         src={logo}
-        alt="HoldWell Removal Co."
+        alt="HoldWell Removals — We Move, You Settle"
         width={1536}
         height={1024}
-        className="h-12 w-auto md:h-14"
+        className="h-14 w-auto md:h-16"
       />
     </Link>
   );
