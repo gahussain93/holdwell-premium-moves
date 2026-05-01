@@ -7,7 +7,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { CtaBand } from "@/components/site/CtaBand";
 import { Button } from "@/components/ui/button";
-import heroImg from "@/assets/hero-van-london.jpg";
+import heroImg from "@/assets/hero-van-london.webp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
