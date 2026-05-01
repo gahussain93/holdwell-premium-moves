@@ -33,8 +33,7 @@ function AreasPage() {
             Removals Across West London &amp; Nearby Areas
           </h1>
           <p className="mt-4 text-muted-foreground">
-            Dedicated local removal pages for the West London areas we cover most. Click your area
-            for local pricing, access notes and nearby coverage.
+            Dedicated local removal pages for West London and nearby areas.
           </p>
         </div>
 
