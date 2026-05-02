@@ -16,12 +16,3 @@ export const SERVICES = [
   { title: "Packing, Assembly & Dismantling", desc: "Professional packing plus beds, wardrobes and desks.", href: "/packing-assembly-dismantling-london" },
   { title: "Storage Runs", desc: "Drop-offs and pick-ups from any storage facility.", href: "/storage-runs-london" },
 ] as const;
-
-export const AREAS = [
-  "Central London", "North London", "South London", "East London", "West London",
-  "City of London", "Camden", "Islington", "Hackney", "Tower Hamlets",
-  "Westminster", "Kensington & Chelsea", "Hammersmith & Fulham", "Wandsworth",
-  "Lambeth", "Southwark", "Lewisham", "Greenwich", "Newham", "Waltham Forest",
-  "Haringey", "Brent", "Ealing", "Hounslow", "Richmond", "Kingston",
-  "Merton", "Sutton", "Croydon", "Bromley", "Barnet", "Enfield",
-] as const;
