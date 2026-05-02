@@ -22,6 +22,7 @@ export function QuoteForm() {
     const data = new FormData(form);
     const name = String(data.get("name") || "");
     const phone = String(data.get("phone") || "");
+    const email = String(data.get("email") || "");
     const from = String(data.get("from") || "");
     const to = String(data.get("to") || "");
     const type = String(data.get("type") || "");
@@ -33,6 +34,7 @@ export function QuoteForm() {
     const lines = [
       `Quote request from ${name}`,
       `Phone: ${phone}`,
+      ...(email ? [`Email: ${email}`] : []),
       `From: ${from}  →  To: ${to}`,
       `Type: ${type}`,
       `Items / rooms: ${items}`,
