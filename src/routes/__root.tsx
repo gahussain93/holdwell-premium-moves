@@ -55,6 +55,16 @@ export const Route = createRootRoute({
           logo: "https://www.holdwellremovals.co.uk/logo.webp",
           image: "https://www.holdwellremovals.co.uk/logo.webp",
           priceRange: "££",
+          serviceType: [
+            "House removals",
+            "Office removals",
+            "Business relocations",
+            "Small moves",
+            "Single item transport",
+            "Man and van",
+            "Packing, assembly and dismantling",
+            "Storage runs",
+          ],
           areaServed: [
             "London",
             "West London",
