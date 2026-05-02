@@ -9,10 +9,10 @@ import { AREAS_LOCAL, type AreaInfo } from "@/lib/areas-data";
 
 export function AreaPage({ area }: { area: AreaInfo }) {
   const sections = [
-    { icon: HomeIcon, title: "House moves", body: area.houseMoves },
-    { icon: Briefcase, title: "Office moves", body: area.officeMoves },
-    { icon: Truck, title: "Single item transport", body: area.singleItem },
-    { icon: Package, title: "Small moves", body: area.smallMoves },
+    { icon: HomeIcon, title: "House moves", body: area.houseMoves, to: "/house-removals-london" as const },
+    { icon: Briefcase, title: "Office moves", body: area.officeMoves, to: "/office-removals-london" as const },
+    { icon: Truck, title: "Single item transport", body: area.singleItem, to: "/single-item-transport-london" as const },
+    { icon: Package, title: "Small moves", body: area.smallMoves, to: "/small-moves-london" as const },
   ];
 
   return (
@@ -49,7 +49,7 @@ export function AreaPage({ area }: { area: AreaInfo }) {
           </h2>
           <div className="mt-10 grid gap-5 sm:grid-cols-2">
             {sections.map((s) => (
-              <div key={s.title} className="flex gap-4 rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-card)]">
+              <Link key={s.title} to={s.to} className="flex gap-4 rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-card)] transition-colors hover:border-primary/40">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-secondary text-primary">
                   <s.icon className="h-5 w-5" />
                 </div>
@@ -57,7 +57,7 @@ export function AreaPage({ area }: { area: AreaInfo }) {
                   <h3 className="text-lg font-semibold text-primary">{s.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{s.body}</p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
