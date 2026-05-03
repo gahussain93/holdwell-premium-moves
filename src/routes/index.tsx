@@ -67,11 +67,11 @@ function HomePage() {
             </span>
             <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl">
               House &amp; Office <br className="hidden sm:inline" />
-              Removals in <span className="text-primary">London</span>
+              Removals in <span className="text-primary">West London</span>
             </h1>
             <p className="mt-6 max-w-xl text-base text-muted-foreground md:text-lg">
-              Clear, upfront pricing for house moves, office relocations, single item transport,
-              small moves and business relocations across London.
+              Clear, upfront pricing for house moves, office relocations, single item transport
+              and small moves across West London, including Ealing, Hounslow, Harrow and Wembley.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" className="rounded-full">
