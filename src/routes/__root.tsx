@@ -107,11 +107,61 @@ export const Route = createRootRoute({
   notFoundComponent: NotFoundComponent,
 });
 
+const movingCompanyJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "MovingCompany",
+  name: "HoldWell Removal Co.",
+  url: "https://www.holdwellremovals.co.uk",
+  telephone: "+447737731115",
+  logo: "https://www.holdwellremovals.co.uk/logo.webp",
+  image: "https://www.holdwellremovals.co.uk/logo.webp",
+  priceRange: "££",
+  areaServed: [
+    "London",
+    "West London",
+    "Ealing",
+    "Hounslow",
+    "Harrow",
+    "Wembley",
+    "Chiswick",
+    "Fulham",
+    "Shepherd\u2019s Bush",
+    "Brentford",
+    "Richmond",
+    "Uxbridge",
+  ],
+  serviceType: [
+    "House removals",
+    "Office removals",
+    "Business relocations",
+    "Small moves",
+    "Single item transport",
+    "Man and van",
+    "Packing, assembly and dismantling",
+    "Storage runs",
+  ],
+};
+
+const webSiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "HoldWell Removal Co.",
+  url: "https://www.holdwellremovals.co.uk",
+};
+
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(movingCompanyJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
+        />
       </head>
       <body>
         {children}
