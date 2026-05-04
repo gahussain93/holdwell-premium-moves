@@ -119,5 +119,34 @@
     <loc>https://www.holdwellremovals.co.uk/removals-uxbridge</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  <url>
+    <loc>https://www.holdwellremovals.co.uk/blog</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.holdwellremovals.co.uk/blog/cost-of-moving-house-london</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.holdwellremovals.co.uk/blog/man-and-van-vs-removals-london</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.holdwellremovals.co.uk/blog/moving-house-checklist-uk</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.holdwellremovals.co.uk/blog/parking-permits-moving-london</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.holdwellremovals.co.uk/blog/how-long-does-a-house-move-take-london</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
