@@ -1,11 +1,12 @@
 import { Link } from "@tanstack/react-router";
-import { Phone, MapPin, Home as HomeIcon, Briefcase, Truck, Package, ShieldCheck, Sparkles } from "lucide-react";
+import { Phone, MapPin, Home as HomeIcon, Briefcase, Truck, Package, ShieldCheck, Sparkles, Clock, AlertCircle, HelpCircle, ArrowRight } from "lucide-react";
 import { SiteLayout } from "./SiteLayout";
 import { CtaBand } from "./CtaBand";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { Button } from "@/components/ui/button";
 import { PRICING } from "@/lib/site-data";
 import { AREAS_LOCAL, type AreaInfo } from "@/lib/areas-data";
+import { SERVICES_SEO } from "@/lib/services-data";
 
 export function AreaPage({ area }: { area: AreaInfo }) {
   const sections = [
@@ -84,6 +85,39 @@ export function AreaPage({ area }: { area: AreaInfo }) {
         </div>
       </section>
 
+      {/* MOVING IN [AREA]: WHAT TO EXPECT */}
+      <section className="bg-surface-soft">
+        <div className="mx-auto max-w-7xl px-4 py-16 md:px-6 md:py-20">
+          <h2 className="text-3xl font-bold text-primary md:text-4xl">
+            Moving in {area.name}: what to expect
+          </h2>
+          <p className="mt-4 max-w-3xl text-muted-foreground">{area.whatToExpect}</p>
+        </div>
+      </section>
+
+      {/* COMMON CHALLENGES */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-7xl px-4 py-16 md:px-6 md:py-20">
+          <div className="flex items-center gap-3">
+            <AlertCircle className="h-6 w-6 text-primary" />
+            <h2 className="text-3xl font-bold text-primary md:text-4xl">
+              Common moving challenges in {area.name}
+            </h2>
+          </div>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {area.challenges.map((c) => (
+              <div
+                key={c}
+                className="flex gap-3 rounded-2xl border border-border bg-card p-5 shadow-[var(--shadow-card)]"
+              >
+                <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-accent-foreground" />
+                <p className="text-sm text-foreground">{c}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* PRICING */}
       <section className="bg-surface-soft">
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-6 md:py-20">
@@ -101,6 +135,47 @@ export function AreaPage({ area }: { area: AreaInfo }) {
                 <p className="mt-3 text-2xl font-bold text-primary">{p.price}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TYPICAL TIMES */}
+      <section className="bg-background">
+        <div className="mx-auto max-w-5xl px-4 py-16 md:px-6 md:py-20">
+          <div className="rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-card)] md:p-10">
+            <div className="flex items-center gap-3">
+              <Clock className="h-6 w-6 text-primary" />
+              <h2 className="text-2xl font-bold text-primary md:text-3xl">
+                Typical move times in {area.name}
+              </h2>
+            </div>
+            <p className="mt-5 text-muted-foreground">{area.typicalTimes}</p>
+            <p className="mt-3 text-xs text-muted-foreground">
+              Times are general expectations, not promises — final duration depends on your specific access, inventory and route.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* RELATED SERVICES (internal linking) */}
+      <section className="bg-surface-soft">
+        <div className="mx-auto max-w-7xl px-4 py-16 md:px-6 md:py-20">
+          <h2 className="text-2xl font-bold text-primary md:text-3xl">
+            Popular services in {area.name}
+          </h2>
+          <div className="mt-6 flex flex-wrap gap-3">
+            {area.relatedServices.map((slug) => {
+              const rs = SERVICES_SEO[slug];
+              return (
+                <a
+                  key={slug}
+                  href={`/${slug}`}
+                  className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-primary transition-colors hover:border-primary/40"
+                >
+                  {rs.name} <ArrowRight className="h-3.5 w-3.5" />
+                </a>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -130,6 +205,29 @@ export function AreaPage({ area }: { area: AreaInfo }) {
             <Link to="/areas" className="text-sm font-semibold text-primary hover:opacity-80">
               View all areas we cover →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQS */}
+      <section className="bg-surface-soft">
+        <div className="mx-auto max-w-4xl px-4 py-16 md:px-6 md:py-20">
+          <div className="flex items-center gap-3">
+            <HelpCircle className="h-6 w-6 text-primary" />
+            <h2 className="text-3xl font-bold text-primary md:text-4xl">Removals in {area.name} — FAQs</h2>
+          </div>
+          <div className="mt-8 space-y-4">
+            {area.faqs.map((f) => (
+              <details
+                key={f.q}
+                className="group rounded-2xl border border-border bg-card p-5 shadow-[var(--shadow-card)]"
+              >
+                <summary className="cursor-pointer list-none text-base font-semibold text-foreground marker:hidden">
+                  {f.q}
+                </summary>
+                <p className="mt-3 text-sm text-muted-foreground">{f.a}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>
