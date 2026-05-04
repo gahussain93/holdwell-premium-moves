@@ -50,11 +50,23 @@ export const Route = createFileRoute("/blog/how-long-does-a-house-move-take-lond
       <h2>One-day or two-day move?</h2>
       <p>Most London moves up to a 4-bed are completed in a single day. A two-day move is usually worth considering when you've got a 5-bed-plus property, a long-distance leg, or a particularly difficult townhouse with no parking and four floors.</p>
 
+      <h2>Office and small business moves</h2>
+      <p>Office moves run on a different clock to homes. A 10-desk office with cabling, monitors and a small server cupboard typically takes a 3-person crew 4–6 hours when packed in advance. Larger relocations — 30+ desks, meeting rooms, kitchen — are usually planned across an evening and a weekend so the team can be working again on Monday morning. Plan around lift bookings, building access hours and IT downtime, not just van time. See <a href="/office-removals-london">office removals</a> and <a href="/business-relocations-london">business relocations</a>.</p>
+
+      <h2>Loading distance — the underrated factor</h2>
+      <p>Every metre between the van door and the front door costs time. A bay suspension that puts the van right outside can save an hour on a 2-bed and several hours on a townhouse. If suspension isn't possible, a flat trolley and a clear path help, but they don't fully cancel the cost of distance. See our <a href="/blog/parking-permits-moving-london">parking guide</a> for how to sort this early.</p>
+
+      <h2>Traffic and timing</h2>
+      <p>Move days that start at 7:30am almost always finish in daylight. Late starts catch evening rush hour, which is the most expensive hour to lose. Avoid Friday afternoon completions when you can — and if you can't, expect the unloading to push into the evening.</p>
+
       <h2>Realistic expectations for completion-day moves</h2>
       <p>If you're moving on completion day, your keys at the new address may not arrive until early afternoon. The morning is usually loading; the new-property unloading runs into the evening. Build that into your timeline.</p>
 
+      <h2>How pricing relates to time</h2>
+      <p>For most domestic moves we quote a fixed price for the day rather than a strict hourly rate, so a longer day doesn't usually mean a bigger bill — but it does mean a longer day for you. For very small jobs, hourly is normal. See <a href="/pricing">pricing</a> for the bands.</p>
+
       <h2>Conclusion</h2>
-      <p>Plan for the longer end of the range, not the shorter one — and start early. Most "moves that overran" are actually moves that started too late. Get a fixed quote and a realistic plan via <a href="/contact">our contact page</a>.</p>
+      <p>Plan for the longer end of the range, not the shorter one — and start early. Most "moves that overran" are actually moves that started too late. For a fixed quote and a realistic plan, see <a href="/house-removals-london">house removals</a> or message us via <a href="/contact">contact</a>.</p>
     </BlogPost>
   ),
 });
