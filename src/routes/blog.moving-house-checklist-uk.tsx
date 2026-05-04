@@ -70,8 +70,14 @@ export const Route = createFileRoute("/blog/moving-house-checklist-uk")({
         <li>Donate or return any leftover packing materials.</li>
       </ul>
 
+      <h2>Packing essentials — what actually matters</h2>
+      <p>You only need a few things for the first 24 hours: bedding for everyone, phone chargers, kettle, mugs, tea/coffee, a roll of toilet paper, basic toiletries, any medication, a change of clothes, and a small toolkit (Allen keys, screwdriver, scissors, tape). Pack this in one clearly labelled box and put it in the van last so it comes off first. Everything else can wait.</p>
+
+      <h2>Utilities and address updates — the short list</h2>
+      <p>Most people only really need to update: bank, employer, GP, dentist, DVLA, vehicle insurance, home insurance, council tax (both addresses), water, gas, electricity, broadband, and Royal Mail redirection. Subscription services (Amazon, supermarkets, gym) can wait a week. Don't try to do all of it in one evening — spread it across the two weeks before move day.</p>
+
       <h2>Conclusion</h2>
-      <p>The biggest time-savers are: book your mover early, sort parking the moment you have a date, and pack room by room. If you'd rather skip the packing entirely, we cover that as part of <a href="/packing-assembly-dismantling-london">packing and assembly</a>.</p>
+      <p>The biggest time-savers are: book your mover early — see <a href="/house-removals-london">house removals</a> — sort parking the moment you have a date, and pack room by room. If you'd rather skip the packing entirely, we cover that as part of <a href="/packing-assembly-dismantling-london">packing and assembly</a>. Ready when you are: <a href="/contact">get a quote</a>.</p>
     </BlogPost>
   ),
 });
