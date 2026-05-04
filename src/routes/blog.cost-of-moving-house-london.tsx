@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { BlogPost } from "@/components/site/BlogPost";
+import { CostEstimator } from "@/components/site/CostEstimator";
 
 export const Route = createFileRoute("/blog/cost-of-moving-house-london")({
   head: () => ({
@@ -27,6 +28,10 @@ export const Route = createFileRoute("/blog/cost-of-moving-house-london")({
         <li><strong>4-bed townhouse with stairs:</strong> £700–£1,200</li>
       </ul>
       <p>For a fixed quote, see our <a href="/pricing">pricing page</a>.</p>
+
+      <CostEstimator />
+
+      <p>The figure above is a rough indication based on a handful of common factors. The biggest swing always comes from access (stairs, lift, parking) and the actual volume of stuff — two flats with the same bedroom count can land in different bands. For a real number, send a few photos and we'll come back with a fixed price. See <a href="/pricing">pricing</a> or <a href="/contact">get in touch</a>.</p>
 
       <h2>What actually drives the price</h2>
       <h3>1. Access at both ends</h3>
