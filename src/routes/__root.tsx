@@ -1,6 +1,14 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import {
+  SITE_URL,
+  BUSINESS_NAME,
+  PHONE_E164,
+  LOGO_URL,
+  SERVICE_AREAS,
+  SERVICE_TYPES,
+} from "@/lib/site-config";
 
 function NotFoundComponent() {
   return (
@@ -52,43 +60,21 @@ export const Route = createRootRoute({
 const movingCompanyJsonLd = {
   "@context": "https://schema.org",
   "@type": "MovingCompany",
-  name: "HoldWell Removal Co.",
-  url: "https://www.holdwellremovals.co.uk",
-  telephone: "+447737731115",
-  logo: "https://www.holdwellremovals.co.uk/logo.webp",
-  image: "https://www.holdwellremovals.co.uk/logo.webp",
+  name: BUSINESS_NAME,
+  url: SITE_URL,
+  telephone: PHONE_E164,
+  logo: LOGO_URL,
+  image: LOGO_URL,
   priceRange: "££",
-  areaServed: [
-    "London",
-    "West London",
-    "Ealing",
-    "Hounslow",
-    "Harrow",
-    "Wembley",
-    "Chiswick",
-    "Fulham",
-    "Shepherd\u2019s Bush",
-    "Brentford",
-    "Richmond",
-    "Uxbridge",
-  ],
-  serviceType: [
-    "House removals",
-    "Office removals",
-    "Business relocations",
-    "Small moves",
-    "Single item transport",
-    "Man and van",
-    "Packing, assembly and dismantling",
-    "Storage runs",
-  ],
+  areaServed: SERVICE_AREAS,
+  serviceType: SERVICE_TYPES,
 };
 
 const webSiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "HoldWell Removal Co.",
-  url: "https://www.holdwellremovals.co.uk",
+  name: BUSINESS_NAME,
+  url: SITE_URL,
 };
 
 function RootShell({ children }: { children: React.ReactNode }) {
