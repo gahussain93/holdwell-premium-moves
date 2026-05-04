@@ -12,6 +12,7 @@ export const Route = createFileRoute("/small-moves-london")({
       { property: "og:title", content: s.h1 },
       { property: "og:description", content: s.description },
     ],
+      links: [{ rel: "canonical", href: "https://www.holdwellremovals.co.uk/small-moves-london" }],
   }),
   component: () => <ServicePage service={s} />,
 });

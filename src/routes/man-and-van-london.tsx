@@ -12,6 +12,7 @@ export const Route = createFileRoute("/man-and-van-london")({
       { property: "og:title", content: s.h1 },
       { property: "og:description", content: s.description },
     ],
+      links: [{ rel: "canonical", href: "https://www.holdwellremovals.co.uk/man-and-van-london" }],
   }),
   component: () => <ServicePage service={s} />,
 });

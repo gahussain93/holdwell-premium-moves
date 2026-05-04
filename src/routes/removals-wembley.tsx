@@ -10,6 +10,7 @@ export const Route = createFileRoute("/removals-wembley")({
       { property: "og:title", content: "Removals in Wembley — HoldWell Removal Co." },
       { property: "og:description", content: "House & office removals across Wembley." },
     ],
+      links: [{ rel: "canonical", href: "https://www.holdwellremovals.co.uk/removals-wembley" }],
   }),
   component: () => <AreaPage area={AREAS_LOCAL.wembley} />,
 });

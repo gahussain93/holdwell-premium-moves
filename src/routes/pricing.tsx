@@ -17,6 +17,7 @@ export const Route = createFileRoute("/pricing")({
       { property: "og:title", content: "Pricing — HoldWell Removal Co." },
       { property: "og:description", content: "Honest, transparent removal pricing." },
     ],
+      links: [{ rel: "canonical", href: "https://www.holdwellremovals.co.uk/pricing" }],
   }),
   component: PricingPage,
 });

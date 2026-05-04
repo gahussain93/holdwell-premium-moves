@@ -10,6 +10,7 @@ export const Route = createFileRoute("/removals-uxbridge")({
       { property: "og:title", content: "Removals in Uxbridge — HoldWell Removal Co." },
       { property: "og:description", content: "House & office removals across Uxbridge." },
     ],
+      links: [{ rel: "canonical", href: "https://www.holdwellremovals.co.uk/removals-uxbridge" }],
   }),
   component: () => <AreaPage area={AREAS_LOCAL.uxbridge} />,
 });

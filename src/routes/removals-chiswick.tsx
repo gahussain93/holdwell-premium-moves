@@ -10,6 +10,7 @@ export const Route = createFileRoute("/removals-chiswick")({
       { property: "og:title", content: "Removals in Chiswick — HoldWell Removal Co." },
       { property: "og:description", content: "House & office removals across Chiswick W4." },
     ],
+      links: [{ rel: "canonical", href: "https://www.holdwellremovals.co.uk/removals-chiswick" }],
   }),
   component: () => <AreaPage area={AREAS_LOCAL.chiswick} />,
 });

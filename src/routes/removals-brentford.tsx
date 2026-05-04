@@ -10,6 +10,7 @@ export const Route = createFileRoute("/removals-brentford")({
       { property: "og:title", content: "Removals in Brentford — HoldWell Removal Co." },
       { property: "og:description", content: "House & office removals across Brentford TW8." },
     ],
+      links: [{ rel: "canonical", href: "https://www.holdwellremovals.co.uk/removals-brentford" }],
   }),
   component: () => <AreaPage area={AREAS_LOCAL.brentford} />,
 });

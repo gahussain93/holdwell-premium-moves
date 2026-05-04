@@ -10,6 +10,7 @@ export const Route = createFileRoute("/removals-shepherds-bush")({
       { property: "og:title", content: "Removals in Shepherd's Bush — HoldWell Removal Co." },
       { property: "og:description", content: "House & office removals across Shepherd's Bush W12." },
     ],
+      links: [{ rel: "canonical", href: "https://www.holdwellremovals.co.uk/removals-shepherds-bush" }],
   }),
   component: () => <AreaPage area={AREAS_LOCAL["shepherds-bush"]} />,
 });

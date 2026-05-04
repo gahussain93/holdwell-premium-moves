@@ -12,6 +12,7 @@ export const Route = createFileRoute("/storage-runs-london")({
       { property: "og:title", content: s.h1 },
       { property: "og:description", content: s.description },
     ],
+      links: [{ rel: "canonical", href: "https://www.holdwellremovals.co.uk/storage-runs-london" }],
   }),
   component: () => <ServicePage service={s} />,
 });

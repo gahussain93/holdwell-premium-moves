@@ -10,6 +10,7 @@ export const Route = createFileRoute("/removals-richmond")({
       { property: "og:title", content: "Removals in Richmond — HoldWell Removal Co." },
       { property: "og:description", content: "House & office removals across Richmond." },
     ],
+      links: [{ rel: "canonical", href: "https://www.holdwellremovals.co.uk/removals-richmond" }],
   }),
   component: () => <AreaPage area={AREAS_LOCAL.richmond} />,
 });
