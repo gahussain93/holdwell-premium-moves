@@ -22,6 +22,7 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: "House & office removal specialists across London." },
       { property: "og:image", content: heroImg },
     ],
+      links: [{ rel: "canonical", href: "https://www.holdwellremovals.co.uk/" }],
   }),
   component: HomePage,
 });

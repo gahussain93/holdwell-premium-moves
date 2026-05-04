@@ -10,6 +10,7 @@ export const Route = createFileRoute("/removals-harrow")({
       { property: "og:title", content: "Removals in Harrow — HoldWell Removal Co." },
       { property: "og:description", content: "House & office removals across Harrow." },
     ],
+      links: [{ rel: "canonical", href: "https://www.holdwellremovals.co.uk/removals-harrow" }],
   }),
   component: () => <AreaPage area={AREAS_LOCAL.harrow} />,
 });

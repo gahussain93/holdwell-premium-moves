@@ -17,6 +17,7 @@ export const Route = createFileRoute("/areas")({
       { property: "og:title", content: "Removals Across West London & Nearby Areas" },
       { property: "og:description", content: "Dedicated local pages for removals across West London." },
     ],
+      links: [{ rel: "canonical", href: "https://www.holdwellremovals.co.uk/areas" }],
   }),
   component: AreasPage,
 });

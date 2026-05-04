@@ -17,6 +17,7 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: "Contact HoldWell Removal Co." },
       { property: "og:description", content: "Fast quotes by call, WhatsApp or form." },
     ],
+      links: [{ rel: "canonical", href: "https://www.holdwellremovals.co.uk/contact" }],
   }),
   component: ContactPage,
 });

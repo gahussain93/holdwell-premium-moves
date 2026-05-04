@@ -10,6 +10,7 @@ export const Route = createFileRoute("/removals-hounslow")({
       { property: "og:title", content: "Removals in Hounslow — HoldWell Removal Co." },
       { property: "og:description", content: "House & office removals across Hounslow and the TW area." },
     ],
+      links: [{ rel: "canonical", href: "https://www.holdwellremovals.co.uk/removals-hounslow" }],
   }),
   component: () => <AreaPage area={AREAS_LOCAL.hounslow} />,
 });

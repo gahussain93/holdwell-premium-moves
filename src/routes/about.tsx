@@ -12,6 +12,7 @@ export const Route = createFileRoute("/about")({
       { property: "og:title", content: "About — HoldWell Removals" },
       { property: "og:description", content: "Friendly, professional London removals team." },
     ],
+      links: [{ rel: "canonical", href: "https://www.holdwellremovals.co.uk/about" }],
   }),
   component: AboutPage,
 });

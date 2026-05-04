@@ -10,6 +10,7 @@ export const Route = createFileRoute("/removals-ealing")({
       { property: "og:title", content: "Removals in Ealing — HoldWell Removal Co." },
       { property: "og:description", content: "House & office removals across Ealing W5 and W13." },
     ],
+      links: [{ rel: "canonical", href: "https://www.holdwellremovals.co.uk/removals-ealing" }],
   }),
   component: () => <AreaPage area={AREAS_LOCAL.ealing} />,
 });

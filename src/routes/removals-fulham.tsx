@@ -10,6 +10,7 @@ export const Route = createFileRoute("/removals-fulham")({
       { property: "og:title", content: "Removals in Fulham — HoldWell Removal Co." },
       { property: "og:description", content: "House & office removals across Fulham SW6." },
     ],
+      links: [{ rel: "canonical", href: "https://www.holdwellremovals.co.uk/removals-fulham" }],
   }),
   component: () => <AreaPage area={AREAS_LOCAL.fulham} />,
 });
