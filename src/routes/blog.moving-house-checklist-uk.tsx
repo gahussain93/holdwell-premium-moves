@@ -76,8 +76,31 @@ export const Route = createFileRoute("/blog/moving-house-checklist-uk")({
       <h2>Utilities and address updates — the short list</h2>
       <p>Most people only really need to update: bank, employer, GP, dentist, DVLA, vehicle insurance, home insurance, council tax (both addresses), water, gas, electricity, broadband, and Royal Mail redirection. Subscription services (Amazon, supermarkets, gym) can wait a week. Don't try to do all of it in one evening — spread it across the two weeks before move day.</p>
 
+      <h2>Packing strategy that actually works</h2>
+      <p>Pack one room a night for the two weeks before move day rather than blitzing the last weekend. Start with the rooms you use least: spare bedroom, hallway cupboards, loft, garage. Label every box on two sides with the destination room (not the contents) — the crew unloads by room, and "Kitchen" written on the side facing the wall doesn't help anyone. Use proper double-walled boxes for books and kitchen, single-wall for clothes and bedding. Wardrobe boxes save hours of ironing on the other side. If you're tight on time, our <a href="/packing-assembly-dismantling-london">packing service</a> can do a full home in a day.</p>
+
+      <h2>Kids, pets and plants</h2>
+      <p>Move-day logistics for the people and animals are usually an afterthought and end up being the most stressful part. If at all possible, send children and pets to a friend or grandparent for the day — they'll have a better time and so will you. Plants travel better in boxes with the tops open; water them lightly the day before, not the morning of the move. Aquariums and reptile tanks need specialist handling and are usually the last thing loaded and first unpacked.</p>
+
+      <h2>London-specific tasks worth flagging</h2>
+      <ul>
+        <li>Check whether either address is in a CPZ and apply for a bay suspension early — see our <a href="/blog/parking-permits-moving-london">parking guide</a>.</li>
+        <li>If you're in a mansion block or new-build with a concierge, book the service lift as soon as you have a date.</li>
+        <li>Confirm whether your new building has restrictions on move-in days or hours (some only allow weekdays).</li>
+        <li>Update your TfL account address for the congestion charge and ULEZ if you drive into central London.</li>
+        <li>Check event days at nearby venues — Stamford Bridge, Craven Cottage, Wembley, Twickenham — and avoid them if you can.</li>
+      </ul>
+
+      <h2>Common mistakes to avoid</h2>
+      <ul>
+        <li>Booking the cheapest mover sight-unseen — get the inventory and access confirmed in writing.</li>
+        <li>Leaving cleaning until move day. Either book end-of-tenancy cleaners for the day after, or do a deep clean the weekend before and a quick once-over after the van leaves.</li>
+        <li>Putting valuables on the van. Passports, jewellery, hard drives and cash should travel with you in the car or your bag.</li>
+        <li>Not labelling the "open first" box clearly — it's the difference between a hot shower that night and rummaging at midnight.</li>
+      </ul>
+
       <h2>Conclusion</h2>
-      <p>The biggest time-savers are: book your mover early — see <a href="/house-removals-london">house removals</a> — sort parking the moment you have a date, and pack room by room. If you'd rather skip the packing entirely, we cover that as part of <a href="/packing-assembly-dismantling-london">packing and assembly</a>. Ready when you are: <a href="/contact">get a quote</a>.</p>
+      <p>The biggest time-savers are: book your mover early — see <a href="/house-removals-london">house removals</a> — sort parking the moment you have a date, and pack room by room. If you'd rather skip the packing entirely, we cover that as part of <a href="/packing-assembly-dismantling-london">packing and assembly</a>. For pricing bands by property size, see <a href="/pricing">pricing</a>. Ready when you are: <a href="/contact">get a quote</a>.</p>
     </BlogPost>
   ),
 });

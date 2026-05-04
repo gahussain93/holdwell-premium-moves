@@ -72,8 +72,17 @@ export const Route = createFileRoute("/blog/cost-of-moving-house-london")({
       <h2>Choosing the right service</h2>
       <p>If you're between options, our <a href="/blog/man-and-van-vs-removals-london">man and van vs removals comparison</a> covers when each makes sense, and the <a href="/man-and-van-london">man and van service</a> or <a href="/house-removals-london">house removals service</a> pages explain what each includes.</p>
 
+      <h2>How to lower your quote without cutting corners</h2>
+      <p>There are a few honest ways to bring the price down. Move mid-week and mid-month if you have flexibility — Friday and end-of-month dates are the most-booked slots in London and the first to go. Pack non-fragile items yourself in advance and leave only the awkward stuff (kitchens, wardrobes, art) to the crew. Disassemble flat-pack the night before if you're confident with an Allen key. Combine your move with a single storage run rather than booking two separate vans. And confirm your bay suspension early so the crew isn't paid to walk down the street with your sofa.</p>
+
+      <h2>What an accurate quote needs from you</h2>
+      <p>The fastest way to get a firm number is to send: floor levels at both ends, lift availability, parking situation, a rough item list (sofas, beds, wardrobes, fridges, washing machines, desks, bookshelves), and any oversized or fragile items. A short video walk-through of each room beats a long list. With that information a mover can usually come back with a fixed price the same day rather than an "estimate" that drifts on the day itself.</p>
+
+      <h2>West London quirks that move the price</h2>
+      <p>Some patterns we see week to week: <a href="/removals-fulham">Fulham</a> and <a href="/removals-chiswick">Chiswick</a> conversions almost always need a bay suspension and a tail-lift Luton because of doorstep loading distance. <a href="/removals-richmond">Richmond</a> and <a href="/removals-ealing">Ealing</a> have wider streets but more CPZ enforcement. <a href="/removals-wembley">Wembley</a> high-rises run on service-lift bookings, so timing matters more than crew size. <a href="/removals-uxbridge">Uxbridge</a>, <a href="/removals-hounslow">Hounslow</a> and <a href="/removals-harrow">Harrow</a> moves often have driveways and easier loading, which keeps the price toward the lower end of the band.</p>
+
       <h2>Conclusion</h2>
-      <p>London moving costs are largely predictable once you know your inventory and access. Send a few photos, the two postcodes and any stair/parking notes, and a good mover should come back within minutes with a fixed price. Get a quote on <a href="/contact">our contact page</a>.</p>
+      <p>London moving costs are largely predictable once you know your inventory and access. Send a few photos, the two postcodes and any stair/parking notes, and a good mover should come back within minutes with a fixed price. Get a quote on <a href="/contact">our contact page</a>, or compare service options on the <a href="/services">services page</a>.</p>
     </BlogPost>
   ),
 });
