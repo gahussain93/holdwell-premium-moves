@@ -63,8 +63,17 @@ export const Route = createFileRoute("/blog/parking-permits-moving-london")({
       <h2>Can your removal company sort it for you?</h2>
       <p>Most can advise and many will apply on your behalf. Just ask when you book — see our <a href="/contact">quote form</a>.</p>
 
+      <h2>Borough-by-borough notes</h2>
+      <p>Each council runs its own portal and timing is slightly different. Hammersmith & Fulham, Kensington & Chelsea, and Westminster all enforce strictly and tend to need at least 5 working days. Ealing, Hounslow and Richmond will sometimes accept shorter notice but the bay availability is tighter on residential streets. Brent (covering <a href="/removals-wembley">Wembley</a>) adds event-day restrictions around the stadium. Hillingdon (around <a href="/removals-uxbridge">Uxbridge</a>) and Harrow (see <a href="/removals-harrow">Harrow removals</a>) are generally the most relaxed because more properties have driveways. Always apply through the borough's own portal — third-party "permit services" usually just resell the council application at a markup.</p>
+
+      <h2>What to do if the bay is blocked on the day</h2>
+      <p>It happens — a resident parks in the suspended bay despite the cones, or the cones are missing. Three steps: photograph the bay with the suspension notice still attached if possible, call the council's parking enforcement line (every borough has one), and have the crew double-park with hazards on while you wait. Enforcement will usually attend within an hour for an active suspension. Don't let the crew unload onto a red route or a junction "just to get started" — that's where PCNs land.</p>
+
+      <h2>Loading without a suspension</h2>
+      <p>If a suspension isn't possible, you have a few options. Many residential streets allow brief loading on single yellows during certain hours — check the time-plate on the nearest sign. Pay-and-display bays can be used if you pay for the time. Pavement loading is technically not allowed, but a flat trolley from a side street is the standard workaround for tight terraces. The crew will know the local rules; tell them about the parking situation when you book so they bring the right equipment.</p>
+
       <h2>Conclusion</h2>
-      <p>Parking is the easiest thing to plan and the most expensive thing to ignore. As soon as you have a confirmed date and address, check the bay outside the door and apply for a suspension if there's any doubt.</p>
+      <p>Parking is the easiest thing to plan and the most expensive thing to ignore. As soon as you have a confirmed date and address, check the bay outside the door and apply for a suspension if there's any doubt. For a mover who'll talk you through the local quirks before quoting, see <a href="/contact">contact</a> or browse the <a href="/areas">areas we cover</a>.</p>
     </BlogPost>
   ),
 });

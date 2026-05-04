@@ -65,8 +65,26 @@ export const Route = createFileRoute("/blog/how-long-does-a-house-move-take-lond
       <h2>How pricing relates to time</h2>
       <p>For most domestic moves we quote a fixed price for the day rather than a strict hourly rate, so a longer day doesn't usually mean a bigger bill — but it does mean a longer day for you. For very small jobs, hourly is normal. See <a href="/pricing">pricing</a> for the bands.</p>
 
+      <h2>A typical move-day timeline</h2>
+      <p>Here's what a 2-bed flat move with a 7:30am start usually looks like in practice:</p>
+      <ul>
+        <li><strong>7:30am — Crew arrives.</strong> Walk-through, blanket protection on doorways and bannisters, agree the loading order.</li>
+        <li><strong>7:45am – 11:00am — Loading.</strong> Big furniture first, then boxes, fragile items last so they come off first.</li>
+        <li><strong>11:00am – 11:30am — Drive to the new address.</strong> West-to-east London moves can take longer; build that in.</li>
+        <li><strong>11:30am – 12:00pm — Keys, walk-through, agree where everything goes.</strong> This bit is faster if you're already there.</li>
+        <li><strong>12:00pm – 3:30pm — Unloading.</strong> Boxes go straight to the labelled rooms; furniture is reassembled.</li>
+        <li><strong>3:30pm – 4:00pm — Final walk-around.</strong> Sign the inventory, settle up, done.</li>
+      </ul>
+      <p>That's the smooth version. Stairs without a lift, a missed parking suspension, or a delayed key handover can each push the finish into the evening.</p>
+
+      <h2>Long-distance and out-of-London moves</h2>
+      <p>If you're moving from London to anywhere outside the M25, build in 1–3 hours of driving on top of the loading and unloading. A move from <a href="/removals-uxbridge">Uxbridge</a> to the south coast, for example, is usually a one-day job for a small property and a two-day job for a 3-bed-plus. We quote these as a fixed job rather than hourly so you don't pay for traffic.</p>
+
+      <h2>Booking the right slot</h2>
+      <p>Mornings finish on time. Afternoon slots that start at midday almost always run into the evening for anything bigger than a 1-bed, and that's when concierge buildings start refusing access. If you have any choice, take the early slot — even if it means an early start.</p>
+
       <h2>Conclusion</h2>
-      <p>Plan for the longer end of the range, not the shorter one — and start early. Most "moves that overran" are actually moves that started too late. For a fixed quote and a realistic plan, see <a href="/house-removals-london">house removals</a> or message us via <a href="/contact">contact</a>.</p>
+      <p>Plan for the longer end of the range, not the shorter one — and start early. Most "moves that overran" are actually moves that started too late. For a fixed quote and a realistic plan, see <a href="/house-removals-london">house removals</a>, browse the <a href="/areas">areas we cover</a>, or message us via <a href="/contact">contact</a>.</p>
     </BlogPost>
   ),
 });

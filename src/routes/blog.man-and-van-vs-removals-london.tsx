@@ -70,8 +70,20 @@ export const Route = createFileRoute("/blog/man-and-van-vs-removals-london")({
       <h2>Edge cases worth calling out</h2>
       <p>If you only have a handful of items, neither service may be the right fit — <a href="/single-item-transport-london">single item transport</a> or a <a href="/small-moves-london">small move</a> slot is usually cheaper. And if your move spans a long-distance leg or storage step, full removals with a planned route almost always beats stitching together two man-and-van bookings.</p>
 
+      <h2>Insurance and protection</h2>
+      <p>Both services should carry goods-in-transit cover, but the level varies. For high-value items — original art, specialist instruments, designer furniture — confirm the per-item limit before booking. A man-and-van quote that's much cheaper than the rest is sometimes carrying lower cover. Ask, and get the answer in writing. For most household contents the standard cover is sufficient, but it's worth knowing the number rather than assuming.</p>
+
+      <h2>Worked examples from West London</h2>
+      <p><strong>Studio in <a href="/removals-shepherds-bush">Shepherd's Bush</a> to a 1-bed in <a href="/removals-ealing">Ealing</a>:</strong> single Luton, two-person crew, half a day. Man and van fits comfortably.</p>
+      <p><strong>2-bed Victorian conversion in <a href="/removals-fulham">Fulham</a>, top floor, no lift:</strong> three-person full-removals crew, full day, bay suspension at the loading end. Man and van would technically work but would take a day-and-a-half and cost more in the end.</p>
+      <p><strong>4-bed townhouse in <a href="/removals-chiswick">Chiswick</a>:</strong> three-person crew, two Lutons or one Luton with a return trip, packing booked the day before. Always full removals.</p>
+      <p><strong>Single sofa from <a href="/removals-brentford">Brentford</a> to <a href="/removals-richmond">Richmond</a>:</strong> <a href="/single-item-transport-london">single item transport</a> — neither full service is needed.</p>
+
+      <h2>Booking lead time</h2>
+      <p>Man-and-van slots can sometimes be booked the same week, especially mid-month and mid-week. Full removals for anything 2-bed and up should ideally be booked 2–4 weeks ahead, and end-of-month or Friday dates fill faster. Last-minute is occasionally possible but the choice of crew and van is narrower. See our <a href="/blog/moving-house-checklist-uk">moving checklist</a> for the wider timeline.</p>
+
       <h2>Conclusion</h2>
-      <p>Send a quick inventory and a photo of the trickiest item. A good mover will tell you honestly which service fits — even if it's the cheaper one. If you'd rather just talk it through, our <a href="/contact">contact page</a> has phone, WhatsApp and a quote form.</p>
+      <p>Send a quick inventory and a photo of the trickiest item. A good mover will tell you honestly which service fits — even if it's the cheaper one. For pricing bands by property size, see <a href="/pricing">pricing</a>. If you'd rather just talk it through, our <a href="/contact">contact page</a> has phone, WhatsApp and a quote form.</p>
     </BlogPost>
   ),
 });
