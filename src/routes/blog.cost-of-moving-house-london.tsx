@@ -29,6 +29,10 @@ export const Route = createFileRoute("/blog/cost-of-moving-house-london")({
       </ul>
       <p>For a fixed quote, see our <a href="/pricing">pricing page</a>.</p>
 
+      <CostEstimator />
+
+      <p>The figure above is a rough indication based on a handful of common factors. The biggest swing always comes from access (stairs, lift, parking) and the actual volume of stuff — two flats with the same bedroom count can land in different bands. For a real number, send a few photos and we'll come back with a fixed price. See <a href="/pricing">pricing</a> or <a href="/contact">get in touch</a>.</p>
+
       <h2>What actually drives the price</h2>
       <h3>1. Access at both ends</h3>
       <p>Stairs without a lift are the single biggest hidden cost. A top-floor walk-up can add an hour or more compared to a ground-floor flat with a driveway. Mansion blocks and Victorian conversions are particularly common pinch points.</p>
