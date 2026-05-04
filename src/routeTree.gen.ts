@@ -34,6 +34,11 @@ import { Route as AreasRouteImport } from './routes/areas'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as BlogParkingPermitsMovingLondonRouteImport } from './routes/blog.parking-permits-moving-london'
+import { Route as BlogMovingHouseChecklistUkRouteImport } from './routes/blog.moving-house-checklist-uk'
+import { Route as BlogManAndVanVsRemovalsLondonRouteImport } from './routes/blog.man-and-van-vs-removals-london'
+import { Route as BlogHowLongDoesAHouseMoveTakeLondonRouteImport } from './routes/blog.how-long-does-a-house-move-take-london'
+import { Route as BlogCostOfMovingHouseLondonRouteImport } from './routes/blog.cost-of-moving-house-london'
 
 const StorageRunsLondonRoute = StorageRunsLondonRouteImport.update({
   id: '/storage-runs-london',
@@ -163,6 +168,36 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   path: '/blog/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogParkingPermitsMovingLondonRoute =
+  BlogParkingPermitsMovingLondonRouteImport.update({
+    id: '/blog/parking-permits-moving-london',
+    path: '/blog/parking-permits-moving-london',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const BlogMovingHouseChecklistUkRoute =
+  BlogMovingHouseChecklistUkRouteImport.update({
+    id: '/blog/moving-house-checklist-uk',
+    path: '/blog/moving-house-checklist-uk',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const BlogManAndVanVsRemovalsLondonRoute =
+  BlogManAndVanVsRemovalsLondonRouteImport.update({
+    id: '/blog/man-and-van-vs-removals-london',
+    path: '/blog/man-and-van-vs-removals-london',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const BlogHowLongDoesAHouseMoveTakeLondonRoute =
+  BlogHowLongDoesAHouseMoveTakeLondonRouteImport.update({
+    id: '/blog/how-long-does-a-house-move-take-london',
+    path: '/blog/how-long-does-a-house-move-take-london',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const BlogCostOfMovingHouseLondonRoute =
+  BlogCostOfMovingHouseLondonRouteImport.update({
+    id: '/blog/cost-of-moving-house-london',
+    path: '/blog/cost-of-moving-house-london',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -189,6 +224,11 @@ export interface FileRoutesByFullPath {
   '/single-item-transport-london': typeof SingleItemTransportLondonRoute
   '/small-moves-london': typeof SmallMovesLondonRoute
   '/storage-runs-london': typeof StorageRunsLondonRoute
+  '/blog/cost-of-moving-house-london': typeof BlogCostOfMovingHouseLondonRoute
+  '/blog/how-long-does-a-house-move-take-london': typeof BlogHowLongDoesAHouseMoveTakeLondonRoute
+  '/blog/man-and-van-vs-removals-london': typeof BlogManAndVanVsRemovalsLondonRoute
+  '/blog/moving-house-checklist-uk': typeof BlogMovingHouseChecklistUkRoute
+  '/blog/parking-permits-moving-london': typeof BlogParkingPermitsMovingLondonRoute
   '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
@@ -216,6 +256,11 @@ export interface FileRoutesByTo {
   '/single-item-transport-london': typeof SingleItemTransportLondonRoute
   '/small-moves-london': typeof SmallMovesLondonRoute
   '/storage-runs-london': typeof StorageRunsLondonRoute
+  '/blog/cost-of-moving-house-london': typeof BlogCostOfMovingHouseLondonRoute
+  '/blog/how-long-does-a-house-move-take-london': typeof BlogHowLongDoesAHouseMoveTakeLondonRoute
+  '/blog/man-and-van-vs-removals-london': typeof BlogManAndVanVsRemovalsLondonRoute
+  '/blog/moving-house-checklist-uk': typeof BlogMovingHouseChecklistUkRoute
+  '/blog/parking-permits-moving-london': typeof BlogParkingPermitsMovingLondonRoute
   '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
@@ -244,6 +289,11 @@ export interface FileRoutesById {
   '/single-item-transport-london': typeof SingleItemTransportLondonRoute
   '/small-moves-london': typeof SmallMovesLondonRoute
   '/storage-runs-london': typeof StorageRunsLondonRoute
+  '/blog/cost-of-moving-house-london': typeof BlogCostOfMovingHouseLondonRoute
+  '/blog/how-long-does-a-house-move-take-london': typeof BlogHowLongDoesAHouseMoveTakeLondonRoute
+  '/blog/man-and-van-vs-removals-london': typeof BlogManAndVanVsRemovalsLondonRoute
+  '/blog/moving-house-checklist-uk': typeof BlogMovingHouseChecklistUkRoute
+  '/blog/parking-permits-moving-london': typeof BlogParkingPermitsMovingLondonRoute
   '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
@@ -273,6 +323,11 @@ export interface FileRouteTypes {
     | '/single-item-transport-london'
     | '/small-moves-london'
     | '/storage-runs-london'
+    | '/blog/cost-of-moving-house-london'
+    | '/blog/how-long-does-a-house-move-take-london'
+    | '/blog/man-and-van-vs-removals-london'
+    | '/blog/moving-house-checklist-uk'
+    | '/blog/parking-permits-moving-london'
     | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -300,6 +355,11 @@ export interface FileRouteTypes {
     | '/single-item-transport-london'
     | '/small-moves-london'
     | '/storage-runs-london'
+    | '/blog/cost-of-moving-house-london'
+    | '/blog/how-long-does-a-house-move-take-london'
+    | '/blog/man-and-van-vs-removals-london'
+    | '/blog/moving-house-checklist-uk'
+    | '/blog/parking-permits-moving-london'
     | '/blog'
   id:
     | '__root__'
@@ -327,6 +387,11 @@ export interface FileRouteTypes {
     | '/single-item-transport-london'
     | '/small-moves-london'
     | '/storage-runs-london'
+    | '/blog/cost-of-moving-house-london'
+    | '/blog/how-long-does-a-house-move-take-london'
+    | '/blog/man-and-van-vs-removals-london'
+    | '/blog/moving-house-checklist-uk'
+    | '/blog/parking-permits-moving-london'
     | '/blog/'
   fileRoutesById: FileRoutesById
 }
@@ -355,6 +420,11 @@ export interface RootRouteChildren {
   SingleItemTransportLondonRoute: typeof SingleItemTransportLondonRoute
   SmallMovesLondonRoute: typeof SmallMovesLondonRoute
   StorageRunsLondonRoute: typeof StorageRunsLondonRoute
+  BlogCostOfMovingHouseLondonRoute: typeof BlogCostOfMovingHouseLondonRoute
+  BlogHowLongDoesAHouseMoveTakeLondonRoute: typeof BlogHowLongDoesAHouseMoveTakeLondonRoute
+  BlogManAndVanVsRemovalsLondonRoute: typeof BlogManAndVanVsRemovalsLondonRoute
+  BlogMovingHouseChecklistUkRoute: typeof BlogMovingHouseChecklistUkRoute
+  BlogParkingPermitsMovingLondonRoute: typeof BlogParkingPermitsMovingLondonRoute
   BlogIndexRoute: typeof BlogIndexRoute
 }
 
@@ -535,6 +605,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/parking-permits-moving-london': {
+      id: '/blog/parking-permits-moving-london'
+      path: '/blog/parking-permits-moving-london'
+      fullPath: '/blog/parking-permits-moving-london'
+      preLoaderRoute: typeof BlogParkingPermitsMovingLondonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/moving-house-checklist-uk': {
+      id: '/blog/moving-house-checklist-uk'
+      path: '/blog/moving-house-checklist-uk'
+      fullPath: '/blog/moving-house-checklist-uk'
+      preLoaderRoute: typeof BlogMovingHouseChecklistUkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/man-and-van-vs-removals-london': {
+      id: '/blog/man-and-van-vs-removals-london'
+      path: '/blog/man-and-van-vs-removals-london'
+      fullPath: '/blog/man-and-van-vs-removals-london'
+      preLoaderRoute: typeof BlogManAndVanVsRemovalsLondonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/how-long-does-a-house-move-take-london': {
+      id: '/blog/how-long-does-a-house-move-take-london'
+      path: '/blog/how-long-does-a-house-move-take-london'
+      fullPath: '/blog/how-long-does-a-house-move-take-london'
+      preLoaderRoute: typeof BlogHowLongDoesAHouseMoveTakeLondonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/cost-of-moving-house-london': {
+      id: '/blog/cost-of-moving-house-london'
+      path: '/blog/cost-of-moving-house-london'
+      fullPath: '/blog/cost-of-moving-house-london'
+      preLoaderRoute: typeof BlogCostOfMovingHouseLondonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -563,6 +668,12 @@ const rootRouteChildren: RootRouteChildren = {
   SingleItemTransportLondonRoute: SingleItemTransportLondonRoute,
   SmallMovesLondonRoute: SmallMovesLondonRoute,
   StorageRunsLondonRoute: StorageRunsLondonRoute,
+  BlogCostOfMovingHouseLondonRoute: BlogCostOfMovingHouseLondonRoute,
+  BlogHowLongDoesAHouseMoveTakeLondonRoute:
+    BlogHowLongDoesAHouseMoveTakeLondonRoute,
+  BlogManAndVanVsRemovalsLondonRoute: BlogManAndVanVsRemovalsLondonRoute,
+  BlogMovingHouseChecklistUkRoute: BlogMovingHouseChecklistUkRoute,
+  BlogParkingPermitsMovingLondonRoute: BlogParkingPermitsMovingLondonRoute,
   BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
