@@ -1,0 +1,75 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { SiteLayout } from "@/components/site/SiteLayout";
+import { CtaBand } from "@/components/site/CtaBand";
+
+const POSTS = [
+  {
+    slug: "cost-of-moving-house-london",
+    title: "How much does it cost to move house in London?",
+    excerpt: "Realistic price ranges by property size, plus what actually drives the final cost.",
+  },
+  {
+    slug: "man-and-van-vs-removals-london",
+    title: "Man and van vs full removals: which do you actually need?",
+    excerpt: "A simple way to decide based on inventory, access and timing.",
+  },
+  {
+    slug: "moving-house-checklist-uk",
+    title: "Moving house checklist (UK): 4 weeks to move day",
+    excerpt: "A no-fluff timeline of what to do, when to do it and what to skip.",
+  },
+  {
+    slug: "parking-permits-moving-london",
+    title: "Parking permits and bay suspensions for London moves",
+    excerpt: "How to suspend a bay, when you need to, and what it actually costs.",
+  },
+  {
+    slug: "how-long-does-a-house-move-take-london",
+    title: "How long does a house move take in London?",
+    excerpt: "Honest timing expectations for studios, 1-beds, 2-beds and townhouses.",
+  },
+];
+
+export const Route = createFileRoute("/blog/")({
+  head: () => ({
+    meta: [
+      { title: "Moving Blog — London Removals Advice | HoldWell" },
+      { name: "description", content: "Practical advice on moving house in London — costs, parking, timing, checklists and choosing the right service." },
+      { property: "og:title", content: "Moving Blog — HoldWell Removals" },
+      { property: "og:description", content: "Practical London moving advice from a working removals team." },
+    ],
+    links: [{ rel: "canonical", href: "https://www.holdwellremovals.co.uk/blog" }],
+  }),
+  component: BlogIndex,
+});
+
+function BlogIndex() {
+  return (
+    <SiteLayout>
+      <section className="bg-background">
+        <div className="mx-auto max-w-5xl px-4 py-16 md:px-6 md:py-20">
+          <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl">
+            Moving advice for London
+          </h1>
+          <p className="mt-5 max-w-2xl text-base text-muted-foreground md:text-lg">
+            Honest, practical articles from a working London removals team — no filler, no fake reviews.
+          </p>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2">
+            {POSTS.map((p) => (
+              <Link
+                key={p.slug}
+                to={`/blog/${p.slug}` as "/blog/cost-of-moving-house-london"}
+                className="rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-card)] transition-colors hover:border-primary/40"
+              >
+                <h2 className="text-lg font-semibold text-primary">{p.title}</h2>
+                <p className="mt-2 text-sm text-muted-foreground">{p.excerpt}</p>
+                <span className="mt-4 inline-block text-sm font-semibold text-primary">Read article →</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+      <CtaBand />
+    </SiteLayout>
+  );
+}
