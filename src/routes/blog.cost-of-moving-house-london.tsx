@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { BlogPost } from "@/components/site/BlogPost";
+import { CostEstimator } from "@/components/site/CostEstimator";
 
 export const Route = createFileRoute("/blog/cost-of-moving-house-london")({
   head: () => ({
