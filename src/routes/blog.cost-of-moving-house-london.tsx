@@ -48,8 +48,29 @@ export const Route = createFileRoute("/blog/cost-of-moving-house-london")({
       </ul>
       <p>A reputable mover should give you a fixed price after seeing the inventory and access notes — not an "estimate" that grows on the day.</p>
 
+      <h2>Property size — what actually changes</h2>
+      <p>Bedroom count is a rough proxy, not the real measure. What changes the price is the volume of stuff and the number of awkward items. A minimalist 2-bed with a sofa, a bed and a wardrobe is closer to a 1-bed in van size and crew time. A 1-bed packed with bookshelves, a piano and three years of Amazon boxes can need a Luton with a 3-person crew. When you ask for a quote, count the heavy items by name — sofas, beds, wardrobes, fridges, washing machines, desks, bookshelves — rather than rooms.</p>
+
+      <h2>Stairs and lifts</h2>
+      <p>Lifts are the great equaliser. A 5th-floor flat with a working passenger lift loads almost as quickly as a ground-floor flat. The same flat with no lift can take an hour or two longer because every trip is up and down stairs. If your lift has a 2-hour booking window, factor that in too — a slot that ends mid-load can leave the crew waiting.</p>
+
+      <h2>Packing help — does it pay back?</h2>
+      <p>Professional packing typically adds 1.5x to 2x of a single packer's daily rate, but it usually saves the same amount of time on move day and reduces breakages. For anyone moving with kids, working full-time up to the move, or with fragile items (glass, art, china), it almost always pays back. See <a href="/packing-assembly-dismantling-london">packing, assembly and dismantling</a>.</p>
+
+      <h2>Timing and distance</h2>
+      <p>Mid-month, mid-week moves are easier to slot in and sometimes cheaper. End-of-month and Fridays are the busiest days nationally — book early. For distance: within a borough is usually the cheapest band, cross-London adds van time, and any move outside the M25 is quoted as a separate longer job rather than charged hourly.</p>
+
+      <h2>Why two quotes can look very different</h2>
+      <p>If two quotes are far apart, the cause is almost always one of three things:</p>
+      <ul>
+        <li>One company priced for a 2-person crew, the other for 3.</li>
+        <li>One quoted a Transit, the other a Luton — different daily rates.</li>
+        <li>One included packing materials, dismantling or insurance and the other didn't.</li>
+      </ul>
+      <p>Ask each quote to spell out crew size, van size, and what's included. The cheapest line is rarely the cheapest move.</p>
+
       <h2>Choosing the right service</h2>
-      <p>If you're between options, our <a href="/blog/man-and-van-vs-removals-london">man and van vs removals comparison</a> covers when each makes sense.</p>
+      <p>If you're between options, our <a href="/blog/man-and-van-vs-removals-london">man and van vs removals comparison</a> covers when each makes sense, and the <a href="/man-and-van-london">man and van service</a> or <a href="/house-removals-london">house removals service</a> pages explain what each includes.</p>
 
       <h2>Conclusion</h2>
       <p>London moving costs are largely predictable once you know your inventory and access. Send a few photos, the two postcodes and any stair/parking notes, and a good mover should come back within minutes with a fixed price. Get a quote on <a href="/contact">our contact page</a>.</p>
