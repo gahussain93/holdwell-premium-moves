@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { CtaBand } from "@/components/site/CtaBand";
 
@@ -56,15 +56,15 @@ function BlogIndex() {
           </p>
           <div className="mt-10 grid gap-5 sm:grid-cols-2">
             {POSTS.map((p) => (
-              <Link
+              <a
                 key={p.slug}
-                to={`/blog/${p.slug}` as "/blog/cost-of-moving-house-london"}
+                href={`/blog/${p.slug}`}
                 className="rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-card)] transition-colors hover:border-primary/40"
               >
                 <h2 className="text-lg font-semibold text-primary">{p.title}</h2>
                 <p className="mt-2 text-sm text-muted-foreground">{p.excerpt}</p>
                 <span className="mt-4 inline-block text-sm font-semibold text-primary">Read article →</span>
-              </Link>
+              </a>
             ))}
           </div>
         </div>

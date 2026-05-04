@@ -33,6 +33,7 @@ import { Route as BusinessRelocationsLondonRouteImport } from './routes/business
 import { Route as AreasRouteImport } from './routes/areas'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
 
 const StorageRunsLondonRoute = StorageRunsLondonRouteImport.update({
   id: '/storage-runs-london',
@@ -157,6 +158,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -183,6 +189,7 @@ export interface FileRoutesByFullPath {
   '/single-item-transport-london': typeof SingleItemTransportLondonRoute
   '/small-moves-london': typeof SmallMovesLondonRoute
   '/storage-runs-london': typeof StorageRunsLondonRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -209,6 +216,7 @@ export interface FileRoutesByTo {
   '/single-item-transport-london': typeof SingleItemTransportLondonRoute
   '/small-moves-london': typeof SmallMovesLondonRoute
   '/storage-runs-london': typeof StorageRunsLondonRoute
+  '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -236,6 +244,7 @@ export interface FileRoutesById {
   '/single-item-transport-london': typeof SingleItemTransportLondonRoute
   '/small-moves-london': typeof SmallMovesLondonRoute
   '/storage-runs-london': typeof StorageRunsLondonRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -264,6 +273,7 @@ export interface FileRouteTypes {
     | '/single-item-transport-london'
     | '/small-moves-london'
     | '/storage-runs-london'
+    | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -290,6 +300,7 @@ export interface FileRouteTypes {
     | '/single-item-transport-london'
     | '/small-moves-london'
     | '/storage-runs-london'
+    | '/blog'
   id:
     | '__root__'
     | '/'
@@ -316,6 +327,7 @@ export interface FileRouteTypes {
     | '/single-item-transport-london'
     | '/small-moves-london'
     | '/storage-runs-london'
+    | '/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -343,6 +355,7 @@ export interface RootRouteChildren {
   SingleItemTransportLondonRoute: typeof SingleItemTransportLondonRoute
   SmallMovesLondonRoute: typeof SmallMovesLondonRoute
   StorageRunsLondonRoute: typeof StorageRunsLondonRoute
+  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -515,6 +528,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -543,6 +563,7 @@ const rootRouteChildren: RootRouteChildren = {
   SingleItemTransportLondonRoute: SingleItemTransportLondonRoute,
   SmallMovesLondonRoute: SmallMovesLondonRoute,
   StorageRunsLondonRoute: StorageRunsLondonRoute,
+  BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
