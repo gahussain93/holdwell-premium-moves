@@ -45,8 +45,8 @@ const SERVICE_GUIDES: Record<ServiceSlug, Array<{ href: string; label: string }>
     { href: "/blog/moving-house-checklist-uk", label: "UK moving checklist" },
   ],
   "storage-runs-london": [
-    { href: "/blog/storage-options-when-moving-london", label: "storage options when moving in London" },
-    { href: "/blog/cost-of-moving-house-london", label: "how storage runs fit into your move cost" },
+    { href: "/blog/storage-options-when-moving-london", label: "storage options when moving" },
+    { href: "/blog/moving-house-checklist-uk", label: "UK moving checklist" },
   ],
 };
 
