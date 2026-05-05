@@ -71,20 +71,18 @@ export const Route = createFileRoute("/blog/cost-of-moving-house-london")({
       <h2>Example Moving Scenarios</h2>
       <p>To make the ranges concrete, here are three example moves of the kind we quote regularly. Figures are illustrative, not guaranteed prices.</p>
       <h3>Example 1 — 1-bed flat in <a href="/removals-shepherds-bush">Shepherd's Bush</a> to <a href="/removals-ealing">Ealing</a></h3>
-      <p>Ground-floor to first-floor, lift available, parking on a CPZ at both ends, no packing needed. Two movers, LWB van, around 4 hours door-to-door. Indicative range: <strong>£200–£280</strong>.</p>
+      <p>Ground-floor to first-floor, lift available, parking on a CPZ at both ends, no packing needed. Two movers, LWB van, around 4 hours door-to-door. Indicative range: <strong>£180–£250</strong>.</p>
       <h3>Example 2 — 2-bed Victorian conversion in <a href="/removals-fulham">Fulham</a> to <a href="/removals-chiswick">Chiswick</a></h3>
-      <p>Top-floor walk-up (no lift), bay suspension at the loading end, kitchen plus a wardrobe to dismantle, light packing on the morning. Three movers, Luton van, around 6 hours. Indicative range: <strong>£420–£560</strong>.</p>
-      <h3>Example 3 — 3-bed family home in <a href="/removals-richmond">Richmond</a> to <a href="/removals-uxbridge">Uxbridge</a></h3>
+      <p>Top-floor walk-up (no lift), bay suspension at the loading end, kitchen plus a wardrobe to dismantle, light packing on the morning. Three movers, Luton van, around 6 hours. Indicative range: <strong>£300–£380</strong>.</p>
+      <h3>Example 3 — 3-bed+ family home in <a href="/removals-richmond">Richmond</a> to <a href="/removals-uxbridge">Uxbridge</a></h3>
       <p>Driveway access at both ends, full house contents including a piano and an American fridge, no packing. Three movers, Luton van, around 7–8 hours including the drive. Indicative range: <strong>£600–£800</strong>.</p>
 
       <h2>Typical price ranges</h2>
-      <p>For most West London moves we see, the following ranges cover the majority of jobs:</p>
+      <p>Typical ranges for our West London moves cover the majority of jobs:</p>
       <ul>
-        <li><strong>Studio / single room:</strong> £100–£180</li>
-        <li><strong>1-bed flat:</strong> £180–£300</li>
-        <li><strong>2-bed flat or small house:</strong> £280–£500</li>
-        <li><strong>3-bed family home:</strong> £475–£800</li>
-        <li><strong>4-bed townhouse with stairs:</strong> £700–£1,200</li>
+        <li><strong>1-bed flat:</strong> £180–£250</li>
+        <li><strong>2-bed flat or small house:</strong> £280–£380</li>
+        <li><strong>3-bed+ family home:</strong> £450–£800</li>
       </ul>
       <p>For a fixed quote, see our <a href="/pricing">pricing page</a>.</p>
 
