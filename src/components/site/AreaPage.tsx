@@ -13,42 +13,42 @@ const AREA_BLOG_LINK_CLS = "font-medium text-primary underline-offset-2 hover:un
 const AREA_GUIDES: Record<AreaSlug, Array<{ href: string; label: string }>> = {
   ealing: [
     { href: "/blog/parking-permits-moving-london", label: "parking permits and bay suspensions" },
-    { href: "/blog/cost-of-moving-house-london", label: "cost of moving house in London" },
+    { href: "/blog/how-to-pack-for-a-house-move-london", label: "how to pack for the move" },
   ],
   chiswick: [
     { href: "/blog/parking-permits-moving-london", label: "parking permits for CPZ moves" },
-    { href: "/blog/best-time-to-move-house-london", label: "best time to book your move" },
+    { href: "/blog/cost-of-moving-house-london", label: "what a Chiswick move typically costs" },
   ],
   fulham: [
     { href: "/blog/parking-permits-moving-london", label: "Fulham parking and bay suspensions" },
-    { href: "/blog/cost-of-moving-house-london", label: "what a Fulham move typically costs" },
+    { href: "/blog/how-to-pack-for-a-house-move-london", label: "packing for tight mansion-block access" },
   ],
   "shepherds-bush": [
-    { href: "/blog/parking-permits-moving-london", label: "parking permits for the area" },
     { href: "/blog/moving-a-1-bed-flat-london", label: "moving a 1-bed flat in London" },
+    { href: "/blog/man-and-van-vs-removals-london", label: "man and van vs full removals" },
   ],
   brentford: [
+    { href: "/blog/moving-a-1-bed-flat-london", label: "moving a 1-bed flat" },
     { href: "/blog/storage-options-when-moving-london", label: "local storage options" },
-    { href: "/blog/cost-of-moving-house-london", label: "cost of moving in West London" },
   ],
   hounslow: [
     { href: "/blog/moving-house-checklist-uk", label: "UK moving house checklist" },
-    { href: "/blog/parking-permits-moving-london", label: "parking and access tips" },
+    { href: "/blog/cost-of-moving-house-london", label: "what a Hounslow move costs" },
   ],
   richmond: [
+    { href: "/blog/moving-house-checklist-uk", label: "UK moving checklist" },
     { href: "/blog/how-long-does-a-house-move-take-london", label: "how long a house move takes" },
-    { href: "/blog/best-time-to-move-house-london", label: "the best time of year to move" },
   ],
   uxbridge: [
     { href: "/blog/moving-a-1-bed-flat-london", label: "moving a 1-bed flat" },
-    { href: "/blog/cost-of-moving-house-london", label: "what longer-distance West London moves cost" },
+    { href: "/blog/man-and-van-vs-removals-london", label: "man and van vs full removals" },
   ],
   harrow: [
     { href: "/blog/moving-house-checklist-uk", label: "UK moving checklist" },
-    { href: "/blog/parking-permits-moving-london", label: "parking and access guide" },
+    { href: "/blog/how-long-does-a-house-move-take-london", label: "how long a house move takes" },
   ],
   wembley: [
-    { href: "/blog/how-long-does-a-house-move-take-london", label: "how long a house move takes" },
+    { href: "/blog/moving-a-1-bed-flat-london", label: "moving a 1-bed flat" },
     { href: "/blog/parking-permits-moving-london", label: "service-lift and event-day parking notes" },
   ],
 };
