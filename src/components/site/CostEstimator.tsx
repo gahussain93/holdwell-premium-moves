@@ -65,9 +65,6 @@ function estimate(
   const r = (n: number) => Math.round(n / 10) * 10;
   return [r(low), r(high)];
 }
-  const r = (n: number) => Math.round(n / 10) * 10;
-  return [r(low), r(high)];
-}
 
 export function CostEstimator() {
   const [form, setForm] = useState<FormState>({
@@ -92,12 +89,12 @@ export function CostEstimator() {
   let warning: string | null = null;
   if (
     parsed.success &&
-    form.size === "4" &&
+    form.size === "3" &&
     form.parking === "far" &&
     form.packing === "no"
   ) {
     warning =
-      "Heads up: a 4+ bed move with far parking and no packing help often runs to the upper end — consider adding packing for a smoother day.";
+      "Heads up: a 3-bed+ move with far parking and no packing help often runs to the upper end — consider adding packing for a smoother day.";
   }
 
   const result = parsed.success
