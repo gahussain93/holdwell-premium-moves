@@ -20,10 +20,9 @@ export const Route = createFileRoute("/blog/how-long-does-a-house-move-take-lond
       <h2>Typical timings by property size</h2>
       <ul>
         <li><strong>Studio / single room:</strong> 2–3 hours total, single trip.</li>
-        <li><strong>1-bed flat:</strong> 3–4 hours with a 2-person crew.</li>
-        <li><strong>2-bed flat or small house:</strong> 4–6 hours.</li>
-        <li><strong>3-bed family home:</strong> 6–8 hours, often a full working day.</li>
-        <li><strong>4-storey townhouse:</strong> 8–10 hours with a 3-person crew.</li>
+        <li><strong>1-bed flat:</strong> 2–3 hours with a 2-person crew.</li>
+        <li><strong>2-bed flat or small house:</strong> 3–4 hours.</li>
+        <li><strong>3-bed+ family home:</strong> 5–7 hours, often most of a working day.</li>
       </ul>
       <p>These are general expectations, not promises. See area-specific notes on pages like <a href="/removals-fulham">Fulham</a>, <a href="/removals-chiswick">Chiswick</a> and <a href="/removals-wembley">Wembley</a>.</p>
 
@@ -48,10 +47,10 @@ export const Route = createFileRoute("/blog/how-long-does-a-house-move-take-lond
       </ul>
 
       <h2>One-day or two-day move?</h2>
-      <p>Most London moves up to a 4-bed are completed in a single day. A two-day move is usually worth considering when you've got a 5-bed-plus property, a long-distance leg, or a particularly difficult townhouse with no parking and four floors.</p>
+      <p>Most London moves up to a 3-bed+ are completed in a single day. A two-day move is usually worth considering when you've got a larger property, a long-distance leg, or a particularly difficult townhouse with no parking and several floors.</p>
 
       <h2>Office and small business moves</h2>
-      <p>Office moves run on a different clock to homes. A 10-desk office with cabling, monitors and a small server cupboard typically takes a 3-person crew 4–6 hours when packed in advance. Larger relocations — 30+ desks, meeting rooms, kitchen — are usually planned across an evening and a weekend so the team can be working again on Monday morning. Plan around lift bookings, building access hours and IT downtime, not just van time. See <a href="/office-removals-london">office removals</a> and <a href="/business-relocations-london">business relocations</a>.</p>
+      <p>Office moves run on a different clock to homes. A 10-desk office with cabling, monitors and a small server cupboard typically takes a 3-person crew most of a working day when packed in advance. Larger relocations — 30+ desks, meeting rooms, kitchen — are usually planned across an evening and a weekend so the team can be working again on Monday morning. Plan around lift bookings, building access hours and IT downtime, not just van time. See <a href="/office-removals-london">office removals</a> and <a href="/business-relocations-london">business relocations</a>.</p>
 
       <h2>Loading distance — the underrated factor</h2>
       <p>Every metre between the van door and the front door costs time. A bay suspension that puts the van right outside can save an hour on a 2-bed and several hours on a townhouse. If suspension isn't possible, a flat trolley and a clear path help, but they don't fully cancel the cost of distance. See our <a href="/blog/parking-permits-moving-london">parking guide</a> for how to sort this early.</p>
