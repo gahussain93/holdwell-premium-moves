@@ -55,7 +55,7 @@ export function QuoteForm() {
     setPending(true);
     try {
       const res = await submitLeadFn({ data: payload });
-      if (!res?.ok) throw new Error("Submission failed");
+      if (res?.ok !== true) throw new Error("Submission failed");
 
       // Only open WhatsApp AFTER the backend has confirmed capture.
       const lines = [
