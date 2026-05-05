@@ -163,7 +163,7 @@ export function QuoteForm() {
         </label>
       </div>
       <Button type="submit" size="lg" className="rounded-full" disabled={pending}>
-        {pending ? "Sending…" : "Send quote request"}
+        {pending ? "Sending…" : "Get My Quote"}
       </Button>
       <p className="text-center text-xs text-muted-foreground">
         Final price depends on access, distance, items and job details. We confirm everything before continuing.
