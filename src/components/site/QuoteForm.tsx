@@ -74,7 +74,7 @@ export function QuoteForm() {
       } catch {
         // Lead is already captured server-side; ignore WhatsApp open failure.
       }
-      toast.success("Thanks! We'll be in touch shortly.");
+      toast.success("Please complete your message in WhatsApp to send your request.");
       setSubmitted(true);
       nonceRef.current = makeNonce();
       form.reset();
@@ -90,9 +90,9 @@ export function QuoteForm() {
     return (
       <div className="rounded-2xl border border-border bg-card p-10 text-center shadow-[var(--shadow-card)]">
         <CheckCircle2 className="mx-auto h-12 w-12 text-accent" />
-        <h3 className="mt-4 text-2xl font-bold text-primary">Quote request sent</h3>
+        <h3 className="mt-4 text-2xl font-bold text-primary">Almost there</h3>
         <p className="mt-2 text-muted-foreground">
-          We've opened WhatsApp with your details. We'll confirm your quote shortly.
+          Please complete your message in WhatsApp to send your request.
         </p>
         <Button className="mt-6" onClick={() => setSubmitted(false)} variant="outline">
           Send another
@@ -163,7 +163,7 @@ export function QuoteForm() {
         </label>
       </div>
       <Button type="submit" size="lg" className="rounded-full" disabled={pending}>
-        {pending ? "Sending…" : "Send quote request"}
+        {pending ? "Sending…" : "Get My Quote"}
       </Button>
       <p className="text-center text-xs text-muted-foreground">
         Final price depends on access, distance, items and job details. We confirm everything before continuing.
