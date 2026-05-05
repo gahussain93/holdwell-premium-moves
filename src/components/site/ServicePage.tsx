@@ -19,8 +19,7 @@ const SERVICE_GUIDES: Record<ServiceSlug, Array<{ href: string; label: string }>
   ],
   "office-removals-london": [
     { href: "/blog/office-relocation-guide-london", label: "London office relocation guide" },
-    { href: "/blog/parking-permits-moving-london", label: "parking and access for commercial moves" },
-    { href: "/blog/storage-options-when-moving-london", label: "storage options during a move" },
+    { href: "/blog/how-long-does-a-house-move-take-london", label: "how long a move typically takes" },
   ],
   "business-relocations-london": [
     { href: "/blog/office-relocation-guide-london", label: "office relocation planning guide" },
@@ -38,16 +37,15 @@ const SERVICE_GUIDES: Record<ServiceSlug, Array<{ href: string; label: string }>
   "man-and-van-london": [
     { href: "/blog/man-and-van-vs-removals-london", label: "man and van vs full removals" },
     { href: "/blog/moving-a-1-bed-flat-london", label: "moving a 1-bed flat in London" },
-    { href: "/blog/cost-of-moving-house-london", label: "what these jobs cost" },
+    { href: "/blog/best-time-to-move-house-london", label: "the best time to book your move" },
   ],
   "packing-assembly-dismantling-london": [
-    { href: "/blog/how-to-pack-for-a-house-move-london", label: "room-by-room packing guide" },
+    { href: "/blog/how-to-pack-for-a-house-move-london", label: "how to pack room by room" },
     { href: "/blog/moving-house-checklist-uk", label: "UK moving checklist" },
-    { href: "/blog/cost-of-moving-house-london", label: "how packing affects the price" },
   ],
   "storage-runs-london": [
-    { href: "/blog/storage-options-when-moving-london", label: "storage options when moving in London" },
-    { href: "/blog/cost-of-moving-house-london", label: "how storage runs fit into your move cost" },
+    { href: "/blog/storage-options-when-moving-london", label: "storage options when moving" },
+    { href: "/blog/moving-house-checklist-uk", label: "UK moving checklist" },
   ],
 };
 
