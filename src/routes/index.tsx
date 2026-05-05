@@ -141,10 +141,11 @@ function HomePage() {
               </div>
               <div className="border-t border-border pt-6 lg:max-w-[200px] lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
                 <p className="border-l-2 border-accent pl-4 text-sm font-semibold text-foreground">
-                  Final price depends on access, distance, items and job details.
+                  Clear upfront pricing — no hidden costs.
                 </p>
                 <p className="mt-3 pl-4 text-xs text-muted-foreground">
-                  We always confirm everything clearly before the move.
+                  Fast quote turnaround. Final price depends on access, distance and items, and is
+                  always confirmed before the move.
                 </p>
               </div>
             </div>
