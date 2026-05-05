@@ -159,7 +159,8 @@ function HomePage() {
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold text-primary md:text-4xl">Our Services</h2>
             <p className="mt-3 text-muted-foreground">
-              Complete removal and transport solutions for homes and businesses.
+              House removals, office relocations, man-and-van, packing services and storage runs —
+              for homes, flats and businesses across West London.
             </p>
           </div>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
