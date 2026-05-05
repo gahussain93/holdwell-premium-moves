@@ -54,7 +54,7 @@ export const AREAS_LOCAL: Record<AreaSlug, AreaInfo> = {
       "School-run congestion around Ealing Common and Pitshanger",
     ],
     typicalTimes:
-      "A 1-bed flat in Ealing usually takes 3–4 hours; a 3-bed family home with stairs commonly runs 6–8 hours. Single item transport across W5 is often completed within 90 minutes.",
+      "A 1-bed flat in Ealing usually takes 2–3 hours; a 3-bed+ family home with stairs commonly runs 5–7 hours. Single item transport across W5 is often completed within 90 minutes.",
     faqs: [
       {
         q: "Can you suspend a parking bay outside my Ealing flat?",
@@ -106,7 +106,7 @@ export const AREAS_LOCAL: Record<AreaSlug, AreaInfo> = {
       "Airport-shift residents needing very early or late slots",
     ],
     typicalTimes:
-      "A 1-bed flat in Hounslow usually takes 3–4 hours; a 3-bed semi 5–7 hours. Heathrow-adjacent jobs are best booked outside the early-morning peak.",
+      "A 1-bed flat in Hounslow usually takes 2–3 hours; a 3-bed+ semi 5–7 hours. Heathrow-adjacent jobs are best booked outside the early-morning peak.",
     faqs: [
       {
         q: "Can you move me very early in the morning?",
@@ -158,7 +158,7 @@ export const AREAS_LOCAL: Record<AreaSlug, AreaInfo> = {
       "Narrow Victorian doorways for modern wide sofas",
     ],
     typicalTimes:
-      "A 2-bed semi in Harrow usually takes 4–6 hours; a 3-bed family home with garage 6–8 hours. Single item runs to/from IKEA Wembley typically complete in 2 hours.",
+      "A 2-bed semi in Harrow usually takes 3–4 hours; a 3-bed+ family home with garage 5–7 hours. Single item runs to/from IKEA Wembley typically complete in 2 hours.",
     faqs: [
       {
         q: "Can you handle the hill near Harrow School?",
@@ -210,7 +210,7 @@ export const AREAS_LOCAL: Record<AreaSlug, AreaInfo> = {
       "Limited drop-off space outside Wembley Park apartments",
     ],
     typicalTimes:
-      "A 1-bed apartment at Wembley Park usually takes 3–5 hours including service-lift time. A 3-bed Sudbury terrace runs 6–8 hours. Always avoid event days at the stadium and SSE Arena.",
+      "A 1-bed apartment at Wembley Park usually takes 2–3 hours including service-lift time. A 3-bed+ Sudbury terrace runs 5–7 hours. Always avoid event days at the stadium and SSE Arena.",
     faqs: [
       {
         q: "Will my move be affected by a stadium event?",
@@ -262,7 +262,7 @@ export const AREAS_LOCAL: Record<AreaSlug, AreaInfo> = {
       "Basement conversions with awkward stair turns",
     ],
     typicalTimes:
-      "A 1-bed Chiswick flat usually takes 3–4 hours; a 3-bed terrace 6–9 hours due to stairs and tight access. Plan suspensions at least a week ahead.",
+      "A 1-bed Chiswick flat usually takes 2–3 hours; a 3-bed+ terrace 5–7 hours due to stairs and tight access. Plan suspensions at least a week ahead.",
     faqs: [
       {
         q: "How do I get a parking bay suspended in Chiswick?",
@@ -314,7 +314,7 @@ export const AREAS_LOCAL: Record<AreaSlug, AreaInfo> = {
       "Heavy items (American fridges, sofas) in narrow Victorian halls",
     ],
     typicalTimes:
-      "A 1-bed mansion-block flat usually takes 3–5 hours. A 4-storey Fulham townhouse moves often run 8–10 hours with a 3-person crew. Always check Chelsea/Fulham fixture lists.",
+      "A 1-bed mansion-block flat usually takes 2–3 hours. A Fulham townhouse move commonly runs 5–7 hours with a 3-person crew. Always check Chelsea/Fulham fixture lists.",
     faqs: [
       {
         q: "Will my move be affected by a Chelsea or Fulham match?",
@@ -366,7 +366,7 @@ export const AREAS_LOCAL: Record<AreaSlug, AreaInfo> = {
       "Loading bay competition near Television Centre",
     ],
     typicalTimes:
-      "A 1-bed flat in W12 usually takes 3–4 hours. A 3-bed terrace off Goldhawk Road runs 6–8 hours. Single item collections from Westfield/IKEA Wembley typically complete in 2 hours.",
+      "A 1-bed flat in W12 usually takes 2–3 hours. A 3-bed+ terrace off Goldhawk Road runs 5–7 hours. Single item collections from Westfield/IKEA Wembley typically complete in 2 hours.",
     faqs: [
       {
         q: "Can you load on Uxbridge Road?",
@@ -418,7 +418,7 @@ export const AREAS_LOCAL: Record<AreaSlug, AreaInfo> = {
       "Concierge sign-in at new developments",
     ],
     typicalTimes:
-      "A 1-bed riverside apartment usually takes 3–5 hours including lift time. A 3-bed Boston Manor terrace runs 6–8 hours. Avoid Brentford FC match days where possible.",
+      "A 1-bed riverside apartment usually takes 2–3 hours including lift time. A 3-bed+ Boston Manor terrace runs 5–7 hours. Avoid Brentford FC match days where possible.",
     faqs: [
       {
         q: "Will my move clash with a Brentford FC match?",
@@ -470,7 +470,7 @@ export const AREAS_LOCAL: Record<AreaSlug, AreaInfo> = {
       "CPZ Mon–Sat with strict suspension lead times",
     ],
     typicalTimes:
-      "A 1-bed Richmond flat usually takes 3–4 hours. A 4-storey townhouse on the Hill commonly runs 8–10 hours due to stairs and protection requirements.",
+      "A 1-bed Richmond flat usually takes 2–3 hours. A larger townhouse on the Hill commonly runs 5–7 hours due to stairs and protection requirements.",
     faqs: [
       {
         q: "Are you experienced with listed buildings?",
@@ -522,7 +522,7 @@ export const AREAS_LOCAL: Record<AreaSlug, AreaInfo> = {
       "Driveway sharing on semi-detached terraces",
     ],
     typicalTimes:
-      "A 1-bed flat in Uxbridge usually takes 3–4 hours. A 3-bed family home with garage 6–8 hours. Student moves at end of term need slot booking with the landlord.",
+      "A 1-bed flat in Uxbridge usually takes 2–3 hours. A 3-bed+ family home with garage 5–7 hours. Student moves at end of term need slot booking with the landlord.",
     faqs: [
       {
         q: "Do you handle Brunel student moves?",
