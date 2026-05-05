@@ -219,9 +219,15 @@ function HomePage() {
           <div className="rounded-3xl bg-surface-soft p-8 text-center md:p-12">
             <h2 className="text-2xl font-bold text-primary md:text-3xl">Honest, flexible pricing</h2>
             <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-              For moves involving stairs, longer walking distances or limited access, the price may
-              be adjusted slightly depending on the work involved. We always confirm everything
-              before continuing.
+              Clear upfront pricing with no hidden costs. For moves involving stairs, longer
+              walking distances or limited access, the price may be adjusted slightly depending on
+              the work involved — we always confirm everything before continuing. See our{" "}
+              <Link to="/pricing" className="font-semibold text-primary underline-offset-2 hover:underline">full pricing</Link>,
+              browse all{" "}
+              <Link to="/services" className="font-semibold text-primary underline-offset-2 hover:underline">services</Link>{" "}
+              or check the{" "}
+              <Link to="/areas" className="font-semibold text-primary underline-offset-2 hover:underline">areas we cover</Link>{" "}
+              including Ealing, Hounslow, Harrow, Wembley, Chiswick and Richmond.
             </p>
           </div>
         </div>
