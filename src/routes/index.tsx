@@ -30,9 +30,9 @@ export const Route = createFileRoute("/")({
 const PRICING = [
   { label: "Single Item / 1–2 Items", price: "£70", icon: Package },
   { label: "Small Move", price: "£100", icon: Boxes },
-  { label: "1-Bed Move", price: "£180", icon: HomeIcon },
-  { label: "2-Bed Move", price: "£280", icon: Building2 },
-  { label: "3-Bed+ Move", price: "£475", icon: Building2 },
+  { label: "1-Bed Move", price: "£200", icon: HomeIcon },
+  { label: "2-Bed Move", price: "£320", icon: Building2 },
+  { label: "3-Bed+ Move", price: "£500", icon: Building2 },
 ];
 
 const SERVICES = [

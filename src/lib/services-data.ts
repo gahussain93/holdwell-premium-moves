@@ -327,7 +327,7 @@ export const SERVICES_SEO: Record<ServiceSlug, ServiceInfo> = {
       "Whether you need a single trip or two",
     ],
     whenToChoose:
-      "Choose small moves for a studio, single room or partial flat — anything below a full 1-bed. For a single sofa or fridge, our single item transport is faster and cheaper. For a full home, see house removals.",
+      "Choose small moves for a studio, single room or partial flat — anything below a full 1-bed. For a single sofa or fridge, our single item transport is a more efficient fit. For a full home, see house removals.",
     faqs: [
       {
         q: "What counts as a small move?",

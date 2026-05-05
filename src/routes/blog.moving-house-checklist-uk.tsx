@@ -93,7 +93,7 @@ export const Route = createFileRoute("/blog/moving-house-checklist-uk")({
 
       <h2>Common mistakes to avoid</h2>
       <ul>
-        <li>Booking the cheapest mover sight-unseen — get the inventory and access confirmed in writing.</li>
+        <li>Booking the lowest quote sight-unseen — get the inventory and access confirmed in writing.</li>
         <li>Leaving cleaning until move day. Either book end-of-tenancy cleaners for the day after, or do a deep clean the weekend before and a quick once-over after the van leaves.</li>
         <li>Putting valuables on the van. Passports, jewellery, hard drives and cash should travel with you in the car or your bag.</li>
         <li>Not labelling the "open first" box clearly — it's the difference between a hot shower that night and rummaging at midnight.</li>

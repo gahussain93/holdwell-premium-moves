@@ -49,7 +49,7 @@ export const Route = createFileRoute("/blog/man-and-van-vs-removals-london")({
       </ul>
 
       <h2>What about price?</h2>
-      <p>Man and van is cheaper per hour but slower for bigger jobs. For anything 1-bed and up, full removals usually works out better value once you factor in the time saved. See realistic numbers in our <a href="/blog/cost-of-moving-house-london">cost guide</a> or our <a href="/pricing">pricing page</a>.</p>
+      <p>Man and van has a lower hourly rate but is slower for bigger jobs. For anything 1-bed and up, full removals usually works out better value once you factor in the time saved — efficient service with transparent pricing rather than a creeping hourly clock. See realistic numbers in our <a href="/blog/cost-of-moving-house-london">cost guide</a> or our <a href="/pricing">pricing page</a>.</p>
 
       <h2>Flats vs houses</h2>
       <p>The property type matters as much as the bedroom count. A 1-bed mansion-block flat with three flights and no lift is often a bigger job than a 2-bed terraced house with a driveway. For flats, the deciding factor is almost always stairs and corridor width — a king-size mattress that won't fit the lift turns a "small" move into a slow one. For houses, it's usually volume: garage contents, sheds, lofts and gardens add up quickly and almost always push the job into full <a href="/house-removals-london">removals</a> territory.</p>
@@ -68,10 +68,10 @@ export const Route = createFileRoute("/blog/man-and-van-vs-removals-london")({
       <p>Any of these tilt the decision toward full removals, even for a small inventory.</p>
 
       <h2>Edge cases worth calling out</h2>
-      <p>If you only have a handful of items, neither service may be the right fit — <a href="/single-item-transport-london">single item transport</a> or a <a href="/small-moves-london">small move</a> slot is usually cheaper. And if your move spans a long-distance leg or storage step, full removals with a planned route almost always beats stitching together two man-and-van bookings.</p>
+      <p>If you only have a handful of items, neither service may be the right fit — <a href="/single-item-transport-london">single item transport</a> or a <a href="/small-moves-london">small move</a> slot is usually a more efficient option. And if your move spans a long-distance leg or storage step, full removals with a planned route almost always beats stitching together two man-and-van bookings.</p>
 
       <h2>Insurance and protection</h2>
-      <p>Both services should carry goods-in-transit cover, but the level varies. For high-value items — original art, specialist instruments, designer furniture — confirm the per-item limit before booking. A man-and-van quote that's much cheaper than the rest is sometimes carrying lower cover. Ask, and get the answer in writing. For most household contents the standard cover is sufficient, but it's worth knowing the number rather than assuming.</p>
+      <p>Both services should carry goods-in-transit cover, but the level varies. For high-value items — original art, specialist instruments, designer furniture — confirm the per-item limit before booking. A man-and-van quote that sits well below the rest is sometimes carrying lower cover. Ask, and get the answer in writing. For most household contents the standard cover is sufficient, but it's worth knowing the number rather than assuming.</p>
 
       <h2>Worked examples from West London</h2>
       <p><strong>Studio in <a href="/removals-shepherds-bush">Shepherd's Bush</a> to a 1-bed in <a href="/removals-ealing">Ealing</a>:</strong> single Luton, two-person crew, half a day. Man and van fits comfortably.</p>
@@ -83,7 +83,7 @@ export const Route = createFileRoute("/blog/man-and-van-vs-removals-london")({
       <p>Man-and-van slots can sometimes be booked the same week, especially mid-month and mid-week. Full removals for anything 2-bed and up should ideally be booked 2–4 weeks ahead, and end-of-month or Friday dates fill faster. Last-minute is occasionally possible but the choice of crew and van is narrower. See our <a href="/blog/moving-house-checklist-uk">moving checklist</a> for the wider timeline.</p>
 
       <h2>Conclusion</h2>
-      <p>Send a quick inventory and a photo of the trickiest item. A good mover will tell you honestly which service fits — even if it's the cheaper one. For pricing bands by property size, see <a href="/pricing">pricing</a>. If you'd rather just talk it through, our <a href="/contact">contact page</a> has phone, WhatsApp and a quote form.</p>
+      <p>Send a quick inventory and a photo of the trickiest item. A good mover will tell you honestly which service fits — even if it's the lower-priced one. For pricing bands by property size, see <a href="/pricing">pricing</a>. If you'd rather just talk it through, our <a href="/contact">contact page</a> has phone, WhatsApp and a quote form.</p>
     </BlogPost>
   ),
 });
