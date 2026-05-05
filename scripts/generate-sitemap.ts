@@ -5,7 +5,7 @@
  */
 import { writeFileSync, readdirSync, statSync } from "node:fs";
 import { join, resolve } from "node:path";
-import { SERVICES_DATA } from "../src/lib/services-data";
+import { SERVICE_SLUGS } from "../src/lib/services-data";
 import { AREA_SLUGS } from "../src/lib/areas-data";
 
 const BASE = "https://www.holdwellremovals.co.uk";
