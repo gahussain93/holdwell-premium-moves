@@ -6,7 +6,60 @@ import { WhatsAppButton } from "./WhatsAppButton";
 import { Button } from "@/components/ui/button";
 import { PRICING } from "@/lib/site-data";
 import { AREAS_LOCAL } from "@/lib/areas-data";
-import { SERVICES_SEO, type ServiceInfo } from "@/lib/services-data";
+import { SERVICES_SEO, type ServiceInfo, type ServiceSlug } from "@/lib/services-data";
+
+const BLOG_LINK_CLS = "font-medium text-primary underline-offset-2 hover:underline";
+
+const SERVICE_GUIDES: Record<ServiceSlug, Array<{ href: string; label: string }>> = {
+  "house-removals-london": [
+    { href: "/blog/cost-of-moving-house-london", label: "cost of moving house in London" },
+    { href: "/blog/how-long-does-a-house-move-take-london", label: "how long a house move takes" },
+    { href: "/blog/moving-house-checklist-uk", label: "UK moving checklist" },
+    { href: "/blog/how-to-pack-for-a-house-move-london", label: "room-by-room packing guide" },
+  ],
+  "office-removals-london": [
+    { href: "/blog/office-relocation-guide-london", label: "London office relocation guide" },
+    { href: "/blog/parking-permits-moving-london", label: "parking and access for commercial moves" },
+    { href: "/blog/storage-options-when-moving-london", label: "storage options during a move" },
+  ],
+  "business-relocations-london": [
+    { href: "/blog/office-relocation-guide-london", label: "office relocation planning guide" },
+    { href: "/blog/storage-options-when-moving-london", label: "storage during a relocation" },
+  ],
+  "small-moves-london": [
+    { href: "/blog/moving-a-1-bed-flat-london", label: "moving a 1-bed flat in London" },
+    { href: "/blog/man-and-van-vs-removals-london", label: "man and van vs full removals" },
+    { href: "/blog/cost-of-moving-house-london", label: "what small moves typically cost" },
+  ],
+  "single-item-transport-london": [
+    { href: "/blog/man-and-van-vs-removals-london", label: "when a man and van is enough" },
+    { href: "/blog/storage-options-when-moving-london", label: "single-item storage runs" },
+  ],
+  "man-and-van-london": [
+    { href: "/blog/man-and-van-vs-removals-london", label: "man and van vs full removals" },
+    { href: "/blog/moving-a-1-bed-flat-london", label: "moving a 1-bed flat in London" },
+    { href: "/blog/cost-of-moving-house-london", label: "what these jobs cost" },
+  ],
+  "packing-assembly-dismantling-london": [
+    { href: "/blog/how-to-pack-for-a-house-move-london", label: "room-by-room packing guide" },
+    { href: "/blog/moving-house-checklist-uk", label: "UK moving checklist" },
+    { href: "/blog/cost-of-moving-house-london", label: "how packing affects the price" },
+  ],
+  "storage-runs-london": [
+    { href: "/blog/storage-options-when-moving-london", label: "storage options when moving in London" },
+    { href: "/blog/cost-of-moving-house-london", label: "how storage runs fit into your move cost" },
+  ],
+};
+
+function renderServiceGuides(slug: ServiceSlug) {
+  const items = SERVICE_GUIDES[slug];
+  return items.map((g, i) => (
+    <span key={g.href}>
+      {i > 0 && (i === items.length - 1 ? " and " : ", ")}
+      <a href={g.href} className={BLOG_LINK_CLS}>{g.label}</a>
+    </span>
+  ));
+}
 
 export function ServicePage({ service }: { service: ServiceInfo }) {
   const prices = PRICING.filter((p) => service.pricingLabels.includes(p.label));
@@ -59,11 +112,7 @@ export function ServicePage({ service }: { service: ServiceInfo }) {
           <div className="mt-10 max-w-3xl text-muted-foreground">
             <p>{service.details}</p>
             <p className="mt-4 text-sm">
-              Helpful reading:{" "}
-              <a href="/blog/cost-of-moving-house-london" className="font-medium text-primary underline-offset-2 hover:underline">cost of moving house in London</a>,{" "}
-              <a href="/blog/how-to-pack-for-a-house-move-london" className="font-medium text-primary underline-offset-2 hover:underline">how to pack room-by-room</a>{" "}
-              and our{" "}
-              <a href="/blog/moving-house-checklist-uk" className="font-medium text-primary underline-offset-2 hover:underline">UK moving checklist</a>.
+              Helpful reading: {renderServiceGuides(service.slug)}
             </p>
             <p className="mt-4 inline-flex items-center gap-2 text-sm text-foreground">
               <Sparkles className="h-4 w-4 text-accent-foreground" />

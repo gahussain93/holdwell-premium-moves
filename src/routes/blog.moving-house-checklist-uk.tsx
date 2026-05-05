@@ -100,7 +100,7 @@ export const Route = createFileRoute("/blog/moving-house-checklist-uk")({
       </ul>
 
       <h2>Conclusion</h2>
-      <p>The biggest time-savers are: book your mover early — see <a href="/house-removals-london">house removals</a> — sort parking the moment you have a date, and pack room by room. If you'd rather skip the packing entirely, we cover that as part of <a href="/packing-assembly-dismantling-london">packing and assembly</a>. For pricing bands by property size, see <a href="/pricing">pricing</a>. Ready when you are: <a href="/contact">get a quote</a>.</p>
+      <p>The biggest time-savers are: book your mover early — see <a href="/house-removals-london">house removals</a> — sort parking the moment you have a date, and pack room by room. If you'd rather skip the packing entirely, we cover that as part of <a href="/packing-assembly-dismantling-london">packing and assembly</a>. For smaller jobs a leaner option is our <a href="/man-and-van-london">man and van service</a>, and for in-between trips during the move see <a href="/storage-runs-london">storage runs</a>. For pricing bands by property size, see <a href="/pricing">pricing</a>, or browse local notes for <a href="/removals-ealing">Ealing</a>, <a href="/removals-hounslow">Hounslow</a> and <a href="/removals-harrow">Harrow</a>. For a closer look at typical durations, see <a href="/blog/how-long-does-a-house-move-take-london">how long a London move takes</a>. Ready when you are: <a href="/contact">get a quote</a>.</p>
     </BlogPost>
   ),
 });
