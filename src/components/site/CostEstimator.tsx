@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useId, useState } from "react";
 import { Link } from "@tanstack/react-router";
 
 type Size = "1" | "2" | "3" | "4";
@@ -37,7 +37,6 @@ function estimate(
     low += 80;
     high += 200;
   }
-  // round to nearest 10
   const r = (n: number) => Math.round(n / 10) * 10;
   return [r(low), r(high)];
 }
@@ -51,20 +50,49 @@ export function CostEstimator() {
 
   const [low, high] = estimate(size, distance, stairs, parking, packing);
 
+  const uid = useId();
+  const sizeId = `${uid}-size`;
+  const distanceId = `${uid}-distance`;
+  const stairsId = `${uid}-stairs`;
+  const parkingId = `${uid}-parking`;
+  const packingId = `${uid}-packing`;
+  const sizeHelpId = `${uid}-size-help`;
+  const distanceHelpId = `${uid}-distance-help`;
+  const stairsHelpId = `${uid}-stairs-help`;
+  const parkingHelpId = `${uid}-parking-help`;
+  const packingHelpId = `${uid}-packing-help`;
+  const resultId = `${uid}-result`;
+  const intoId = `${uid}-intro`;
+
+  const labelClass = "block text-sm font-medium text-foreground";
+  const helpClass = "mt-1 text-xs text-muted-foreground";
   const fieldClass =
-    "mt-1 w-full rounded-md border border-input bg-background px-3 py-2 text-sm";
+    "mt-1 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground shadow-sm transition-colors hover:border-primary/60 focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50";
 
   return (
-    <div className="not-prose my-10 rounded-xl border border-border bg-card p-6 shadow-sm">
-      <h3 className="text-lg font-semibold text-primary">Rough cost estimator</h3>
-      <p className="mt-2 text-sm text-muted-foreground">
+    <section
+      aria-labelledby={`${uid}-title`}
+      aria-describedby={intoId}
+      className="not-prose my-10 rounded-xl border border-border bg-card p-6 shadow-sm"
+    >
+      <h3 id={`${uid}-title`} className="text-lg font-semibold text-primary">
+        Rough cost estimator
+      </h3>
+      <p id={intoId} className="mt-2 text-sm text-muted-foreground">
         Use this as a rough guide only. Final price depends on your inventory, access and timing — for a fixed price, send us a few photos.
       </p>
 
-      <div className="mt-5 grid gap-4 sm:grid-cols-2">
-        <label className="block text-sm font-medium text-foreground">
-          Property size
+      <fieldset className="mt-5 grid gap-4 sm:grid-cols-2 border-0 p-0 m-0">
+        <legend className="sr-only">Move details</legend>
+
+        <div>
+          <label htmlFor={sizeId} className={labelClass}>
+            Property size
+          </label>
           <select
+            id={sizeId}
+            name="size"
+            aria-describedby={sizeHelpId}
             className={fieldClass}
             value={size}
             onChange={(e) => setSize(e.target.value as Size)}
@@ -74,11 +102,19 @@ export function CostEstimator() {
             <option value="3">3 bed</option>
             <option value="4">4+ bed</option>
           </select>
-        </label>
+          <p id={sizeHelpId} className={helpClass}>
+            Number of bedrooms in the property you're moving from.
+          </p>
+        </div>
 
-        <label className="block text-sm font-medium text-foreground">
-          Distance
+        <div>
+          <label htmlFor={distanceId} className={labelClass}>
+            Distance
+          </label>
           <select
+            id={distanceId}
+            name="distance"
+            aria-describedby={distanceHelpId}
             className={fieldClass}
             value={distance}
             onChange={(e) => setDistance(e.target.value as Distance)}
@@ -86,11 +122,19 @@ export function CostEstimator() {
             <option value="local">Local (within London)</option>
             <option value="outside">Outside London</option>
           </select>
-        </label>
+          <p id={distanceHelpId} className={helpClass}>
+            Local moves stay inside the M25; outside London adds mileage.
+          </p>
+        </div>
 
-        <label className="block text-sm font-medium text-foreground">
-          Stairs without lift?
+        <div>
+          <label htmlFor={stairsId} className={labelClass}>
+            Stairs without lift?
+          </label>
           <select
+            id={stairsId}
+            name="stairs"
+            aria-describedby={stairsHelpId}
             className={fieldClass}
             value={stairs}
             onChange={(e) => setStairs(e.target.value as YesNo)}
@@ -98,11 +142,19 @@ export function CostEstimator() {
             <option value="no">No / lift available</option>
             <option value="yes">Yes, stairs only</option>
           </select>
-        </label>
+          <p id={stairsHelpId} className={helpClass}>
+            Carrying up several floors of stairs takes longer.
+          </p>
+        </div>
 
-        <label className="block text-sm font-medium text-foreground">
-          Parking distance
+        <div>
+          <label htmlFor={parkingId} className={labelClass}>
+            Parking distance
+          </label>
           <select
+            id={parkingId}
+            name="parking"
+            aria-describedby={parkingHelpId}
             className={fieldClass}
             value={parking}
             onChange={(e) => setParking(e.target.value as Parking)}
@@ -110,11 +162,19 @@ export function CostEstimator() {
             <option value="close">Close to door</option>
             <option value="far">Far from door</option>
           </select>
-        </label>
+          <p id={parkingHelpId} className={helpClass}>
+            Long carries from the van to the door add time.
+          </p>
+        </div>
 
-        <label className="block text-sm font-medium text-foreground sm:col-span-2">
-          Packing required?
+        <div className="sm:col-span-2">
+          <label htmlFor={packingId} className={labelClass}>
+            Packing required?
+          </label>
           <select
+            id={packingId}
+            name="packing"
+            aria-describedby={packingHelpId}
             className={fieldClass}
             value={packing}
             onChange={(e) => setPacking(e.target.value as YesNo)}
@@ -122,20 +182,42 @@ export function CostEstimator() {
             <option value="no">No, I'll pack myself</option>
             <option value="yes">Yes, please pack for me</option>
           </select>
-        </label>
-      </div>
+          <p id={packingHelpId} className={helpClass}>
+            Optional packing service includes materials and labour.
+          </p>
+        </div>
+      </fieldset>
 
-      <div className="mt-6 rounded-lg bg-muted p-4">
+      <div
+        id={resultId}
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        className="mt-6 rounded-lg bg-muted p-4"
+      >
         <p className="text-xs uppercase tracking-wide text-muted-foreground">Estimated range</p>
         <p className="mt-1 text-2xl font-bold text-foreground">
+          <span className="sr-only">Estimated price range: </span>
           £{low}–£{high}
         </p>
         <p className="mt-2 text-xs text-muted-foreground">
           Indicative only — not a quote. For a fixed price, see{" "}
-          <Link to="/pricing" className="font-medium text-primary underline">pricing</Link> or{" "}
-          <Link to="/contact" className="font-medium text-primary underline">get in touch</Link>.
+          <Link
+            to="/pricing"
+            className="font-medium text-primary underline rounded-sm focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            pricing
+          </Link>{" "}
+          or{" "}
+          <Link
+            to="/contact"
+            className="font-medium text-primary underline rounded-sm focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            get in touch
+          </Link>
+          .
         </p>
       </div>
-    </div>
+    </section>
   );
 }
