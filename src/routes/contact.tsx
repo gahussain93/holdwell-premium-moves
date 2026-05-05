@@ -57,8 +57,8 @@ function ContactPage() {
             <ContactCard
               icon={<Mail className="h-5 w-5" />}
               title="Email"
-              line="hello@holdwellremovals.co.uk"
-              href="mailto:hello@holdwellremovals.co.uk"
+              line="holdwellremovals@hotmail.com"
+              href="mailto:holdwellremovals@hotmail.com"
             />
             <div className="rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-card)]">
               <div className="flex items-center gap-3">

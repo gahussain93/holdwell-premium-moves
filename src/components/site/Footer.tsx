@@ -37,9 +37,9 @@ export function Footer() {
               <MessageCircle className="h-4 w-4" />
               <span>WhatsApp</span>
             </a>
-            <a href="mailto:hello@holdwellremovals.co.uk" className="flex items-center gap-2 text-foreground hover:text-primary">
+            <a href="mailto:holdwellremovals@hotmail.com" className="flex items-center gap-2 text-foreground hover:text-primary">
               <Mail className="h-4 w-4" />
-              <span>hello@holdwellremovals.co.uk</span>
+              <span>holdwellremovals@hotmail.com</span>
             </a>
           </div>
         </div>

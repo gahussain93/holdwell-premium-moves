@@ -4,7 +4,7 @@ export const BUSINESS_NAME = "HoldWell Removal Co.";
 
 export const PHONE_DISPLAY = "07737 731115";
 export const PHONE_E164 = "+447737731115";
-export const EMAIL = "hello@holdwellremovals.co.uk";
+export const EMAIL = "holdwellremovals@hotmail.com";
 export const WHATSAPP_URL = "https://wa.me/447737731115";
 export const LOGO_URL = `${SITE_URL}/logo.webp`;
 

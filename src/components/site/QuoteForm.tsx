@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -12,41 +12,78 @@ import {
 } from "@/components/ui/select";
 import { toast } from "sonner";
 import { CheckCircle2 } from "lucide-react";
+import { useServerFn } from "@tanstack/react-start";
+import { submitLead } from "@/server/leads.functions";
+
+function makeNonce() {
+  const c = (globalThis as any).crypto;
+  if (c?.randomUUID) return c.randomUUID();
+  return `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+}
 
 export function QuoteForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [pending, setPending] = useState(false);
+  const nonceRef = useRef<string>(makeNonce());
+  const submitLeadFn = useServerFn(submitLead);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (pending) return;
     const form = e.currentTarget;
     const data = new FormData(form);
-    const name = String(data.get("name") || "");
-    const phone = String(data.get("phone") || "");
-    const email = String(data.get("email") || "");
-    const from = String(data.get("from") || "");
-    const to = String(data.get("to") || "");
-    const type = String(data.get("type") || "");
-    const items = String(data.get("items") || "");
-    const stairs = String(data.get("stairs") || "");
-    const access = String(data.get("access") || "");
-    const date = String(data.get("date") || "");
+    const payload = {
+      name: String(data.get("name") || "").trim(),
+      phone: String(data.get("phone") || "").trim(),
+      email: String(data.get("email") || "").trim(),
+      from: String(data.get("from") || "").trim(),
+      to: String(data.get("to") || "").trim(),
+      type: String(data.get("type") || ""),
+      items: String(data.get("items") || ""),
+      stairs: String(data.get("stairs") || ""),
+      access: String(data.get("access") || ""),
+      date: String(data.get("date") || ""),
+      company: String(data.get("company") || ""),
+      nonce: nonceRef.current,
+    };
 
-    const lines = [
-      `Quote request from ${name}`,
-      `Phone: ${phone}`,
-      ...(email ? [`Email: ${email}`] : []),
-      `From: ${from}  →  To: ${to}`,
-      `Type: ${type}`,
-      `Items / rooms: ${items}`,
-      `Stairs / lift: ${stairs}`,
-      `Access notes: ${access}`,
-      `Preferred date: ${date}`,
-    ];
-    const message = encodeURIComponent(lines.join("\n"));
-    window.open(`https://wa.me/447737731115?text=${message}`, "_blank");
-    toast.success("Thanks! We'll be in touch shortly.");
-    setSubmitted(true);
-    form.reset();
+    if (!payload.name || !payload.phone || !payload.from || !payload.to) {
+      toast.error("Please fill in name, phone, from and to.");
+      return;
+    }
+
+    setPending(true);
+    try {
+      const res = await submitLeadFn({ data: payload });
+      if (!res?.ok) throw new Error("Submission failed");
+
+      const lines = [
+        `Quote request from ${payload.name}`,
+        `Phone: ${payload.phone}`,
+        ...(payload.email ? [`Email: ${payload.email}`] : []),
+        `From: ${payload.from}  →  To: ${payload.to}`,
+        `Type: ${payload.type}`,
+        `Items / rooms: ${payload.items}`,
+        `Stairs / lift: ${payload.stairs}`,
+        `Access notes: ${payload.access}`,
+        `Preferred date: ${payload.date}`,
+      ];
+      const message = encodeURIComponent(lines.join("\n"));
+      try {
+        window.open(`https://wa.me/447737731115?text=${message}`, "_blank");
+      } catch {
+        // Lead is already captured server-side; ignore WhatsApp open failure.
+      }
+      toast.success("Thanks! We'll be in touch shortly.");
+      setSubmitted(true);
+      nonceRef.current = makeNonce();
+      form.reset();
+    } catch (err) {
+      console.error(err);
+      toast.error("Couldn't send your request. Please try again or call us.");
+    } finally {
+      setPending(false);
+    }
   }
 
   if (submitted) {
@@ -118,8 +155,15 @@ export function QuoteForm() {
         <Label htmlFor="access">Access notes (optional)</Label>
         <Textarea id="access" name="access" rows={3} placeholder="Parking, narrow doors, long walk from van, etc." />
       </div>
-      <Button type="submit" size="lg" className="rounded-full">
-        Send quote request
+      {/* Honeypot field — must remain empty. Hidden from users and assistive tech. */}
+      <div aria-hidden="true" style={{ position: "absolute", left: "-10000px", width: 1, height: 1, overflow: "hidden" }}>
+        <label>
+          Company
+          <input type="text" name="company" tabIndex={-1} autoComplete="off" defaultValue="" />
+        </label>
+      </div>
+      <Button type="submit" size="lg" className="rounded-full" disabled={pending}>
+        {pending ? "Sending…" : "Send quote request"}
       </Button>
       <p className="text-center text-xs text-muted-foreground">
         Final price depends on access, distance, items and job details. We confirm everything before continuing.
