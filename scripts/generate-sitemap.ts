@@ -54,10 +54,10 @@ for (const h of hubs) {
 }
 
 // Service pages from services-data.ts
-for (const s of SERVICES_DATA) {
-  const file = routeFile(`${s.slug}.tsx`);
+for (const slug of SERVICE_SLUGS) {
+  const file = routeFile(`${slug}.tsx`);
   entries.push({
-    loc: `${BASE}/${s.slug}`,
+    loc: `${BASE}/${slug}`,
     lastmod: mtime(file),
     changefreq: "weekly",
     priority: "0.8",
