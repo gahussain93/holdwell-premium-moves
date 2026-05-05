@@ -71,8 +71,10 @@ function HomePage() {
               Removals in <span className="text-primary">West London</span>
             </h1>
             <p className="mt-6 max-w-xl text-base text-muted-foreground md:text-lg">
-              Clear, upfront pricing for house moves, office relocations, single item transport
-              and small moves across West London, including Ealing, Hounslow, Harrow and Wembley.
+              Experienced, careful and reliable removals across West London — house moves,
+              office relocations, man-and-van, packing services and storage runs. Clear upfront
+              pricing, no hidden costs and fast quote turnaround across Ealing, Hounslow,
+              Harrow, Wembley and surrounding areas.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" className="rounded-full">
@@ -100,6 +102,26 @@ function HomePage() {
         </div>
       </section>
 
+      {/* TRUST STRIP */}
+      <section className="bg-background pb-8">
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <div className="rounded-2xl border border-border bg-card p-5 shadow-[var(--shadow-card)]">
+            <div className="flex flex-col gap-3 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
+              <p className="text-foreground">
+                <span className="font-semibold text-primary">“Professional, careful and on time.”</span>{" "}
+                Trusted by London households and businesses.
+              </p>
+              <ul className="flex flex-wrap gap-x-5 gap-y-2 text-xs font-medium text-foreground">
+                <li className="inline-flex items-center gap-1.5"><ShieldCheck className="h-3.5 w-3.5 text-primary" /> Experienced team</li>
+                <li className="inline-flex items-center gap-1.5"><PackageCheck className="h-3.5 w-3.5 text-primary" /> Careful handling</li>
+                <li className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5 text-primary" /> Reliable &amp; on time</li>
+                <li className="inline-flex items-center gap-1.5"><BadgePoundSterling className="h-3.5 w-3.5 text-primary" /> Clear pricing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* PRICING STRIP */}
       <section className="bg-background pb-16">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
@@ -119,10 +141,11 @@ function HomePage() {
               </div>
               <div className="border-t border-border pt-6 lg:max-w-[200px] lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
                 <p className="border-l-2 border-accent pl-4 text-sm font-semibold text-foreground">
-                  Final price depends on access, distance, items and job details.
+                  Clear upfront pricing — no hidden costs.
                 </p>
                 <p className="mt-3 pl-4 text-xs text-muted-foreground">
-                  We always confirm everything clearly before the move.
+                  Fast quote turnaround. Final price depends on access, distance and items, and is
+                  always confirmed before the move.
                 </p>
               </div>
             </div>
@@ -136,7 +159,8 @@ function HomePage() {
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold text-primary md:text-4xl">Our Services</h2>
             <p className="mt-3 text-muted-foreground">
-              Complete removal and transport solutions for homes and businesses.
+              House removals, office relocations, man-and-van, packing services and storage runs —
+              for homes, flats and businesses across West London.
             </p>
           </div>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -195,9 +219,15 @@ function HomePage() {
           <div className="rounded-3xl bg-surface-soft p-8 text-center md:p-12">
             <h2 className="text-2xl font-bold text-primary md:text-3xl">Honest, flexible pricing</h2>
             <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-              For moves involving stairs, longer walking distances or limited access, the price may
-              be adjusted slightly depending on the work involved. We always confirm everything
-              before continuing.
+              Clear upfront pricing with no hidden costs. For moves involving stairs, longer
+              walking distances or limited access, the price may be adjusted slightly depending on
+              the work involved — we always confirm everything before continuing. See our{" "}
+              <Link to="/pricing" className="font-semibold text-primary underline-offset-2 hover:underline">full pricing</Link>,
+              browse all{" "}
+              <Link to="/services" className="font-semibold text-primary underline-offset-2 hover:underline">services</Link>{" "}
+              or check the{" "}
+              <Link to="/areas" className="font-semibold text-primary underline-offset-2 hover:underline">areas we cover</Link>{" "}
+              including Ealing, Hounslow, Harrow, Wembley, Chiswick and Richmond.
             </p>
           </div>
         </div>
