@@ -109,9 +109,9 @@ function BlogIndex() {
             Moving advice for London
           </h1>
           <p className="mt-5 max-w-2xl text-base text-muted-foreground md:text-lg">
-            Honest, practical articles from a working London removals team — no filler, no fake reviews.
-            Use these guides to plan house removals, man-and-van jobs, packing and storage runs across
-            West London with confidence on cost, timing and access.
+            Practical London moving advice from a working removals team — covering costs, parking,
+            packing, timing, storage and how to choose the right service for your job. Grouped by
+            topic so you can jump straight to the stage of the move you're planning.
           </p>
           {groups.map((g) => (
             <div key={g.title} className="mt-12">
