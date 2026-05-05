@@ -315,6 +315,10 @@ export function CostEstimator() {
               <p className="mt-2 text-xs font-medium text-foreground/80">{warning}</p>
             )}
           </>
+        ) : isOutside ? (
+          <p className="mt-1 text-2xl font-bold text-foreground">
+            From £500+ depending on distance
+          </p>
         ) : (
           <p className="mt-1 text-sm text-muted-foreground">
             Complete all fields above to see an estimated range.
