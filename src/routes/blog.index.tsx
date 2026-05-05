@@ -69,6 +69,34 @@ export const Route = createFileRoute("/blog/")({
 });
 
 function BlogIndex() {
+  const groups: Array<{ title: string; slugs: string[] }> = [
+    {
+      title: "Moving costs & pricing",
+      slugs: ["cost-of-moving-house-london", "best-time-to-move-house-london"],
+    },
+    {
+      title: "Planning your move",
+      slugs: [
+        "moving-house-checklist-uk",
+        "how-long-does-a-house-move-take-london",
+        "how-to-pack-for-a-house-move-london",
+      ],
+    },
+    {
+      title: "London moving logistics",
+      slugs: ["parking-permits-moving-london", "storage-options-when-moving-london"],
+    },
+    {
+      title: "Service comparisons & scenarios",
+      slugs: [
+        "man-and-van-vs-removals-london",
+        "moving-a-1-bed-flat-london",
+        "office-relocation-guide-london",
+      ],
+    },
+  ];
+  const bySlug = Object.fromEntries(POSTS.map((p) => [p.slug, p]));
+
   return (
     <SiteLayout>
       <section className="bg-background">
@@ -78,20 +106,31 @@ function BlogIndex() {
           </h1>
           <p className="mt-5 max-w-2xl text-base text-muted-foreground md:text-lg">
             Honest, practical articles from a working London removals team — no filler, no fake reviews.
+            Use these guides to plan house removals, man-and-van jobs, packing and storage runs across
+            West London with confidence on cost, timing and access.
           </p>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2">
-            {POSTS.map((p) => (
-              <a
-                key={p.slug}
-                href={`/blog/${p.slug}`}
-                className="rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-card)] transition-colors hover:border-primary/40"
-              >
-                <h2 className="text-lg font-semibold text-primary">{p.title}</h2>
-                <p className="mt-2 text-sm text-muted-foreground">{p.excerpt}</p>
-                <span className="mt-4 inline-block text-sm font-semibold text-primary">Read article →</span>
-              </a>
-            ))}
-          </div>
+          {groups.map((g) => (
+            <div key={g.title} className="mt-12">
+              <h2 className="text-2xl font-bold text-primary md:text-3xl">{g.title}</h2>
+              <div className="mt-6 grid gap-5 sm:grid-cols-2">
+                {g.slugs.map((slug) => {
+                  const p = bySlug[slug];
+                  if (!p) return null;
+                  return (
+                    <a
+                      key={p.slug}
+                      href={`/blog/${p.slug}`}
+                      className="rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-card)] transition-colors hover:border-primary/40"
+                    >
+                      <h3 className="text-lg font-semibold text-primary">{p.title}</h3>
+                      <p className="mt-2 text-sm text-muted-foreground">{p.excerpt}</p>
+                      <span className="mt-4 inline-block text-sm font-semibold text-primary">Read article →</span>
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
       <CtaBand />
