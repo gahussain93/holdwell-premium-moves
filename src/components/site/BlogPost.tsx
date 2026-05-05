@@ -34,6 +34,8 @@ export function BlogPost({
     "@type": "Article",
     headline: title,
     description: intro,
+    image: [LOGO_URL],
+    inLanguage: "en-GB",
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     url,
     datePublished: published,
