@@ -1,9 +1,9 @@
 export const PRICING = [
   { label: "Single Item / 1–2 Items", price: "from £70" },
   { label: "Small Move", price: "from £100" },
-  { label: "1-Bed Move", price: "from £180" },
-  { label: "2-Bed Move", price: "from £280" },
-  { label: "3-Bed+ Move", price: "from £475" },
+  { label: "1-Bed Move", price: "from £200" },
+  { label: "2-Bed Move", price: "from £320" },
+  { label: "3-Bed+ Move", price: "from £500" },
 ] as const;
 
 export const SERVICES = [
