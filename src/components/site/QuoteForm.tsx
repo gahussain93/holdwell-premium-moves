@@ -155,8 +155,15 @@ export function QuoteForm() {
         <Label htmlFor="access">Access notes (optional)</Label>
         <Textarea id="access" name="access" rows={3} placeholder="Parking, narrow doors, long walk from van, etc." />
       </div>
-      <Button type="submit" size="lg" className="rounded-full">
-        Send quote request
+      {/* Honeypot field — must remain empty. Hidden from users and assistive tech. */}
+      <div aria-hidden="true" style={{ position: "absolute", left: "-10000px", width: 1, height: 1, overflow: "hidden" }}>
+        <label>
+          Company
+          <input type="text" name="company" tabIndex={-1} autoComplete="off" defaultValue="" />
+        </label>
+      </div>
+      <Button type="submit" size="lg" className="rounded-full" disabled={pending}>
+        {pending ? "Sending…" : "Send quote request"}
       </Button>
       <p className="text-center text-xs text-muted-foreground">
         Final price depends on access, distance, items and job details. We confirm everything before continuing.
