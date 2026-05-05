@@ -69,13 +69,15 @@ export const Route = createFileRoute("/blog/")({
 });
 
 function BlogIndex() {
-  const groups: Array<{ title: string; slugs: string[] }> = [
+  const groups: Array<{ title: string; description: string; slugs: string[] }> = [
     {
-      title: "Moving costs & pricing",
+      title: "Costs & pricing",
+      description: "Realistic London price ranges and the timing decisions that move the final number up or down.",
       slugs: ["cost-of-moving-house-london", "best-time-to-move-house-london"],
     },
     {
       title: "Planning your move",
+      description: "Timelines, packing order and duration estimates so nothing slips between booking and unloading.",
       slugs: [
         "moving-house-checklist-uk",
         "how-long-does-a-house-move-take-london",
@@ -84,10 +86,12 @@ function BlogIndex() {
     },
     {
       title: "London moving logistics",
+      description: "Parking, bay suspensions and storage — the local details that make a London move actually run on time.",
       slugs: ["parking-permits-moving-london", "storage-options-when-moving-london"],
     },
     {
-      title: "Service comparisons & scenarios",
+      title: "Service comparisons & move scenarios",
+      description: "How to choose between a man and van, full removals and office relocations for your specific job.",
       slugs: [
         "man-and-van-vs-removals-london",
         "moving-a-1-bed-flat-london",
@@ -105,13 +109,14 @@ function BlogIndex() {
             Moving advice for London
           </h1>
           <p className="mt-5 max-w-2xl text-base text-muted-foreground md:text-lg">
-            Honest, practical articles from a working London removals team — no filler, no fake reviews.
-            Use these guides to plan house removals, man-and-van jobs, packing and storage runs across
-            West London with confidence on cost, timing and access.
+            Practical London moving advice from a working removals team — covering costs, parking,
+            packing, timing, storage and how to choose the right service for your job. Grouped by
+            topic so you can jump straight to the stage of the move you're planning.
           </p>
           {groups.map((g) => (
             <div key={g.title} className="mt-12">
               <h2 className="text-2xl font-bold text-primary md:text-3xl">{g.title}</h2>
+              <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{g.description}</p>
               <div className="mt-6 grid gap-5 sm:grid-cols-2">
                 {g.slugs.map((slug) => {
                   const p = bySlug[slug];
