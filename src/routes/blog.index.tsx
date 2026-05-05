@@ -128,9 +128,10 @@ function BlogIndex() {
             Moving advice for London
           </h1>
           <p className="mt-5 max-w-2xl text-base text-muted-foreground md:text-lg">
-            Practical London moving advice from a working removals team — covering costs, parking,
-            packing, timing, storage and how to choose the right service for your job. Grouped by
-            topic so you can jump straight to the stage of the move you're planning.
+            Honest, working-knowledge advice on moving in London — what a move actually costs, how
+            to pack and time it properly, the parking and storage details that catch people out,
+            and how to choose between a man and van, full house removals or an office relocation.
+            Grouped by topic so you can skip to the stage you're planning.
           </p>
           {groups.map((g) => (
             <div key={g.title} className="mt-12">
