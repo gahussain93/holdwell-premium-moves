@@ -44,7 +44,7 @@ export const submitLead = createServerFn({ method: "POST" })
     }
 
     const payload = {
-      type: "quote_lead",
+      kind: "quote_lead",
       receivedAt: new Date().toISOString(),
       ...data,
     };
