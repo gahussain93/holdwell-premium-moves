@@ -71,8 +71,10 @@ function HomePage() {
               Removals in <span className="text-primary">West London</span>
             </h1>
             <p className="mt-6 max-w-xl text-base text-muted-foreground md:text-lg">
-              Clear, upfront pricing for house moves, office relocations, single item transport
-              and small moves across West London, including Ealing, Hounslow, Harrow and Wembley.
+              Experienced, careful and reliable removals across West London — house moves,
+              office relocations, man-and-van, packing services and storage runs. Clear upfront
+              pricing, no hidden costs and fast quote turnaround across Ealing, Hounslow,
+              Harrow, Wembley and surrounding areas.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" className="rounded-full">
