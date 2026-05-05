@@ -67,8 +67,26 @@ function renderServiceGuides(slug: ServiceSlug) {
 export function ServicePage({ service }: { service: ServiceInfo }) {
   const prices = PRICING.filter((p) => service.pricingLabels.includes(p.label));
 
+  const faqJsonLd = service.faqs.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: service.faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      }
+    : null;
+
   return (
     <SiteLayout>
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
       {/* HERO */}
       <section className="bg-background">
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-6 md:py-20">
