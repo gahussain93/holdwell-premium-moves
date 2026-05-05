@@ -1,5 +1,6 @@
 import { useId, useState } from "react";
 import { Link } from "@tanstack/react-router";
+import { z } from "zod";
 
 type Size = "1" | "2" | "3" | "4";
 type Distance = "local" | "outside";
@@ -12,6 +13,24 @@ const BASE: Record<Size, [number, number]> = {
   "3": [475, 800],
   "4": [700, 1200],
 };
+
+const schema = z.object({
+  size: z.enum(["1", "2", "3", "4"], { message: "Please select a property size." }),
+  distance: z.enum(["local", "outside"], { message: "Please choose a distance." }),
+  stairs: z.enum(["yes", "no"], { message: "Please tell us about stairs." }),
+  parking: z.enum(["close", "far"], { message: "Please choose a parking distance." }),
+  packing: z.enum(["yes", "no"], { message: "Please choose a packing option." }),
+});
+
+type FormState = {
+  size: Size | "";
+  distance: Distance | "";
+  stairs: YesNo | "";
+  parking: Parking | "";
+  packing: YesNo | "";
+};
+
+type Errors = Partial<Record<keyof FormState, string>>;
 
 function estimate(
   size: Size,
@@ -42,43 +61,83 @@ function estimate(
 }
 
 export function CostEstimator() {
-  const [size, setSize] = useState<Size>("2");
-  const [distance, setDistance] = useState<Distance>("local");
-  const [stairs, setStairs] = useState<YesNo>("no");
-  const [parking, setParking] = useState<Parking>("close");
-  const [packing, setPacking] = useState<YesNo>("no");
+  const [form, setForm] = useState<FormState>({
+    size: "",
+    distance: "",
+    stairs: "",
+    parking: "",
+    packing: "",
+  });
+  const [touched, setTouched] = useState<Partial<Record<keyof FormState, boolean>>>({});
 
-  const [low, high] = estimate(size, distance, stairs, parking, packing);
+  const parsed = schema.safeParse(form);
+  const errors: Errors = {};
+  if (!parsed.success) {
+    for (const issue of parsed.error.issues) {
+      const key = issue.path[0] as keyof FormState;
+      if (!errors[key]) errors[key] = issue.message;
+    }
+  }
+
+  // Cross-field consistency warning (non-blocking).
+  let warning: string | null = null;
+  if (
+    parsed.success &&
+    form.size === "4" &&
+    form.parking === "far" &&
+    form.packing === "no"
+  ) {
+    warning =
+      "Heads up: a 4+ bed move with far parking and no packing help often runs to the upper end — consider adding packing for a smoother day.";
+  }
+
+  const result = parsed.success
+    ? estimate(form.size as Size, form.distance as Distance, form.stairs as YesNo, form.parking as Parking, form.packing as YesNo)
+    : null;
+
+  const update = <K extends keyof FormState>(key: K, value: FormState[K]) => {
+    setForm((prev) => ({ ...prev, [key]: value }));
+    setTouched((prev) => ({ ...prev, [key]: true }));
+  };
+
+  const blur = (key: keyof FormState) =>
+    setTouched((prev) => ({ ...prev, [key]: true }));
 
   const uid = useId();
-  const sizeId = `${uid}-size`;
-  const distanceId = `${uid}-distance`;
-  const stairsId = `${uid}-stairs`;
-  const parkingId = `${uid}-parking`;
-  const packingId = `${uid}-packing`;
-  const sizeHelpId = `${uid}-size-help`;
-  const distanceHelpId = `${uid}-distance-help`;
-  const stairsHelpId = `${uid}-stairs-help`;
-  const parkingHelpId = `${uid}-parking-help`;
-  const packingHelpId = `${uid}-packing-help`;
-  const resultId = `${uid}-result`;
-  const intoId = `${uid}-intro`;
+  const ids = {
+    size: `${uid}-size`,
+    distance: `${uid}-distance`,
+    stairs: `${uid}-stairs`,
+    parking: `${uid}-parking`,
+    packing: `${uid}-packing`,
+  } as const;
+  const helpId = (k: keyof FormState) => `${uid}-${k}-help`;
+  const errId = (k: keyof FormState) => `${uid}-${k}-err`;
+  const introId = `${uid}-intro`;
 
   const labelClass = "block text-sm font-medium text-foreground";
   const helpClass = "mt-1 text-xs text-muted-foreground";
-  const fieldClass =
-    "mt-1 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground shadow-sm transition-colors hover:border-primary/60 focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50";
+  const errorClass = "mt-1 text-xs font-medium text-destructive";
+  const fieldClass = (k: keyof FormState) =>
+    [
+      "mt-1 w-full rounded-md border bg-background px-3 py-2 text-sm text-foreground shadow-sm transition-colors hover:border-primary/60 focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50",
+      touched[k] && errors[k] ? "border-destructive" : "border-input",
+    ].join(" ");
+
+  const showError = (k: keyof FormState) => Boolean(touched[k] && errors[k]);
+  const describedBy = (k: keyof FormState) =>
+    [helpId(k), showError(k) ? errId(k) : null].filter(Boolean).join(" ");
 
   return (
     <section
       aria-labelledby={`${uid}-title`}
-      aria-describedby={intoId}
+      aria-describedby={introId}
       className="not-prose my-10 rounded-xl border border-border bg-card p-6 shadow-sm"
     >
       <h3 id={`${uid}-title`} className="text-lg font-semibold text-primary">
         Rough cost estimator
       </h3>
-      <p id={intoId} className="mt-2 text-sm text-muted-foreground">
+      <p id={introId} className="mt-2 text-sm text-muted-foreground">
         Use this as a rough guide only. Final price depends on your inventory, access and timing — for a fixed price, send us a few photos.
       </p>
 
@@ -86,120 +145,180 @@ export function CostEstimator() {
         <legend className="sr-only">Move details</legend>
 
         <div>
-          <label htmlFor={sizeId} className={labelClass}>
-            Property size
+          <label htmlFor={ids.size} className={labelClass}>
+            Property size <span aria-hidden="true" className="text-destructive">*</span>
           </label>
           <select
-            id={sizeId}
+            id={ids.size}
             name="size"
-            aria-describedby={sizeHelpId}
-            className={fieldClass}
-            value={size}
-            onChange={(e) => setSize(e.target.value as Size)}
+            required
+            aria-required="true"
+            aria-invalid={showError("size") || undefined}
+            aria-describedby={describedBy("size")}
+            className={fieldClass("size")}
+            value={form.size}
+            onChange={(e) => update("size", e.target.value as Size)}
+            onBlur={() => blur("size")}
           >
+            <option value="" disabled>Select…</option>
             <option value="1">1 bed</option>
             <option value="2">2 bed</option>
             <option value="3">3 bed</option>
             <option value="4">4+ bed</option>
           </select>
-          <p id={sizeHelpId} className={helpClass}>
+          <p id={helpId("size")} className={helpClass}>
             Number of bedrooms in the property you're moving from.
           </p>
+          {showError("size") && (
+            <p id={errId("size")} className={errorClass}>
+              {errors.size}
+            </p>
+          )}
         </div>
 
         <div>
-          <label htmlFor={distanceId} className={labelClass}>
-            Distance
+          <label htmlFor={ids.distance} className={labelClass}>
+            Distance <span aria-hidden="true" className="text-destructive">*</span>
           </label>
           <select
-            id={distanceId}
+            id={ids.distance}
             name="distance"
-            aria-describedby={distanceHelpId}
-            className={fieldClass}
-            value={distance}
-            onChange={(e) => setDistance(e.target.value as Distance)}
+            required
+            aria-required="true"
+            aria-invalid={showError("distance") || undefined}
+            aria-describedby={describedBy("distance")}
+            className={fieldClass("distance")}
+            value={form.distance}
+            onChange={(e) => update("distance", e.target.value as Distance)}
+            onBlur={() => blur("distance")}
           >
+            <option value="" disabled>Select…</option>
             <option value="local">Local (within London)</option>
             <option value="outside">Outside London</option>
           </select>
-          <p id={distanceHelpId} className={helpClass}>
+          <p id={helpId("distance")} className={helpClass}>
             Local moves stay inside the M25; outside London adds mileage.
           </p>
+          {showError("distance") && (
+            <p id={errId("distance")} className={errorClass}>
+              {errors.distance}
+            </p>
+          )}
         </div>
 
         <div>
-          <label htmlFor={stairsId} className={labelClass}>
-            Stairs without lift?
+          <label htmlFor={ids.stairs} className={labelClass}>
+            Stairs without lift? <span aria-hidden="true" className="text-destructive">*</span>
           </label>
           <select
-            id={stairsId}
+            id={ids.stairs}
             name="stairs"
-            aria-describedby={stairsHelpId}
-            className={fieldClass}
-            value={stairs}
-            onChange={(e) => setStairs(e.target.value as YesNo)}
+            required
+            aria-required="true"
+            aria-invalid={showError("stairs") || undefined}
+            aria-describedby={describedBy("stairs")}
+            className={fieldClass("stairs")}
+            value={form.stairs}
+            onChange={(e) => update("stairs", e.target.value as YesNo)}
+            onBlur={() => blur("stairs")}
           >
+            <option value="" disabled>Select…</option>
             <option value="no">No / lift available</option>
             <option value="yes">Yes, stairs only</option>
           </select>
-          <p id={stairsHelpId} className={helpClass}>
+          <p id={helpId("stairs")} className={helpClass}>
             Carrying up several floors of stairs takes longer.
           </p>
+          {showError("stairs") && (
+            <p id={errId("stairs")} className={errorClass}>
+              {errors.stairs}
+            </p>
+          )}
         </div>
 
         <div>
-          <label htmlFor={parkingId} className={labelClass}>
-            Parking distance
+          <label htmlFor={ids.parking} className={labelClass}>
+            Parking distance <span aria-hidden="true" className="text-destructive">*</span>
           </label>
           <select
-            id={parkingId}
+            id={ids.parking}
             name="parking"
-            aria-describedby={parkingHelpId}
-            className={fieldClass}
-            value={parking}
-            onChange={(e) => setParking(e.target.value as Parking)}
+            required
+            aria-required="true"
+            aria-invalid={showError("parking") || undefined}
+            aria-describedby={describedBy("parking")}
+            className={fieldClass("parking")}
+            value={form.parking}
+            onChange={(e) => update("parking", e.target.value as Parking)}
+            onBlur={() => blur("parking")}
           >
+            <option value="" disabled>Select…</option>
             <option value="close">Close to door</option>
             <option value="far">Far from door</option>
           </select>
-          <p id={parkingHelpId} className={helpClass}>
+          <p id={helpId("parking")} className={helpClass}>
             Long carries from the van to the door add time.
           </p>
+          {showError("parking") && (
+            <p id={errId("parking")} className={errorClass}>
+              {errors.parking}
+            </p>
+          )}
         </div>
 
         <div className="sm:col-span-2">
-          <label htmlFor={packingId} className={labelClass}>
-            Packing required?
+          <label htmlFor={ids.packing} className={labelClass}>
+            Packing required? <span aria-hidden="true" className="text-destructive">*</span>
           </label>
           <select
-            id={packingId}
+            id={ids.packing}
             name="packing"
-            aria-describedby={packingHelpId}
-            className={fieldClass}
-            value={packing}
-            onChange={(e) => setPacking(e.target.value as YesNo)}
+            required
+            aria-required="true"
+            aria-invalid={showError("packing") || undefined}
+            aria-describedby={describedBy("packing")}
+            className={fieldClass("packing")}
+            value={form.packing}
+            onChange={(e) => update("packing", e.target.value as YesNo)}
+            onBlur={() => blur("packing")}
           >
+            <option value="" disabled>Select…</option>
             <option value="no">No, I'll pack myself</option>
             <option value="yes">Yes, please pack for me</option>
           </select>
-          <p id={packingHelpId} className={helpClass}>
+          <p id={helpId("packing")} className={helpClass}>
             Optional packing service includes materials and labour.
           </p>
+          {showError("packing") && (
+            <p id={errId("packing")} className={errorClass}>
+              {errors.packing}
+            </p>
+          )}
         </div>
       </fieldset>
 
       <div
-        id={resultId}
         role="status"
         aria-live="polite"
         aria-atomic="true"
         className="mt-6 rounded-lg bg-muted p-4"
       >
         <p className="text-xs uppercase tracking-wide text-muted-foreground">Estimated range</p>
-        <p className="mt-1 text-2xl font-bold text-foreground">
-          <span className="sr-only">Estimated price range: </span>
-          £{low}–£{high}
-        </p>
+        {result ? (
+          <>
+            <p className="mt-1 text-2xl font-bold text-foreground">
+              <span className="sr-only">Estimated price range: </span>
+              £{result[0]}–£{result[1]}
+            </p>
+            {warning && (
+              <p className="mt-2 text-xs font-medium text-foreground/80">{warning}</p>
+            )}
+          </>
+        ) : (
+          <p className="mt-1 text-sm text-muted-foreground">
+            Complete all fields above to see an estimated range.
+          </p>
+        )}
         <p className="mt-2 text-xs text-muted-foreground">
           Indicative only — not a quote. For a fixed price, see{" "}
           <Link
