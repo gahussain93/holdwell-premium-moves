@@ -85,10 +85,13 @@ export function AreaPage({ area }: { area: AreaInfo }) {
     ? {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        mainEntity: area.faqs.map((f) => ({
+        mainEntity: area.faqs.slice(0, 6).map((f) => ({
           "@type": "Question",
           name: f.q,
-          acceptedAnswer: { "@type": "Answer", text: f.a },
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: f.a.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim(),
+          },
         })),
       }
     : null;

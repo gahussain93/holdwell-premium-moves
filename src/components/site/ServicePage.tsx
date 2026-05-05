@@ -71,10 +71,13 @@ export function ServicePage({ service }: { service: ServiceInfo }) {
     ? {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        mainEntity: service.faqs.map((f) => ({
+        mainEntity: service.faqs.slice(0, 6).map((f) => ({
           "@type": "Question",
           name: f.q,
-          acceptedAnswer: { "@type": "Answer", text: f.a },
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: f.a.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim(),
+          },
         })),
       }
     : null;
