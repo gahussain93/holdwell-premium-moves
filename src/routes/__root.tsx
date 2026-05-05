@@ -5,8 +5,8 @@ import {
   SITE_URL,
   BUSINESS_NAME,
   PHONE_E164,
+  EMAIL,
   LOGO_URL,
-  SERVICE_AREAS,
   SERVICE_TYPES,
 } from "@/lib/site-config";
 
