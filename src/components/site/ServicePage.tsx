@@ -19,8 +19,7 @@ const SERVICE_GUIDES: Record<ServiceSlug, Array<{ href: string; label: string }>
   ],
   "office-removals-london": [
     { href: "/blog/office-relocation-guide-london", label: "London office relocation guide" },
-    { href: "/blog/parking-permits-moving-london", label: "parking and access for commercial moves" },
-    { href: "/blog/storage-options-when-moving-london", label: "storage options during a move" },
+    { href: "/blog/how-long-does-a-house-move-take-london", label: "how long a move typically takes" },
   ],
   "business-relocations-london": [
     { href: "/blog/office-relocation-guide-london", label: "office relocation planning guide" },
