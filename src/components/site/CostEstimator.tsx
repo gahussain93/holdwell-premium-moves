@@ -2,20 +2,23 @@ import { useId, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { z } from "zod";
 
-type Size = "1" | "2" | "3" | "4";
+type Size = "1" | "2" | "3";
 type Distance = "local" | "outside";
 type YesNo = "yes" | "no";
 type Parking = "close" | "far";
 
+// Strict price model — these are the only ranges we publish.
 const BASE: Record<Size, [number, number]> = {
-  "1": [180, 300],
-  "2": [280, 500],
-  "3": [475, 800],
-  "4": [700, 1200],
+  "1": [180, 250],
+  "2": [280, 380],
+  "3": [450, 800],
 };
 
+const MIN_PRICE = 180;
+const MAX_PRICE = 800;
+
 const schema = z.object({
-  size: z.enum(["1", "2", "3", "4"], { message: "Please select a property size." }),
+  size: z.enum(["1", "2", "3"], { message: "Please select a property size." }),
   distance: z.enum(["local", "outside"], { message: "Please choose a distance." }),
   stairs: z.enum(["yes", "no"], { message: "Please tell us about stairs." }),
   parking: z.enum(["close", "far"], { message: "Please choose a parking distance." }),
