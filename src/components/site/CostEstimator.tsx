@@ -9,13 +9,13 @@ type Parking = "close" | "far";
 
 // Strict price model — these are the only ranges we publish.
 const BASE: Record<Size, [number, number]> = {
-  "1": [180, 250],
-  "2": [280, 380],
-  "3": [450, 800],
+  "1": [200, 300],
+  "2": [320, 450],
+  "3": [500, 900],
 };
 
-const MIN_PRICE = 180;
-const MAX_PRICE = 800;
+const MIN_PRICE = 200;
+const MAX_PRICE = 900;
 
 const schema = z.object({
   size: z.enum(["1", "2", "3"], { message: "Please select a property size." }),
@@ -37,21 +37,16 @@ type Errors = Partial<Record<keyof FormState, string>>;
 
 function estimate(
   size: Size,
-  distance: Distance,
   stairs: YesNo,
   parking: Parking,
   packing: YesNo,
 ): [number, number] {
   let [low, high] = BASE[size];
   // Modifiers nudge within the band; we always clamp to the published model.
-  if (distance === "outside") high += 80;
   if (stairs === "yes") high += 40;
   if (parking === "far") high += 30;
   if (packing === "yes") high += 60;
-  // Pull the low end up slightly when several factors stack, but never above
-  // the band's upper limit and never below the global floor.
   const stack =
-    (distance === "outside" ? 1 : 0) +
     (stairs === "yes" ? 1 : 0) +
     (parking === "far" ? 1 : 0) +
     (packing === "yes" ? 1 : 0);
