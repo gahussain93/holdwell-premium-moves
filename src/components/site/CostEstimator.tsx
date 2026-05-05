@@ -92,8 +92,9 @@ export function CostEstimator() {
       "Heads up: a 3-bed+ move with far parking and no packing help often runs to the upper end — consider adding packing for a smoother day.";
   }
 
-  const result = parsed.success
-    ? estimate(form.size as Size, form.distance as Distance, form.stairs as YesNo, form.parking as Parking, form.packing as YesNo)
+  const isOutside = parsed.success && form.distance === "outside";
+  const result = parsed.success && !isOutside
+    ? estimate(form.size as Size, form.stairs as YesNo, form.parking as Parking, form.packing as YesNo)
     : null;
 
   const update = <K extends keyof FormState>(key: K, value: FormState[K]) => {
