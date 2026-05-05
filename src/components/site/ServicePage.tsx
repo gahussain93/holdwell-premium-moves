@@ -59,11 +59,7 @@ export function ServicePage({ service }: { service: ServiceInfo }) {
           <div className="mt-10 max-w-3xl text-muted-foreground">
             <p>{service.details}</p>
             <p className="mt-4 text-sm">
-              Helpful reading:{" "}
-              <a href="/blog/cost-of-moving-house-london" className="font-medium text-primary underline-offset-2 hover:underline">cost of moving house in London</a>,{" "}
-              <a href="/blog/how-to-pack-for-a-house-move-london" className="font-medium text-primary underline-offset-2 hover:underline">how to pack room-by-room</a>{" "}
-              and our{" "}
-              <a href="/blog/moving-house-checklist-uk" className="font-medium text-primary underline-offset-2 hover:underline">UK moving checklist</a>.
+              Helpful reading: {renderServiceGuides(service.slug)}
             </p>
             <p className="mt-4 inline-flex items-center gap-2 text-sm text-foreground">
               <Sparkles className="h-4 w-4 text-accent-foreground" />
