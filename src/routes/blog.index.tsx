@@ -116,6 +116,7 @@ function BlogIndex() {
           {groups.map((g) => (
             <div key={g.title} className="mt-12">
               <h2 className="text-2xl font-bold text-primary md:text-3xl">{g.title}</h2>
+              <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{g.description}</p>
               <div className="mt-6 grid gap-5 sm:grid-cols-2">
                 {g.slugs.map((slug) => {
                   const p = bySlug[slug];
