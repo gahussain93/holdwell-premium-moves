@@ -68,35 +68,53 @@ export const Route = createFileRoute("/blog/")({
   component: BlogIndex,
 });
 
+const LINK_CLS = "font-medium text-primary underline-offset-2 hover:underline";
+
 function BlogIndex() {
-  const groups: Array<{ title: string; description: string; slugs: string[] }> = [
+  const groups: Array<{ title: string; slugs: string[]; description: React.ReactNode }> = [
     {
       title: "Costs & pricing",
-      description: "Realistic London price ranges and the timing decisions that move the final number up or down.",
       slugs: ["cost-of-moving-house-london", "best-time-to-move-house-london"],
+      description: (
+        <>
+          Start here when you're still budgeting and trying to work out which service actually fits the job. These guides break down what a London move tends to cost by property size, how the day and month you book changes the price, and when a leaner option like our <a href={"/man-and-van-london"} className={LINK_CLS}>man and van service</a> works out cheaper than a full removal. For headline price bands, see our <a href={"/pricing"} className={LINK_CLS}>pricing page</a>.
+        </>
+      ),
     },
     {
       title: "Planning your move",
-      description: "Timelines, packing order and duration estimates so nothing slips between booking and unloading.",
       slugs: [
         "moving-house-checklist-uk",
         "how-long-does-a-house-move-take-london",
         "how-to-pack-for-a-house-move-london",
       ],
+      description: (
+        <>
+          Read these in the four weeks before move day — they exist to stop the avoidable mistakes that turn a one-day job into two. You'll get a week-by-week checklist, honest duration estimates by property size, and a room-by-room packing order that makes unloading the new place actually painless. If packing is the part you'd rather hand over, that's covered by our <a href={"/packing-assembly-dismantling-london"} className={LINK_CLS}>packing and dismantling service</a>.
+        </>
+      ),
     },
     {
       title: "London moving logistics",
-      description: "Parking, bay suspensions and storage — the local details that make a London move actually run on time.",
       slugs: ["parking-permits-moving-london", "storage-options-when-moving-london"],
+      description: (
+        <>
+          The local details that quietly decide whether a London move runs on time: where the van actually parks, how to suspend a bay on a CPZ street, and what to do when completion dates don't line up. Worth reading if you're moving in a borough with tight access or narrow roads — browse <a href={"/areas"} className={LINK_CLS}>the areas we cover</a> for street-level notes near you.
+        </>
+      ),
     },
     {
       title: "Service comparisons & move scenarios",
-      description: "How to choose between a man and van, full removals and office relocations for your specific job.",
       slugs: [
         "man-and-van-vs-removals-london",
         "moving-a-1-bed-flat-london",
         "office-relocation-guide-london",
       ],
+      description: (
+        <>
+          Use this section when you know roughly what you're moving but aren't sure which service to book. We compare man-and-van against full removals for small flats, walk through what a 1-bed move really involves, and lay out the lead times and weekend logistics behind a low-downtime <a href={"/office-removals-london"} className={LINK_CLS}>office relocation</a>.
+        </>
+      ),
     },
   ];
   const bySlug = Object.fromEntries(POSTS.map((p) => [p.slug, p]));
