@@ -21,7 +21,7 @@ export const Route = createFileRoute("/blog/cost-of-moving-house-london")({
       <div className="not-prose my-6 rounded-lg border border-border bg-muted/40 p-5">
         <p className="text-xs uppercase tracking-wide text-muted-foreground">Quick overview</p>
         <p className="mt-2 text-sm text-foreground">
-          Most London house moves fall between <strong>£180 and £1,200</strong> depending on property size, access and distance. A typical 1-bed flat sits around £180–£300, a 2-bed £280–£500, and a 3-bed home £475–£800. Use the estimator below for a closer figure, or read on for what drives the variation.
+          Typical ranges for our West London moves fall between <strong>£180 and £800</strong> depending on property size, access and distance. A 1-bed flat sits around £180–£250, a 2-bed £280–£380, and a 3-bed+ home £450–£800. Use the estimator below for a closer figure, or read on for what drives the variation.
         </p>
       </div>
 
@@ -39,23 +39,23 @@ export const Route = createFileRoute("/blog/cost-of-moving-house-london")({
           <tbody className="text-foreground/90">
             <tr className="border-b border-border">
               <td className="px-3 py-2">1-bed flat</td>
-              <td className="px-3 py-2">£180–£300</td>
+              <td className="px-3 py-2">£180–£250</td>
               <td className="px-3 py-2">2 movers, Transit or LWB</td>
             </tr>
             <tr className="border-b border-border">
               <td className="px-3 py-2">2-bed flat or small house</td>
-              <td className="px-3 py-2">£280–£500</td>
+              <td className="px-3 py-2">£280–£380</td>
               <td className="px-3 py-2">2–3 movers, LWB or Luton</td>
             </tr>
             <tr>
-              <td className="px-3 py-2">3-bed family home</td>
-              <td className="px-3 py-2">£475–£800</td>
+              <td className="px-3 py-2">3-bed+ family home</td>
+              <td className="px-3 py-2">£450–£800</td>
               <td className="px-3 py-2">3 movers, Luton (often two trips or two vans)</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p>Ranges assume a local move within London with reasonable access. Outside the M25, top-floor walk-ups, or heavy packing requirements push prices toward the upper end. See <a href="/pricing">our pricing page</a> for the full breakdown.</p>
+      <p>Ranges assume a local move within London with reasonable access. Outside the M25, top-floor walk-ups, or heavy packing requirements push prices toward the upper end of each band. See <a href="/pricing">our pricing page</a> for the full breakdown.</p>
 
       <h2>Why Moving Costs Vary</h2>
       <p>Two moves with identical bedroom counts can land in different price bands. The main reasons are:</p>
