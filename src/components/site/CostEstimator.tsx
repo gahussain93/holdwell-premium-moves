@@ -169,8 +169,7 @@ export function CostEstimator() {
             <option value="" disabled>Select…</option>
             <option value="1">1 bed</option>
             <option value="2">2 bed</option>
-            <option value="3">3 bed</option>
-            <option value="4">4+ bed</option>
+            <option value="3">3 bed+</option>
           </select>
           <p id={helpId("size")} className={helpClass}>
             Number of bedrooms in the property you're moving from.
