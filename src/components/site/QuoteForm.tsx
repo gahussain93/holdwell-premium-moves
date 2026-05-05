@@ -57,6 +57,7 @@ export function QuoteForm() {
       const res = await submitLeadFn({ data: payload });
       if (!res?.ok) throw new Error("Submission failed");
 
+      // Only open WhatsApp AFTER the backend has confirmed capture.
       const lines = [
         `Quote request from ${payload.name}`,
         `Phone: ${payload.phone}`,
@@ -72,15 +73,18 @@ export function QuoteForm() {
       try {
         window.open(`https://wa.me/447737731115?text=${message}`, "_blank");
       } catch {
-        // Lead is already captured server-side; ignore WhatsApp open failure.
+        // Lead already captured server-side; ignore WhatsApp open failure.
       }
-      toast.success("Please complete your message in WhatsApp to send your request.");
+      toast.success("Quote request received. Please complete your message in WhatsApp.");
       setSubmitted(true);
       nonceRef.current = makeNonce();
       form.reset();
     } catch (err) {
       console.error(err);
-      toast.error("Couldn't send your request. Please try again or call us.");
+      // Do NOT open WhatsApp, do NOT reset form, do NOT mark submitted.
+      toast.error(
+        "We couldn’t save your quote request. Please call us or message us on WhatsApp.",
+      );
     } finally {
       setPending(false);
     }
