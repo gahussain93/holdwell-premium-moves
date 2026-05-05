@@ -77,7 +77,7 @@ function HomePage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" className="rounded-full">
                 <a href="tel:07737731115" className="inline-flex items-center gap-2">
-                  <Phone className="h-4 w-4" /> Call / WhatsApp 07737731115
+                  <Phone className="h-4 w-4" /> Call 07737 731115
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline" className="rounded-full">
