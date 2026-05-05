@@ -102,6 +102,26 @@ function HomePage() {
         </div>
       </section>
 
+      {/* TRUST STRIP */}
+      <section className="bg-background pb-8">
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <div className="rounded-2xl border border-border bg-card p-5 shadow-[var(--shadow-card)]">
+            <div className="flex flex-col gap-3 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
+              <p className="text-foreground">
+                <span className="font-semibold text-primary">“Professional, careful and on time.”</span>{" "}
+                Trusted by London households and businesses.
+              </p>
+              <ul className="flex flex-wrap gap-x-5 gap-y-2 text-xs font-medium text-foreground">
+                <li className="inline-flex items-center gap-1.5"><ShieldCheck className="h-3.5 w-3.5 text-primary" /> Experienced team</li>
+                <li className="inline-flex items-center gap-1.5"><PackageCheck className="h-3.5 w-3.5 text-primary" /> Careful handling</li>
+                <li className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5 text-primary" /> Reliable &amp; on time</li>
+                <li className="inline-flex items-center gap-1.5"><BadgePoundSterling className="h-3.5 w-3.5 text-primary" /> Clear pricing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* PRICING STRIP */}
       <section className="bg-background pb-16">
         <div className="mx-auto max-w-7xl px-4 md:px-6">
