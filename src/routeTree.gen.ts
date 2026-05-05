@@ -39,6 +39,7 @@ import { Route as BlogMovingHouseChecklistUkRouteImport } from './routes/blog.mo
 import { Route as BlogManAndVanVsRemovalsLondonRouteImport } from './routes/blog.man-and-van-vs-removals-london'
 import { Route as BlogHowLongDoesAHouseMoveTakeLondonRouteImport } from './routes/blog.how-long-does-a-house-move-take-london'
 import { Route as BlogCostOfMovingHouseLondonRouteImport } from './routes/blog.cost-of-moving-house-london'
+import { Route as ApiPublicLeadRouteImport } from './routes/api/public/lead'
 
 const StorageRunsLondonRoute = StorageRunsLondonRouteImport.update({
   id: '/storage-runs-london',
@@ -198,6 +199,11 @@ const BlogCostOfMovingHouseLondonRoute =
     path: '/blog/cost-of-moving-house-london',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiPublicLeadRoute = ApiPublicLeadRouteImport.update({
+  id: '/api/public/lead',
+  path: '/api/public/lead',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -230,6 +236,7 @@ export interface FileRoutesByFullPath {
   '/blog/moving-house-checklist-uk': typeof BlogMovingHouseChecklistUkRoute
   '/blog/parking-permits-moving-london': typeof BlogParkingPermitsMovingLondonRoute
   '/blog/': typeof BlogIndexRoute
+  '/api/public/lead': typeof ApiPublicLeadRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -262,6 +269,7 @@ export interface FileRoutesByTo {
   '/blog/moving-house-checklist-uk': typeof BlogMovingHouseChecklistUkRoute
   '/blog/parking-permits-moving-london': typeof BlogParkingPermitsMovingLondonRoute
   '/blog': typeof BlogIndexRoute
+  '/api/public/lead': typeof ApiPublicLeadRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -295,6 +303,7 @@ export interface FileRoutesById {
   '/blog/moving-house-checklist-uk': typeof BlogMovingHouseChecklistUkRoute
   '/blog/parking-permits-moving-london': typeof BlogParkingPermitsMovingLondonRoute
   '/blog/': typeof BlogIndexRoute
+  '/api/public/lead': typeof ApiPublicLeadRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -329,6 +338,7 @@ export interface FileRouteTypes {
     | '/blog/moving-house-checklist-uk'
     | '/blog/parking-permits-moving-london'
     | '/blog/'
+    | '/api/public/lead'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -361,6 +371,7 @@ export interface FileRouteTypes {
     | '/blog/moving-house-checklist-uk'
     | '/blog/parking-permits-moving-london'
     | '/blog'
+    | '/api/public/lead'
   id:
     | '__root__'
     | '/'
@@ -393,6 +404,7 @@ export interface FileRouteTypes {
     | '/blog/moving-house-checklist-uk'
     | '/blog/parking-permits-moving-london'
     | '/blog/'
+    | '/api/public/lead'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -426,6 +438,7 @@ export interface RootRouteChildren {
   BlogMovingHouseChecklistUkRoute: typeof BlogMovingHouseChecklistUkRoute
   BlogParkingPermitsMovingLondonRoute: typeof BlogParkingPermitsMovingLondonRoute
   BlogIndexRoute: typeof BlogIndexRoute
+  ApiPublicLeadRoute: typeof ApiPublicLeadRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -640,6 +653,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogCostOfMovingHouseLondonRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/lead': {
+      id: '/api/public/lead'
+      path: '/api/public/lead'
+      fullPath: '/api/public/lead'
+      preLoaderRoute: typeof ApiPublicLeadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -675,6 +695,7 @@ const rootRouteChildren: RootRouteChildren = {
   BlogMovingHouseChecklistUkRoute: BlogMovingHouseChecklistUkRoute,
   BlogParkingPermitsMovingLondonRoute: BlogParkingPermitsMovingLondonRoute,
   BlogIndexRoute: BlogIndexRoute,
+  ApiPublicLeadRoute: ApiPublicLeadRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
