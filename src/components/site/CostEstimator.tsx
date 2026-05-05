@@ -2,20 +2,23 @@ import { useId, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { z } from "zod";
 
-type Size = "1" | "2" | "3" | "4";
+type Size = "1" | "2" | "3";
 type Distance = "local" | "outside";
 type YesNo = "yes" | "no";
 type Parking = "close" | "far";
 
+// Strict price model — these are the only ranges we publish.
 const BASE: Record<Size, [number, number]> = {
-  "1": [180, 300],
-  "2": [280, 500],
-  "3": [475, 800],
-  "4": [700, 1200],
+  "1": [180, 250],
+  "2": [280, 380],
+  "3": [450, 800],
 };
 
+const MIN_PRICE = 180;
+const MAX_PRICE = 800;
+
 const schema = z.object({
-  size: z.enum(["1", "2", "3", "4"], { message: "Please select a property size." }),
+  size: z.enum(["1", "2", "3"], { message: "Please select a property size." }),
   distance: z.enum(["local", "outside"], { message: "Please choose a distance." }),
   stairs: z.enum(["yes", "no"], { message: "Please tell us about stairs." }),
   parking: z.enum(["close", "far"], { message: "Please choose a parking distance." }),
@@ -40,22 +43,25 @@ function estimate(
   packing: YesNo,
 ): [number, number] {
   let [low, high] = BASE[size];
-  if (distance === "outside") {
-    low += 120;
-    high += 250;
-  }
-  if (stairs === "yes") {
-    low += 40;
-    high += 100;
-  }
-  if (parking === "far") {
-    low += 30;
-    high += 80;
-  }
-  if (packing === "yes") {
-    low += 80;
-    high += 200;
-  }
+  // Modifiers nudge within the band; we always clamp to the published model.
+  if (distance === "outside") high += 80;
+  if (stairs === "yes") high += 40;
+  if (parking === "far") high += 30;
+  if (packing === "yes") high += 60;
+  // Pull the low end up slightly when several factors stack, but never above
+  // the band's upper limit and never below the global floor.
+  const stack =
+    (distance === "outside" ? 1 : 0) +
+    (stairs === "yes" ? 1 : 0) +
+    (parking === "far" ? 1 : 0) +
+    (packing === "yes" ? 1 : 0);
+  if (stack >= 2) low += 30;
+
+  const [bandLow, bandHigh] = BASE[size];
+  const clamp = (n: number) => Math.min(MAX_PRICE, Math.max(MIN_PRICE, n));
+  low = Math.max(bandLow, clamp(low));
+  high = Math.min(bandHigh, clamp(high));
+  if (high < low) high = low;
   const r = (n: number) => Math.round(n / 10) * 10;
   return [r(low), r(high)];
 }
@@ -83,12 +89,12 @@ export function CostEstimator() {
   let warning: string | null = null;
   if (
     parsed.success &&
-    form.size === "4" &&
+    form.size === "3" &&
     form.parking === "far" &&
     form.packing === "no"
   ) {
     warning =
-      "Heads up: a 4+ bed move with far parking and no packing help often runs to the upper end — consider adding packing for a smoother day.";
+      "Heads up: a 3-bed+ move with far parking and no packing help often runs to the upper end — consider adding packing for a smoother day.";
   }
 
   const result = parsed.success
@@ -163,8 +169,7 @@ export function CostEstimator() {
             <option value="" disabled>Select…</option>
             <option value="1">1 bed</option>
             <option value="2">2 bed</option>
-            <option value="3">3 bed</option>
-            <option value="4">4+ bed</option>
+            <option value="3">3 bed+</option>
           </select>
           <p id={helpId("size")} className={helpClass}>
             Number of bedrooms in the property you're moving from.
