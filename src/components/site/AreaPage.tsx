@@ -92,6 +92,13 @@ export function AreaPage({ area }: { area: AreaInfo }) {
             Moving in {area.name}: what to expect
           </h2>
           <p className="mt-4 max-w-3xl text-muted-foreground">{area.whatToExpect}</p>
+          <p className="mt-4 max-w-3xl text-sm text-muted-foreground">
+            Planning your move? See our{" "}
+            <a href="/blog/parking-permits-moving-london" className="font-medium text-primary underline-offset-2 hover:underline">parking permits guide</a>{" "}
+            and the{" "}
+            <a href="/blog/cost-of-moving-house-london" className="font-medium text-primary underline-offset-2 hover:underline">cost of moving house in London</a>{" "}
+            for what to expect locally.
+          </p>
         </div>
       </section>
 
