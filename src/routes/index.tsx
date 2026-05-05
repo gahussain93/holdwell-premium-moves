@@ -230,12 +230,12 @@ function HomePage() {
               including Ealing, Hounslow, Harrow, Wembley, Chiswick and Richmond.
             </p>
             <p className="mx-auto mt-4 max-w-2xl text-sm text-muted-foreground">
-              New to planning a move? Read our{" "}
-              <a href="/blog/cost-of-moving-house-london" className="font-semibold text-primary underline-offset-2 hover:underline">London moving cost guide</a>,
-              {" "}compare{" "}
-              <a href="/blog/man-and-van-vs-removals-london" className="font-semibold text-primary underline-offset-2 hover:underline">man and van vs full removals</a>,
-              {" "}or check our{" "}
-              <a href="/blog/parking-permits-moving-london" className="font-semibold text-primary underline-offset-2 hover:underline">parking permit advice for London moves</a>.
+              Still planning? See our{" "}
+              <a href="/blog/cost-of-moving-house-london" className="font-semibold text-primary underline-offset-2 hover:underline">price breakdown for a London move</a>,
+              {" "}work out{" "}
+              <a href="/blog/man-and-van-vs-removals-london" className="font-semibold text-primary underline-offset-2 hover:underline">whether a man and van or full removal fits your job</a>,
+              {" "}and read our{" "}
+              <a href="/blog/parking-permits-moving-london" className="font-semibold text-primary underline-offset-2 hover:underline">bay suspension and parking guide</a>.
             </p>
           </div>
         </div>

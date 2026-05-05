@@ -19,7 +19,7 @@ export const Route = createFileRoute("/blog/moving-house-checklist-uk")({
     >
       <h2>4 weeks before</h2>
       <ul>
-        <li>Confirm your moving date and book a removal company. Friday and end-of-month dates fill quickly — see our <a href="/house-removals-london">house removals service</a>.</li>
+        <li>Confirm your moving date and book a removal company. Friday and end-of-month dates fill quickly — book our <a href="/house-removals-london">professional home removals team</a>.</li>
         <li>Walk through every room and rough-list what's coming, what's being sold and what's going to charity.</li>
         <li>Get quotes for any specialist items (piano, art, large fish tank).</li>
       </ul>
