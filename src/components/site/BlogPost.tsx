@@ -1,24 +1,56 @@
 import type { ReactNode } from "react";
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
 import { Phone, Calendar } from "lucide-react";
 import { SiteLayout } from "./SiteLayout";
 import { CtaBand } from "./CtaBand";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { Button } from "@/components/ui/button";
+import { SITE_URL, BUSINESS_NAME, LOGO_URL, canonicalUrl } from "@/lib/site-config";
+
+// Static, consistent publish date for all current posts (avoids guessed values).
+const DEFAULT_PUBLISHED_ISO = "2026-05-01";
 
 export function BlogPost({
   title,
   intro,
   date,
   children,
+  datePublished,
+  dateModified,
 }: {
   title: string;
   intro: string;
   date: string;
   children: ReactNode;
+  datePublished?: string;
+  dateModified?: string;
 }) {
+  const { pathname } = useLocation();
+  const url = canonicalUrl(pathname);
+  const published = datePublished ?? DEFAULT_PUBLISHED_ISO;
+  const modified = dateModified ?? published;
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description: intro,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    url,
+    datePublished: published,
+    dateModified: modified,
+    author: { "@type": "Organization", name: BUSINESS_NAME, url: SITE_URL },
+    publisher: {
+      "@type": "Organization",
+      name: BUSINESS_NAME,
+      logo: { "@type": "ImageObject", url: LOGO_URL },
+    },
+  };
   return (
     <SiteLayout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <section className="bg-background">
         <div className="mx-auto max-w-3xl px-4 py-16 md:px-6 md:py-20">
           <Link to="/blog" className="text-sm font-semibold text-primary hover:opacity-80">

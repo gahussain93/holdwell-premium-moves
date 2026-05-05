@@ -5,8 +5,8 @@ import {
   SITE_URL,
   BUSINESS_NAME,
   PHONE_E164,
+  EMAIL,
   LOGO_URL,
-  SERVICE_AREAS,
   SERVICE_TYPES,
 } from "@/lib/site-config";
 
@@ -63,11 +63,29 @@ const movingCompanyJsonLd = {
   name: BUSINESS_NAME,
   url: SITE_URL,
   telephone: PHONE_E164,
+  email: EMAIL,
   logo: LOGO_URL,
   image: LOGO_URL,
   priceRange: "££",
-  areaServed: SERVICE_AREAS,
+  areaServed: [
+    "Ealing",
+    "Chiswick",
+    "Fulham",
+    "Hounslow",
+    "Harrow",
+    "Wembley",
+    "Richmond",
+    "Uxbridge",
+    "Brentford",
+    "Shepherd\u2019s Bush",
+  ],
   serviceType: SERVICE_TYPES,
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: PHONE_E164,
+    email: EMAIL,
+    contactType: "customer service",
+  },
 };
 
 const webSiteJsonLd = {
