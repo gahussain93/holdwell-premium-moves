@@ -69,13 +69,15 @@ export const Route = createFileRoute("/blog/")({
 });
 
 function BlogIndex() {
-  const groups: Array<{ title: string; slugs: string[] }> = [
+  const groups: Array<{ title: string; description: string; slugs: string[] }> = [
     {
-      title: "Moving costs & pricing",
+      title: "Costs & pricing",
+      description: "Realistic London price ranges and the timing decisions that move the final number up or down.",
       slugs: ["cost-of-moving-house-london", "best-time-to-move-house-london"],
     },
     {
       title: "Planning your move",
+      description: "Timelines, packing order and duration estimates so nothing slips between booking and unloading.",
       slugs: [
         "moving-house-checklist-uk",
         "how-long-does-a-house-move-take-london",
@@ -84,10 +86,12 @@ function BlogIndex() {
     },
     {
       title: "London moving logistics",
+      description: "Parking, bay suspensions and storage — the local details that make a London move actually run on time.",
       slugs: ["parking-permits-moving-london", "storage-options-when-moving-london"],
     },
     {
-      title: "Service comparisons & scenarios",
+      title: "Service comparisons & move scenarios",
+      description: "How to choose between a man and van, full removals and office relocations for your specific job.",
       slugs: [
         "man-and-van-vs-removals-london",
         "moving-a-1-bed-flat-london",
