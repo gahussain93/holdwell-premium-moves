@@ -28,6 +28,31 @@ const POSTS = [
     title: "How long does a house move take in London?",
     excerpt: "Honest timing expectations for studios, 1-beds, 2-beds and townhouses.",
   },
+  {
+    slug: "how-to-pack-for-a-house-move-london",
+    title: "How to pack for a house move in London (room-by-room)",
+    excerpt: "Materials, order of work, fragile items and labelling — and what to leave to the crew.",
+  },
+  {
+    slug: "best-time-to-move-house-london",
+    title: "When is the best time to move house in London?",
+    excerpt: "Day, month and season pricing patterns — when to book for the lowest price.",
+  },
+  {
+    slug: "moving-a-1-bed-flat-london",
+    title: "Moving a 1-bed flat in London: cost, time and van size",
+    excerpt: "Realistic numbers and what catches first-time movers out.",
+  },
+  {
+    slug: "office-relocation-guide-london",
+    title: "Office relocation in London — a planning guide",
+    excerpt: "Lead times, IT, lift bookings and weekend logistics for low-downtime moves.",
+  },
+  {
+    slug: "storage-options-when-moving-london",
+    title: "Storage options when moving house in London",
+    excerpt: "When storage is worth it, what it costs, and how to combine it with the move.",
+  },
 ];
 
 export const Route = createFileRoute("/blog/")({
