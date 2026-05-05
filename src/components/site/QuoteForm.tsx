@@ -74,7 +74,7 @@ export function QuoteForm() {
       } catch {
         // Lead is already captured server-side; ignore WhatsApp open failure.
       }
-      toast.success("Thanks! We'll be in touch shortly.");
+      toast.success("Please complete your message in WhatsApp to send your request.");
       setSubmitted(true);
       nonceRef.current = makeNonce();
       form.reset();
