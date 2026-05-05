@@ -18,6 +18,65 @@ export const Route = createFileRoute("/blog/cost-of-moving-house-london")({
       title="How much does it cost to move house in London?"
       intro="Removal prices in London vary more than most people expect. Two 2-bed flats in the same postcode can cost very different amounts depending on stairs, parking and the items inside. Here's a realistic guide to what you should be paying — and what's actually driving the number."
     >
+      <div className="not-prose my-6 rounded-lg border border-border bg-muted/40 p-5">
+        <p className="text-xs uppercase tracking-wide text-muted-foreground">Quick overview</p>
+        <p className="mt-2 text-sm text-foreground">
+          Most London house moves fall between <strong>£180 and £1,200</strong> depending on property size, access and distance. A typical 1-bed flat sits around £180–£300, a 2-bed £280–£500, and a 3-bed home £475–£800. Use the estimator below for a closer figure, or read on for what drives the variation.
+        </p>
+      </div>
+
+      <h2>Typical Moving Costs in London</h2>
+      <p>The table below shows the realistic price bands we see week to week across West London. Bedroom count is a useful starting point, but the final figure depends on the factors covered further down the page.</p>
+      <div className="not-prose my-6 overflow-x-auto">
+        <table className="w-full border-collapse text-sm">
+          <thead>
+            <tr className="border-b border-border bg-muted/40 text-left">
+              <th className="px-3 py-2 font-semibold text-foreground">Property size</th>
+              <th className="px-3 py-2 font-semibold text-foreground">Typical range</th>
+              <th className="px-3 py-2 font-semibold text-foreground">Common crew &amp; van</th>
+            </tr>
+          </thead>
+          <tbody className="text-foreground/90">
+            <tr className="border-b border-border">
+              <td className="px-3 py-2">1-bed flat</td>
+              <td className="px-3 py-2">£180–£300</td>
+              <td className="px-3 py-2">2 movers, Transit or LWB</td>
+            </tr>
+            <tr className="border-b border-border">
+              <td className="px-3 py-2">2-bed flat or small house</td>
+              <td className="px-3 py-2">£280–£500</td>
+              <td className="px-3 py-2">2–3 movers, LWB or Luton</td>
+            </tr>
+            <tr>
+              <td className="px-3 py-2">3-bed family home</td>
+              <td className="px-3 py-2">£475–£800</td>
+              <td className="px-3 py-2">3 movers, Luton (often two trips or two vans)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Ranges assume a local move within London with reasonable access. Outside the M25, top-floor walk-ups, or heavy packing requirements push prices toward the upper end. See <a href="/pricing">our pricing page</a> for the full breakdown.</p>
+
+      <h2>Why Moving Costs Vary</h2>
+      <p>Two moves with identical bedroom counts can land in different price bands. The main reasons are:</p>
+      <ul>
+        <li><strong>Volume of belongings</strong> — a sparsely furnished 2-bed loads in half the time of a 2-bed full of books, art and flat-pack furniture.</li>
+        <li><strong>Access at both ends</strong> — stairs without a lift, narrow corridors, and tight doorways add real time to every trip.</li>
+        <li><strong>Parking distance</strong> — when the van can't park near the door, every item has a longer carry. CPZ areas often need a <a href="/blog/parking-permits-moving-london">bay suspension</a>.</li>
+        <li><strong>Distance between addresses</strong> — within a borough is the cheapest band; cross-London adds van time; outside the M25 is quoted as a longer job.</li>
+        <li><strong>Day and time</strong> — Fridays and end-of-month dates book up first and are the most expensive.</li>
+        <li><strong>Add-on services</strong> — packing, dismantling and assembly, and <a href="/storage-runs-london">storage runs</a> all change the total.</li>
+      </ul>
+
+      <h2>Example Moving Scenarios</h2>
+      <p>To make the ranges concrete, here are three example moves of the kind we quote regularly. Figures are illustrative, not guaranteed prices.</p>
+      <h3>Example 1 — 1-bed flat in <a href="/removals-shepherds-bush">Shepherd's Bush</a> to <a href="/removals-ealing">Ealing</a></h3>
+      <p>Ground-floor to first-floor, lift available, parking on a CPZ at both ends, no packing needed. Two movers, LWB van, around 4 hours door-to-door. Indicative range: <strong>£200–£280</strong>.</p>
+      <h3>Example 2 — 2-bed Victorian conversion in <a href="/removals-fulham">Fulham</a> to <a href="/removals-chiswick">Chiswick</a></h3>
+      <p>Top-floor walk-up (no lift), bay suspension at the loading end, kitchen plus a wardrobe to dismantle, light packing on the morning. Three movers, Luton van, around 6 hours. Indicative range: <strong>£420–£560</strong>.</p>
+      <h3>Example 3 — 3-bed family home in <a href="/removals-richmond">Richmond</a> to <a href="/removals-uxbridge">Uxbridge</a></h3>
+      <p>Driveway access at both ends, full house contents including a piano and an American fridge, no packing. Three movers, Luton van, around 7–8 hours including the drive. Indicative range: <strong>£600–£800</strong>.</p>
+
       <h2>Typical price ranges</h2>
       <p>For most West London moves we see, the following ranges cover the majority of jobs:</p>
       <ul>
