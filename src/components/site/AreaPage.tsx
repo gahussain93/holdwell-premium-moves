@@ -81,8 +81,26 @@ export function AreaPage({ area }: { area: AreaInfo }) {
     { icon: Package, title: "Small moves", body: area.smallMoves, to: "/small-moves-london" as const },
   ];
 
+  const faqJsonLd = area.faqs.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: area.faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      }
+    : null;
+
   return (
     <SiteLayout>
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
       {/* HERO */}
       <section className="bg-background">
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-6 md:py-20">
