@@ -37,29 +37,27 @@ function seenRecently(nonce: string): boolean {
 export const submitLead = createServerFn({ method: "POST" })
   .inputValidator((input: unknown) => LeadSchema.parse(input))
   .handler(async ({ data }) => {
-    // Honeypot triggered → silently accept, do nothing
+    // Honeypot triggered → silently drop. Report ok:false so we never claim
+    // a delivery that did not happen.
     if (data.company && data.company.length > 0) {
-      return { ok: true as const };
-    }
-
-    // Best-effort dedupe (not authoritative). Same isolate, same nonce within
-    // 5 min → return success so the client can continue to WhatsApp without
-    // a duplicate email.
-    if (seenRecently(data.nonce)) {
-      return { ok: true as const, deduped: true as const };
+      return { ok: false as const, error: "rejected" as const };
     }
 
     const apiKey = process.env.RESEND_API_KEY;
     const fromEmail = process.env.LEADS_FROM_EMAIL;
     const toEmail = process.env.LEADS_TO_EMAIL || "holdwellremovals@hotmail.com";
 
-    if (!apiKey) {
-      console.error("[LEAD] RESEND_API_KEY is not configured");
-      throw new Error("Lead delivery not configured");
+    if (!apiKey || !fromEmail) {
+      console.error("[LEAD] missing config", {
+        hasApiKey: !!apiKey,
+        hasFromEmail: !!fromEmail,
+      });
+      return { ok: false as const, error: "not_configured" as const };
     }
-    if (!fromEmail) {
-      console.error("[LEAD] LEADS_FROM_EMAIL is not configured");
-      throw new Error("Lead delivery not configured");
+
+    // Best-effort, non-authoritative throttle (in-memory; not durable).
+    if (seenRecently(data.nonce)) {
+      return { ok: false as const, error: "duplicate" as const };
     }
 
     const lines = [
@@ -74,36 +72,60 @@ export const submitLead = createServerFn({ method: "POST" })
       `Preferred date: ${data.date || "-"}`,
     ].filter(Boolean);
 
-    const res = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from: fromEmail,
-        to: [toEmail],
-        reply_to: data.email || undefined,
-        subject: `New quote request — ${data.name}`,
-        text: lines.join("\n"),
-      }),
-    });
+    let res: Response;
+    try {
+      res = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${apiKey}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          from: fromEmail,
+          to: [toEmail],
+          reply_to: data.email || undefined,
+          subject: `New quote request — ${data.name}`,
+          text: lines.join("\n"),
+        }),
+      });
+    } catch (err) {
+      console.error("[LEAD] network error contacting Resend", err);
+      recentNonces.delete(data.nonce);
+      return { ok: false as const, error: "network_error" as const };
+    }
 
     if (!res.ok) {
       const body = await res.text().catch(() => "");
-      console.error("[LEAD] email delivery failed", res.status, body);
-      // Roll back dedupe so a retry can go through
+      console.error("[LEAD] Resend non-2xx", res.status, body);
       recentNonces.delete(data.nonce);
-      throw new Error("Lead delivery failed");
+      return { ok: false as const, error: "provider_error" as const, status: res.status };
+    }
+
+    let providerBody: any = null;
+    try {
+      providerBody = await res.json();
+    } catch (err) {
+      console.error("[LEAD] could not parse Resend response", err);
+      recentNonces.delete(data.nonce);
+      return { ok: false as const, error: "invalid_provider_response" as const };
+    }
+
+    const messageId: string | undefined = providerBody?.id;
+    if (!messageId || typeof messageId !== "string") {
+      console.error("[LEAD] Resend response missing message id", providerBody);
+      recentNonces.delete(data.nonce);
+      return { ok: false as const, error: "no_message_id" as const };
     }
 
     console.log("[LEAD] delivered", JSON.stringify({
       receivedAt: new Date().toISOString(),
+      messageId,
       name: data.name,
       phone: data.phone,
       from: data.from,
       to: data.to,
     }));
 
-    return { ok: true as const };
+    return { ok: true as const, messageId };
   });
+
