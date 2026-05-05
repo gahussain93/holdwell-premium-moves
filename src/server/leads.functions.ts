@@ -14,21 +14,24 @@ const LeadSchema = z.object({
   access: z.string().trim().max(1000).optional().default(""),
   // honeypot — must be empty
   company: z.string().max(0).optional().default(""),
-  // idempotency token
+  // idempotency token (best-effort only; not durable across Worker isolates)
   nonce: z.string().min(8).max(80),
 });
 
 export type LeadInput = z.infer<typeof LeadSchema>;
 
-const seen = new Map<string, number>();
+// Best-effort, in-memory throttle. NOT durable across Cloudflare Worker
+// isolates — do not rely on this for correctness. Frontend pending-state
+// is the primary duplicate-submission guard.
+const recentNonces = new Map<string, number>();
 const TTL_MS = 5 * 60 * 1000;
 
-function dedupe(nonce: string): boolean {
+function seenRecently(nonce: string): boolean {
   const now = Date.now();
-  for (const [k, t] of seen) if (now - t > TTL_MS) seen.delete(k);
-  if (seen.has(nonce)) return false;
-  seen.set(nonce, now);
-  return true;
+  for (const [k, t] of recentNonces) if (now - t > TTL_MS) recentNonces.delete(k);
+  if (recentNonces.has(nonce)) return true;
+  recentNonces.set(nonce, now);
+  return false;
 }
 
 export const submitLead = createServerFn({ method: "POST" })
@@ -39,52 +42,68 @@ export const submitLead = createServerFn({ method: "POST" })
       return { ok: true as const };
     }
 
-    if (!dedupe(data.nonce)) {
-      return { ok: true as const, deduped: true };
+    // Best-effort dedupe (not authoritative). Same isolate, same nonce within
+    // 5 min → return success so the client can continue to WhatsApp without
+    // a duplicate email.
+    if (seenRecently(data.nonce)) {
+      return { ok: true as const, deduped: true as const };
     }
-
-    const payload = {
-      kind: "quote_lead",
-      receivedAt: new Date().toISOString(),
-      ...data,
-    };
-    // Durable record in worker logs
-    console.log("[LEAD]", JSON.stringify(payload));
 
     const apiKey = process.env.RESEND_API_KEY;
-    if (apiKey) {
-      const lines = [
-        `Quote request from ${data.name}`,
-        `Phone: ${data.phone}`,
-        data.email ? `Email: ${data.email}` : "",
-        `From: ${data.from}  →  To: ${data.to}`,
-        `Type: ${data.type || "-"}`,
-        `Items / rooms: ${data.items || "-"}`,
-        `Stairs / lift: ${data.stairs || "-"}`,
-        `Access notes: ${data.access || "-"}`,
-        `Preferred date: ${data.date || "-"}`,
-      ].filter(Boolean);
+    const fromEmail = process.env.LEADS_FROM_EMAIL;
+    const toEmail = process.env.LEADS_TO_EMAIL || "holdwellremovals@hotmail.com";
 
-      const res = await fetch("https://api.resend.com/emails", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          from: "HoldWell Leads <leads@holdwellremovals.co.uk>",
-          to: ["holdwellremovals@hotmail.com"],
-          reply_to: data.email || undefined,
-          subject: `New quote request — ${data.name}`,
-          text: lines.join("\n"),
-        }),
-      });
-      if (!res.ok) {
-        const body = await res.text().catch(() => "");
-        console.error("[LEAD] email delivery failed", res.status, body);
-        throw new Error("Lead delivery failed");
-      }
+    if (!apiKey) {
+      console.error("[LEAD] RESEND_API_KEY is not configured");
+      throw new Error("Lead delivery not configured");
     }
+    if (!fromEmail) {
+      console.error("[LEAD] LEADS_FROM_EMAIL is not configured");
+      throw new Error("Lead delivery not configured");
+    }
+
+    const lines = [
+      `Quote request from ${data.name}`,
+      `Phone: ${data.phone}`,
+      data.email ? `Email: ${data.email}` : "",
+      `From: ${data.from}  →  To: ${data.to}`,
+      `Type: ${data.type || "-"}`,
+      `Items / rooms: ${data.items || "-"}`,
+      `Stairs / lift: ${data.stairs || "-"}`,
+      `Access notes: ${data.access || "-"}`,
+      `Preferred date: ${data.date || "-"}`,
+    ].filter(Boolean);
+
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: fromEmail,
+        to: [toEmail],
+        reply_to: data.email || undefined,
+        subject: `New quote request — ${data.name}`,
+        text: lines.join("\n"),
+      }),
+    });
+
+    if (!res.ok) {
+      const body = await res.text().catch(() => "");
+      console.error("[LEAD] email delivery failed", res.status, body);
+      // Roll back dedupe so a retry can go through
+      recentNonces.delete(data.nonce);
+      throw new Error("Lead delivery failed");
+    }
+
+    console.log("[LEAD] delivered", JSON.stringify({
+      receivedAt: new Date().toISOString(),
+      name: data.name,
+      phone: data.phone,
+      from: data.from,
+      to: data.to,
+    }));
 
     return { ok: true as const };
   });
