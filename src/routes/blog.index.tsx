@@ -72,7 +72,7 @@ export const Route = createFileRoute("/blog/")({
 const LINK_CLS = "font-medium text-primary underline-offset-2 hover:underline";
 
 function BlogIndex() {
-  const groups: Array<{ title: string; slugs: string[]; description: React.ReactNode }> = [
+  const groups: Array<{ title: string; slugs: string[]; description: ReactNode }> = [
     {
       title: "Costs & pricing",
       slugs: ["cost-of-moving-house-london", "best-time-to-move-house-london"],
