@@ -5,8 +5,63 @@ import { CtaBand } from "./CtaBand";
 import { WhatsAppButton } from "./WhatsAppButton";
 import { Button } from "@/components/ui/button";
 import { PRICING } from "@/lib/site-data";
-import { AREAS_LOCAL, type AreaInfo } from "@/lib/areas-data";
+import { AREAS_LOCAL, type AreaInfo, type AreaSlug } from "@/lib/areas-data";
 import { SERVICES_SEO } from "@/lib/services-data";
+
+const AREA_BLOG_LINK_CLS = "font-medium text-primary underline-offset-2 hover:underline";
+
+const AREA_GUIDES: Record<AreaSlug, Array<{ href: string; label: string }>> = {
+  ealing: [
+    { href: "/blog/parking-permits-moving-london", label: "parking permits and bay suspensions" },
+    { href: "/blog/cost-of-moving-house-london", label: "cost of moving house in London" },
+  ],
+  chiswick: [
+    { href: "/blog/parking-permits-moving-london", label: "parking permits for CPZ moves" },
+    { href: "/blog/best-time-to-move-house-london", label: "best time to book your move" },
+  ],
+  fulham: [
+    { href: "/blog/parking-permits-moving-london", label: "Fulham parking and bay suspensions" },
+    { href: "/blog/cost-of-moving-house-london", label: "what a Fulham move typically costs" },
+  ],
+  "shepherds-bush": [
+    { href: "/blog/parking-permits-moving-london", label: "parking permits for the area" },
+    { href: "/blog/moving-a-1-bed-flat-london", label: "moving a 1-bed flat in London" },
+  ],
+  brentford: [
+    { href: "/blog/storage-options-when-moving-london", label: "local storage options" },
+    { href: "/blog/cost-of-moving-house-london", label: "cost of moving in West London" },
+  ],
+  hounslow: [
+    { href: "/blog/moving-house-checklist-uk", label: "UK moving house checklist" },
+    { href: "/blog/parking-permits-moving-london", label: "parking and access tips" },
+  ],
+  richmond: [
+    { href: "/blog/how-long-does-a-house-move-take-london", label: "how long a house move takes" },
+    { href: "/blog/best-time-to-move-house-london", label: "the best time of year to move" },
+  ],
+  uxbridge: [
+    { href: "/blog/moving-a-1-bed-flat-london", label: "moving a 1-bed flat" },
+    { href: "/blog/cost-of-moving-house-london", label: "what longer-distance West London moves cost" },
+  ],
+  harrow: [
+    { href: "/blog/moving-house-checklist-uk", label: "UK moving checklist" },
+    { href: "/blog/parking-permits-moving-london", label: "parking and access guide" },
+  ],
+  wembley: [
+    { href: "/blog/how-long-does-a-house-move-take-london", label: "how long a house move takes" },
+    { href: "/blog/parking-permits-moving-london", label: "service-lift and event-day parking notes" },
+  ],
+};
+
+function renderAreaGuides(slug: AreaSlug) {
+  const items = AREA_GUIDES[slug] ?? [];
+  return items.map((g, i) => (
+    <span key={g.href}>
+      {i > 0 && (i === items.length - 1 ? " and " : ", ")}
+      <a href={g.href} className={AREA_BLOG_LINK_CLS}>{g.label}</a>
+    </span>
+  ));
+}
 
 export function AreaPage({ area }: { area: AreaInfo }) {
   const sections = [
